@@ -92,30 +92,30 @@ Program()
 {
     χ = GridTerminalSystem;
     Runtime.UpdateFrequency = UpdateFrequency.Update10;
-    if (ї(Me, controllerTag, true)) ƽ = В.А; Љ(ϸ.Ϸ);
-    if (ƽ != В.А) {
+    if (ї(Me, controllerTag, true)) ƽ = Enum13.А; Љ(Enum1.Ϸ);
+    if (ƽ != Enum13.А) {
         ώ = "Welcome to [PAM]!";
-        ɚ ϊ = ɖ();
-        if (ƽ == В.ǻ) {
+        Enum16 ϊ = ɖ();
+        if (ƽ == Enum13.ǻ) {
             List<IMyShipDrill> ω = new List<IMyShipDrill>();
             List<IMyShipGrinder> ψ = new List<IMyShipGrinder>();
             χ.GetBlocksOfType(ω, q => q.CubeGrid == Me.CubeGrid);
             χ.GetBlocksOfType(ψ, q => q.CubeGrid == Me.CubeGrid);
             if (ω.Count > 0) {
-                ƽ = В.Б;
+                ƽ = Enum13.Б;
                 ώ = "Miner mode enabled!";
             } else if (ψ.Count > 0) {
-                ƽ = В.ψ;
+                ƽ = Enum13.ψ;
                 ώ = "Grinder mode enabled!";
             } else {
-                ƽ = В.Ͼ;
-                Ͻ(Ѓ.Ͼ);
+                ƽ = Enum13.Ͼ;
+                Ͻ(Enum2.Ͼ);
             }
         }
 
-        if (ϊ == ɚ.ə) ν = false;
-        if (ϊ == ɚ.ɘ) ώ = "Data restore failed!";
-        if (ϊ == ɚ.Ə) ώ = "New version, wipe data";
+        if (ϊ == Enum16.ə) ν = false;
+        if (ϊ == Enum16.ɘ) ώ = "Data restore failed!";
+        if (ϊ == Enum16.Ə) ώ = "New version, wipe data";
     }
 }
 
@@ -176,7 +176,7 @@ void Main(string Ƹ, UpdateType Ρ) {
         if (Ƹ != "")
             ȿ = Ƹ;
 
-        if (ƽ != В.А)
+        if (ƽ != Enum13.А)
             Λ(Ƹ);
         else
             ǌ(Ƹ);
@@ -244,8 +244,8 @@ void Λ(string Ƹ) {
         }
     }
 
-    bool θ = λ && Ҡ == ҍ.Д && !μ && !Π && ι == 0 && !ˍ;
-    if (ο && Ҡ != ҍ.Д)
+    bool θ = λ && Ҡ == Enum10.Д && !μ && !Π && ι == 0 && !ˍ;
+    if (ο && Ҡ != Enum10.Д)
         Π = true;
 
     if ((ξ && !θ) || (ο && θ)) {
@@ -280,7 +280,7 @@ void Λ(string Ƹ) {
                 ώ = "Setup complete";
         }
         else {
-            if (Ӄ == ӌ.Ӊ && ƽ != В.Ͼ) {
+            if (Ӄ == Enum9.Ӊ && ƽ != Enum13.Ͼ) {
                 ô();
                 ѓ();
                 ó("Inv balance");
@@ -322,29 +322,29 @@ void Λ(string Ƹ) {
             if (Ə > 6) {
                 Ə = 0;
                 λ = true;
-                if (ɛ != ӌ.Ӌ) {
+                if (ɛ != Enum9.Ӌ) {
                     switch (ɛ) {
-                        case ӌ.Ӈ:
+                        case Enum9.Ӈ:
                             қ();
                             break;
 
-                        case ӌ.ӆ:
+                        case Enum9.ӆ:
                             қ();
                             break;
 
-                        case ӌ.Ӊ:
+                        case Enum9.Ӊ:
                             қ();
                             break;
 
-                        case ӌ.ғ:
+                        case Enum9.ғ:
                             ҏ();
                             break;
 
-                        case ӌ.ӈ:
+                        case Enum9.ӈ:
                             Ґ();
                             break;
                     }
-                    ɛ = ӌ.Ӌ;
+                    ɛ = Enum9.Ӌ;
                 }
             }
         }
@@ -355,7 +355,7 @@ void Λ(string Ƹ) {
                 ν = true;
                 ɘ = 2;
             }
-            if (ɘ >= 2 && Ҡ != ҍ.Д)
+            if (ɘ >= 2 && Ҡ != Enum10.Д)
                 Ҕ();
 
             if (ɘ <= 1) {
@@ -366,7 +366,7 @@ void Λ(string Ƹ) {
                 τ = Э.WorldMatrix.Left;
                 σ = Э.WorldMatrix.Down;
                 ˇ();
-                if (Ҡ != ҍ.Д) {
+                if (Ҡ != Enum10.Д) {
                     μ = false;
                     ű(false);
                     È(false);
@@ -517,7 +517,7 @@ void η(string Ƹ) {
             break;
     }
 
-    if (ƽ != В.Ͼ) {
+    if (ƽ != Enum13.Ͼ) {
         switch (Ƽ) {
             case "SHUTTLE":
                 {
@@ -540,28 +540,28 @@ void η(string Ƹ) {
 
             case "CFGL":
                 {
-                    if (!ʈ(ref ɹ, true, ʉ.Ă, Ʒ, "") || !Ϻ(ζ))
+                    if (!ʈ(ref ɹ, true, Enum7.Ă, Ʒ, "") || !Ϻ(ζ))
                         ώ = ǆ;
                 }
                 break;
 
             case "CFGE":
                 {
-                    if (!ʈ(ref ɷ, true, ʉ.ʏ, Ʒ, "IG") || !ʈ(ref ɸ, true, ʉ.ʐ, ζ, "IG") || !ʈ(ref ɶ, true, ʉ.ʎ, ε, "IG"))
+                    if (!ʈ(ref ɷ, true, Enum7.ʏ, Ʒ, "IG") || !ʈ(ref ɸ, true, Enum7.ʐ, ζ, "IG") || !ʈ(ref ɶ, true, Enum7.ʎ, ε, "IG"))
                         ώ = ǆ;
                 }
                 break;
 
             case "CFGA":
                 {
-                    if (!ʈ(ref ɵ, false, ʉ.ª, Ʒ, ""))
+                    if (!ʈ(ref ɵ, false, Enum7.ª, Ʒ, ""))
                         ώ = ǆ;
                 }
                 break;
 
             case"CFGW":
                 {
-                    if (!ʈ(ref ɴ, false, ʉ.ʓ, Ʒ, "") || !ʈ(ref ɳ, false, ʉ.ʓ, ζ, ""))
+                    if (!ʈ(ref ɴ, false, Enum7.ʓ, Ʒ, "") || !ʈ(ref ɳ, false, Enum7.ʓ, ζ, ""))
                         ώ = ǆ;
                 }
                 break;
@@ -620,7 +620,7 @@ String γ() {
         "[ALIGN] Align the ship to planet\n" + 
         "[RESET] Reset all data\n";
 
-    if (ƽ != В.Ͼ)
+    if (ƽ != Enum13.Ͼ)
         O += "[SHUTTLE] Enable shuttle mode\n" + 
             "[NEXT] Next hole\n" + 
             "[PREV] Previous hole\n\n" + 
@@ -661,13 +661,13 @@ String γ() {
 
 void β() {
     Ҕ();
-    ƽ = В.Ͼ;
-    Ͻ(Ѓ.Ͼ);
+    ƽ = Enum13.Ͼ;
+    Ͻ(Enum2.Ͼ);
     Ǟ.Ͷ = false;
     Β.Ͷ = false;
     Ь = null;
     Ш.Clear();
-    Ӄ = ӌ.Ӌ;
+    Ӄ = Enum9.Ӌ;
 }
 
 void α(bool ά, bool ΰ)
@@ -690,7 +690,7 @@ void α(bool ά, bool ΰ)
 }
 
 bool ί(String ή, String έ, String Ϋ) {
-    bool ά = Ӄ == ӌ.Ӊ;
+    bool ά = Ӄ == Enum9.Ӊ;
     int Y, X, ț;
     if (int.TryParse(ή, out Y) && int.TryParse(έ, out X) && int.TryParse(Ϋ, out ț)) {
         this.Ҕ();
@@ -732,20 +732,23 @@ bool Ϲ(String ț, String Ʀ) {
         J = false;
 
     if (Ʀ == "HOME")
-        ʆ = ʯ.ʮ;
+        ʆ = Enum5.ʮ;
     else if (Ʀ == "STOP")
-        ʆ = ʯ.ʬ;
+        ʆ = Enum5.ʬ;
     else if (Ʀ == "JOB")
-        ʆ = ʯ.ʭ;
+        ʆ = Enum5.ʭ;
     else if (Ʀ == "IG")
-        ʆ = ʯ.ʫ;
+        ʆ = Enum5.ʫ;
     else
         J = false;
 
     return J;
 }
 
-public enum ϸ {
+/**
+ * Original: ϸ
+ */ 
+public enum Enum1 {
     Ϸ,
     ϵ,
     ϴ,
@@ -767,18 +770,18 @@ public enum ϸ {
     Ќ
 }
 
-int[] Ћ = new int[Enum.GetValues(ϸ.ž.GetType()).Length];
+int[] Ћ = new int[Enum.GetValues(Enum1.ž.GetType()).Length];
 bool Њ = false;
 
-void Љ(ϸ ʻ) {
+void Љ(Enum1 ʻ) {
     Ћ[(int)Є] = Ѕ;
     Ѕ = Ћ[(int)ʻ];
-    if (ʻ == ϸ.Ϭ)
+    if (ʻ == Enum1.Ϭ)
         Ѕ = 0;
 
     Є = ʻ;
-    if (ƽ != В.А)
-        Ş(Є == ϸ.ϴ, false, 0, 0);
+    if (ƽ != Enum13.А)
+        Ş(Є == Enum1.ϴ, false, 0, 0);
 
     Њ = true;
 }
@@ -799,9 +802,12 @@ void Ї(bool ʹ) {
 
 int І = 0;
 int Ѕ = 0;
-ϸ Є = ϸ.Ϸ;
+Enum1 Є = Enum1.Ϸ;
 
-public enum Ѓ {
+/**
+ * Original: Ѓ 
+ */ 
+public enum Enum2 {
     Ђ,
     Ё,
     Ѐ,
@@ -809,25 +815,25 @@ public enum Ѓ {
     Ͼ
 }
 
-String Ͻ(Ѓ ƿ) {
+String Ͻ(Enum2 ƿ) {
     switch (ƿ) {
-        case Ѓ.Ђ:
+        case Enum2.Ђ:
             ώ = "Job is running";
             break;
 
-        case Ѓ.Ё:
+        case Enum2.Ё:
             ώ = "Connector not ready!";
             break;
 
-        case Ѓ.Ѐ:
+        case Enum2.Ѐ:
             ώ = "Ship modified, path outdated!";
             break;
 
-        case Ѓ.Ͽ:
+        case Enum2.Ͽ:
             ώ = "Interrupted by player!";
             break;
 
-        case Ѓ.Ͼ:
+        case Enum2.Ͼ:
             ώ = "Shuttle mode enabled!";
             break;
     }
@@ -835,12 +841,12 @@ String Ͻ(Ѓ ƿ) {
     return "";
 }
 
-String ϝ(ʲ ϫ) {
+String ϝ(Enum4 ϫ) {
     switch (ϫ) {
-        case ʲ.ʱ:
+        case Enum4.ʱ:
             return "Top-Left";
 
-        case ʲ.ʰ:
+        case Enum4.ʰ:
             return "Center";
 
         default:
@@ -848,224 +854,224 @@ String ϝ(ʲ ϫ) {
     }
 }
 
-String ϝ(ʶ Ϫ) {
+String ϝ(Enum3 Ϫ) {
     switch (Ϫ) {
-        case ʶ.ʴ:
-            return "Auto" + (ƽ == В.Б ? " (Ore)" : "");
+        case Enum3.ʴ:
+            return "Auto" + (ƽ == Enum13.Б ? " (Ore)" : "");
 
-        case ʶ.ʳ:
+        case Enum3.ʳ:
             return "Auto (+Stone)";
 
-        case ʶ.ʵ:
+        case Enum3.ʵ:
             return "Default";
 
         default: return "";
     }
 }
 
-String Ϝ(ӌ ϛ) {
+String Ϝ(Enum9 ϛ) {
     switch (ϛ) {
-        case ӌ.Ӌ:
+        case Enum9.Ӌ:
             return "No job";
 
-        case ӌ.ӊ:
+        case Enum9.ӊ:
             return "Job paused";
 
-        case ӌ.Ӊ:
+        case Enum9.Ӊ:
             return "Job active";
 
-        case ӌ.Ӈ:
+        case Enum9.Ӈ:
             return "Job active";
 
-        case ӌ.ӆ:
+        case Enum9.ӆ:
             return "Job active";
 
-        case ӌ.ΰ:
+        case Enum9.ΰ:
             return "Job done";
 
-        case ӌ.Ғ:
+        case Enum9.Ғ:
             return "Job changed";
 
-        case ӌ.ғ:
+        case Enum9.ғ:
             return "Move home";
 
-        case ӌ.ӈ:
+        case Enum9.ӈ:
             return "Move to job";
     }
 
     return "";
 }
 
-String Ϛ(ʯ ϙ) {
+String Ϛ(Enum5 ϙ) {
     switch (ϙ) {
-        case ʯ.ʮ:
+        case Enum5.ʮ:
             return "Return home";
 
-        case ʯ.ʭ:
+        case Enum5.ʭ:
             return "Fly to job pos";
 
-        case ʯ.ʬ:
+        case Enum5.ʬ:
             return "Stop";
 
-        case ʯ.ʫ:
+        case Enum5.ʫ:
             return "Ignore";
     }
 
     return "";
 }
 
-String Ϙ(ʪ ș) {
+String Ϙ(Enum6 ș) {
     switch (ș) {
-        case ʪ.ɗ:
+        case Enum6.ɗ:
             return "Off";
 
-        case ʪ.ʧ:
+        case Enum6.ʧ:
             return "Drop pos (Stone) ";
 
-        case ʪ.ʦ:
+        case Enum6.ʦ:
             return "Drop pos (Sto.+Ice)";
 
-        case ʪ.ʩ:
+        case Enum6.ʩ:
             return "Cur. pos (Stone)";
 
-        case ʪ.ʨ:
+        case Enum6.ʨ:
             return "Cur. pos (Sto.+Ice)";
 
-        case ʪ.ʥ:
+        case Enum6.ʥ:
             return "In motion (Stone)";
 
-        case ʪ.ʺ:
+        case Enum6.ʺ:
             return "In motion (Sto.+Ice)";
     }
 
     return "";
 }
 
-String ϗ(И ϖ) {
+String ϗ(Enum12 ϖ) {
     switch (ϖ) {
-        case И.ɗ:
+        case Enum12.ɗ:
             return "No batteries";
 
-        case И.Ŧ:
+        case Enum12.Ŧ:
             return "Charging";
 
-        case И.Г:
+        case Enum12.Г:
             return "Discharging";
     }
 
     return "";
 }
 
-String ϕ(ҍ ϛ) {
-    String O = ƽ == В.Ͼ ? "target" : "job";
+String ϕ(Enum10 ϛ) {
+    String O = ƽ == Enum13.Ͼ ? "target" : "job";
     switch (ϛ) {
-        case ҍ.Д:
+        case Enum10.Д:
             return "Idle";
 
-        case ҍ.ʟ:
+        case Enum10.ʟ:
             return "Flying to XY position";
 
-        case ҍ.Ҍ:
-            return ƽ == В.ψ ? "Grinding" : "Mining";
+        case Enum10.Ҍ:
+            return ƽ == Enum13.ψ ? "Grinding" : "Mining";
 
-        case ҍ.ҝ:
+        case Enum10.ҝ:
             return "Returning";
 
-        case ҍ.ң:
+        case Enum10.ң:
             return "Flying to drop pos";
 
-        case ҍ.ұ:
+        case Enum10.ұ:
             return "Returning to dock";
 
-        case ҍ.ү:
+        case Enum10.ү:
             return "Flying to dock area";
 
-        case ҍ.Ү:
+        case Enum10.Ү:
             return "Flying to job area";
 
-        case ҍ.Ҧ:
+        case Enum10.Ҧ:
             return "Flying to path";
 
-        case ҍ.ҭ:
+        case Enum10.ҭ:
             return "Flying to job position";
 
-        case ҍ.Ҭ:
+        case Enum10.Ҭ:
             return "Approaching dock";
 
-        case ҍ.ґ:
+        case Enum10.ґ:
             return "Docking";
 
-        case ҍ.ҫ:
+        case Enum10.ҫ:
             return "Aligning";
 
-        case ҍ.Ҫ:
+        case Enum10.Ҫ:
             return "Aligning";
 
-        case ҍ.ҩ:
+        case Enum10.ҩ:
             return "Retry docking";
 
-        case ҍ.Ҩ:
+        case Enum10.Ҩ:
             return "Unloading";
 
-        case ҍ.ҡ:
+        case Enum10.ҡ:
             return Ɗ;
 
-        case ҍ.ҧ:
+        case Enum10.ҧ:
             return "Undocking";
 
-        case ҍ.Ŧ:
+        case Enum10.Ŧ:
             return "Charging batteries";
 
-        case ҍ.Ĺ:
+        case Enum10.Ĺ:
             return "Waiting for uranium";
 
-        case ҍ.ļ:
+        case Enum10.ļ:
             return "Filling up hydrogen";
-        case ҍ.ҥ:
+        case Enum10.ҥ:
             return "Waiting for ejection";
 
-        case ҍ.Ҥ:
+        case Enum10.Ҥ:
             return "Waiting for ejection";
 
-        case ҍ.Ң:
+        case Enum10.Ң:
             return "Flying to drop pos";
     }
     return "";
 }
 
-String ϓ(ſ Ų) {
+String ϓ(Enum15 Ų) {
     switch (Ų) {
-        case ſ.ž:
+        case Enum15.ž:
             return "On \"Undock\" command";
 
-        case ſ.Ž:
+        case Enum15.Ž:
             return "On player entered cockpit";
 
-        case ſ.Ż:
+        case Enum15.Ż:
             return "On ship is full";
 
-        case ſ.ź:
+        case Enum15.ź:
             return "On ship is empty";
 
-        case ſ.ż:
+        case Enum15.ż:
             return "On time delay";
 
-        case ſ.Ÿ:
+        case Enum15.Ÿ:
             return "On batteries empty(<25%)";
 
-        case ſ.ŷ:
+        case Enum15.ŷ:
             return "On batteries empty(=0%)";
 
-        case ſ.Ź:
+        case Enum15.Ź:
             return "On batteries full";
 
-        case ſ.ŵ:
+        case Enum15.ŵ:
             return "On hydrogen empty(<25%)";
 
-        case ſ.Ŵ:
+        case Enum15.Ŵ:
             return "On hydrogen empty(=0%)";
 
-        case ſ.Ŷ:
+        case Enum15.Ŷ:
             return "On hydrogen full";
     }
 
@@ -1105,22 +1111,22 @@ String ϣ(bool ƛ) {
     Ɨ += Ʃ;
 
     double Ϣ = Math.Max(Math.Round(this.Ԍ), 0);
-    if (Є == ϸ.Ϸ) {
-        bool O = ƽ == В.Ͼ;
+    if (Є == Enum1.Ϸ) {
+        bool O = ƽ == Enum13.Ͼ;
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Record path & set home"))
             ʹ();
 
-        if (ƽ == В.Б)
+        if (ƽ == Enum13.Б)
             if (ύ(ref Ɨ, ƴ, A++, ƛ, " Setup mining job"))
-                Љ(ϸ.ϴ);
+                Љ(Enum1.ϴ);
 
-        if (ƽ == В.ψ)
+        if (ƽ == Enum13.ψ)
             if (ύ(ref Ɨ, ƴ, A++, ƛ, " Setup grinding job"))
-                Љ(ϸ.ϴ);
+                Љ(Enum1.ϴ);
 
-        if (ƽ == В.Ͼ)
+        if (ƽ == Enum13.Ͼ)
             if (ύ(ref Ɨ, ƴ, A++, ƛ, " Setup shuttle job"))
-                Љ(ϸ.Ѝ);
+                Љ(Enum1.Ѝ);
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Continue job"))
             қ();
@@ -1133,17 +1139,17 @@ String ϣ(bool ƛ) {
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Behavior settings"))
             if (O)
-                Љ(ϸ.Џ);
+                Љ(Enum1.Џ);
             else
-                Љ(ϸ.ϱ);
+                Љ(Enum1.ϱ);
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Info"))
-            Љ(ϸ.ϯ);
+            Љ(Enum1.ϯ);
 
-        if (ƽ != В.Ͼ)
+        if (ƽ != Enum13.Ͼ)
             if (ύ(ref Ɨ, ƴ, A++, ƛ, " Help"))
-                Љ(ϸ.ϭ);
-    } else if (Є == ϸ.ϴ) {
+                Љ(Enum1.ϭ);
+    } else if (Є == Enum1.ϴ) {
         double ϡ = Math.Round(ʃ * Й, 1);
         double Ϡ = Math.Round(ʂ * Я, 1);
         String Ι = "";
@@ -1152,7 +1158,7 @@ String ϣ(bool ƛ) {
 
         if (ύ(ref Ι, ƴ, A++, ƛ, " Change current job")) {
             Қ(false, false);
-            Љ(ϸ.Ϸ);
+            Љ(Enum1.Ϸ);
         }
 
         if (ύ(ref Ι, ƴ, A++, ƛ, " Width + (Width: " + ʃ + " = " + ϡ + "m)")) {
@@ -1175,7 +1181,7 @@ String ϣ(bool ƛ) {
             ʸ(true);
         }
 
-        if (ύ(ref Ι, ƴ, A++, ƛ, " Depth + (" + (ʀ == ʶ.ʵ ? "Depth" : "Min") + ": " + ʁ + "m)")) {
+        if (ύ(ref Ι, ƴ, A++, ƛ, " Depth + (" + (ʀ == Enum3.ʵ ? "Depth" : "Min") + ": " + ʁ + "m)")) {
             ő(ref ʁ, 5, 50, 2);
             ʸ(true);
         }
@@ -1193,18 +1199,18 @@ String ϣ(bool ƛ) {
             ʄ = ͼ(ʄ);
         }
 
-        if (ƽ == В.ψ && ʀ == ʶ.ʳ)
+        if (ƽ == Enum13.ψ && ʀ == Enum3.ʳ)
             ʀ = ͼ(ʀ);
 
         Ɨ += ǧ(8, Ι, ƴ, ref ϥ);
-    } else if (Є == ϸ.Ѝ) {
+    } else if (Є == Enum1.Ѝ) {
         float[] ʜ = new float[] { 0, 3, 10, 30, 60, 300, 600, 1200, 1800 };
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Next")) {
-            Љ(ϸ.Ќ);
+            Љ(Enum1.Ќ);
         }
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Back")) {
-            Љ(ϸ.Ϸ);
+            Љ(Enum1.Ϸ);
         }
 
         Ɨ += " Leave connector 1:\n";
@@ -1225,12 +1231,12 @@ String ϣ(bool ƛ) {
         else if (ύ(ref Ɨ, ƴ, A++, ƛ, " - Delay: " + Ǖ((int)ʒ.Ƅ)))
             ʒ.Ƅ = ʞ(ʒ.Ƅ, ʜ);
     }
-    else if (Є == ϸ.Ќ) {
+    else if (Є == Enum1.Ќ) {
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Start job!"))
             Ұ();
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Back")) {
-            Љ(ϸ.Ѝ);
+            Љ(Enum1.Ѝ);
         }
 
         Ɨ += " Timer: \"Docking connector 1\":\n";
@@ -1249,7 +1255,7 @@ String ϣ(bool ƛ) {
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " = " + (ʒ.ƕ != "" ? ʒ.ƕ : "-")))
             ʒ.ƕ = ʙ(ref Ϧ);
     }
-    else if (Є == ϸ.ϳ) {
+    else if (Є == Enum1.ϳ) {
         String ϟ = ɹ + " %";
         if (ο)
             ϑ++;
@@ -1260,7 +1266,7 @@ String ϣ(bool ƛ) {
             if (ϐ > 1)
                 ϐ = 0;
 
-            bool[] Ϟ = new bool[]{Ц.Count==0,ĥ==И.ɗ,Ф.Count==0};
+            bool[] Ϟ = new bool[]{Ц.Count==0,ĥ==Enum12.ɗ,Ф.Count==0};
             int Ä = 0;
             while (true) {
                 Ä++;
@@ -1276,20 +1282,20 @@ String ϣ(bool ƛ) {
             }
         }
 
-        bool O = ƽ == В.Ͼ;
+        bool O = ƽ == Enum13.Ͼ;
         if (!O && ɿ && Ƈ != -1 && ϐ == 0)
             ϟ = Ƈ < 1000000 ? Math.Round(Ƈ) + " Kg" : Math.Round(Ƈ / 1000) + " t";
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Stop!")) {
             Ҕ();
-            Љ(ϸ.Ϸ);
+            Љ(Enum1.Ϸ);
         }
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Behavior settings"))
             if (!O)
-                Љ(ϸ.ϱ);
+                Љ(Enum1.ϱ);
             else
-                Љ(ϸ.Џ);
+                Љ(Enum1.Џ);
 
         if (!O) {
             if (ύ(ref Ɨ, ƴ, A++, ƛ, " Next hole"))
@@ -1307,21 +1313,21 @@ String ϣ(bool ƛ) {
             Ɨ += "Uranium: " + (Ц.Count == 0 ? "No reactors" : Math.Round(Ĺ, 1) + "Kg " + (ɷ == -1 ? "" : " Min: " + ɷ + " Kg")) + "\n";
 
         if (Ϗ == 1)
-            Ɨ += "Battery: " + (ĥ == И.ɗ ? ϗ(ĥ) : Ĩ + "% " + (ɸ == -1 || O ? "" : " Min: " + ɸ + " %")) + "\n";
+            Ɨ += "Battery: " + (ĥ == Enum12.ɗ ? ϗ(ĥ) : Ĩ + "% " + (ɸ == -1 || O ? "" : " Min: " + ɸ + " %")) + "\n";
 
         if (Ϗ == 2)
             Ɨ += "Hydrogen: " + (Ф.Count == 0 ? "No tanks" : Math.Round(ļ, 1) + "% " + (ɶ == -1 || O ? "" : " Min: " + ɶ + " %")) + "\n";
-    } else if (Є == ϸ.ϱ) {
+    } else if (Є == Enum1.ϱ) {
         String Ι = "";
         if (ύ(ref Ι, ƴ, A++, ƛ, " Back")) {
-            if (Ӄ == ӌ.Ӊ)
-                Љ(ϸ.ϳ);
+            if (Ӄ == Enum9.Ӊ)
+                Љ(Enum1.ϳ);
             else
-                Љ(ϸ.Ϸ);
+                Љ(Enum1.Ϸ);
         }
 
         if (ύ(ref Ι, ƴ, A++, ƛ, " Max load: " + ɹ + "%"))
-            ʈ(ref ɹ, ɹ <= 80 ? -10 : -5, ʉ.Ă, false);
+            ʈ(ref ɹ, ɹ <= 80 ? -10 : -5, Enum7.Ă, false);
 
         if (ύ(ref Ι, ƴ, A++, ƛ, " Weight limit: " + (ɿ ? "On" : "Off")))
             ɿ = !ɿ;
@@ -1340,13 +1346,13 @@ String ϣ(bool ƛ) {
             ɺ = !ɺ;
 
         if (ύ(ref Ι, ƴ, A++, ƛ, " Uranium: " + (ɷ == -1 ? "Ignore" : "Min " + ɷ + "Kg")))
-            ʈ(ref ɷ, (ɷ > 5 ? -5 : -1), ʉ.ʏ, true);
+            ʈ(ref ɷ, (ɷ > 5 ? -5 : -1), Enum7.ʏ, true);
 
         if (ύ(ref Ι, ƴ, A++, ƛ, " Battery: " + (ɸ == -1 ? "Ignore" : "Min " + ɸ + "%")))
-            ʈ(ref ɸ, -5, ʉ.ʐ, true);
+            ʈ(ref ɸ, -5, Enum7.ʐ, true);
 
         if (ύ(ref Ι, ƴ, A++, ƛ, " Hydrogen: " + (ɶ == -1 ? "Ignore" : "Min " + ɶ + "%")))
-            ʈ(ref ɶ, -10, ʉ.ʎ, true);
+            ʈ(ref ɶ, -10, Enum7.ʎ, true);
 
         if (ύ(ref Ι, ƴ, A++, ƛ, " When done: " + (ʅ ? "Return home" : "Stop")))
             ʅ = !ʅ;
@@ -1356,31 +1362,31 @@ String ϣ(bool ƛ) {
         }
 
         if (ύ(ref Ι, ƴ, A++, ƛ, " Advanced..."))
-            Љ(ϸ.ϰ);
+            Љ(Enum1.ϰ);
 
         Ɨ += ǧ(8, Ι, ƴ, ref Ϥ);
-    } else if (Є == ϸ.ϰ) {
+    } else if (Є == Enum1.ϰ) {
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Back")) {
-            if (Ӄ == ӌ.Ӊ)
-                Љ(ϸ.ϳ);
+            if (Ӄ == Enum9.Ӊ)
+                Љ(Enum1.ϳ);
             else
-                Љ(ϸ.Ϸ);
+                Љ(Enum1.Ϸ);
         }
 
-        if (ύ(ref Ɨ, ƴ, A++, ƛ, (ƽ == В.ψ ? " Grinder" : " Drill") + " inv. balancing: " + (ɾ ? "On" : "Off")))
+        if (ύ(ref Ɨ, ƴ, A++, ƛ, (ƽ == Enum13.ψ ? " Grinder" : " Drill") + " inv. balancing: " + (ɾ ? "On" : "Off")))
             ɾ = !ɾ;
 
-        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Enable" + (ƽ == В.ψ ? " grinders" : " drills") + ": " + (ʇ ? "Fwd + Bwd" : "Fwd")))
+        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Enable" + (ƽ == Enum13.ψ ? " grinders" : " drills") + ": " + (ʇ ? "Fwd + Bwd" : "Fwd")))
             ʇ = !ʇ;
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Work speed fwd.: " + ɴ + "m/s"))
-            ʈ(ref ɴ, 0.5f, ʉ.ʓ, false);
+            ʈ(ref ɴ, 0.5f, Enum7.ʓ, false);
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Work speed bwd.: " + ɳ + "m/s"))
-            ʈ(ref ɳ, 0.5f, ʉ.ʓ, false);
+            ʈ(ref ɳ, 0.5f, Enum7.ʓ, false);
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Acceleration: " + Math.Round(ɵ * 100f) + "%" + (ɵ > 0.80f ? " (risky)" : ""))) {
-            ʈ(ref ɵ, 0.1f, ʉ.ª, false);
+            ʈ(ref ɵ, 0.1f, Enum7.ª, false);
         }
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Width overlap: " + ɼ * 100f + "%"))
@@ -1388,22 +1394,22 @@ String ϣ(bool ƛ) {
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Height overlap: " + ɲ * 100f + "%"))
             ʠ(false, 0.05f);
-    } else if (Є == ϸ.Џ) {
+    } else if (Є == Enum1.Џ) {
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Back")) {
-            if (Ӄ == ӌ.Ӊ)
-                Љ(ϸ.ϳ);
+            if (Ӄ == Enum9.Ӊ)
+                Љ(Enum1.ϳ);
             else
-                Љ(ϸ.Ϸ);
+                Љ(Enum1.Ϸ);
         }
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Max load: " + ɹ + "%"))
-            ʈ(ref ɹ, ɹ <= 80 ? -10 : -5, ʉ.Ă, false);
+            ʈ(ref ɹ, ɹ <= 80 ? -10 : -5, Enum7.Ă, false);
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Unload ice: " + (ɺ ? "On" : "Off")))
             ɺ = !ɺ;
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Uranium: " + (ɷ == -1 ? "Ignore" : "Min " + ɷ + "Kg")))
-            ʈ(ref ɷ, (ɷ > 5 ? -5 : -1), ʉ.ʏ, true);
+            ʈ(ref ɷ, (ɷ > 5 ? -5 : -1), Enum7.ʏ, true);
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Battery: " + (ɸ == -1 ? "Ignore" : "Charge up")))
             ɸ = (ɸ == -1 ? 1 : -1);
@@ -1416,9 +1422,9 @@ String ϣ(bool ƛ) {
         }
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Acceleration: " + Math.Round(ɵ * 100f) + "%" + (ɵ > 0.80f ? " (risky)" : ""))) {
-            ʈ(ref ɵ, 0.1f, ʉ.ª, false);
+            ʈ(ref ɵ, 0.1f, Enum7.ª, false);
         }
-    } else if (Є == ϸ.ϵ) {
+    } else if (Є == Enum1.ϵ) {
         double Ʌ = 0;
         if (ˋ.Count > 0)
             Ʌ = Vector3.Distance(ˋ.Last().ɉ, ɉ);
@@ -1426,7 +1432,7 @@ String ϣ(bool ƛ) {
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Stop path recording"))
             ˎ();
 
-        if (ƽ != В.Ͼ) {
+        if (ƽ != Enum13.Ͼ) {
             if (ύ(ref Ɨ, ƴ, A++, ƛ, " Home: " + (Ώ ? "Use old home" : (Β.Ͷ ? "Was set! " : "none "))))
                 Ώ = !Ώ;
         } else {
@@ -1442,10 +1448,10 @@ String ϣ(bool ƛ) {
 
         Ɨ += ƶ;
         Ɨ += "Wp spacing: " + Math.Round(ˈ) + "m\n";
-    } else if (Є == ϸ.ϲ) {
+    } else if (Є == Enum1.ϲ) {
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Stop")) {
             Ҕ();
-            Љ(ϸ.Ϸ);
+            Љ(Enum1.Ϸ);
         }
 
         Ɨ += ƶ;
@@ -1454,7 +1460,7 @@ String ϣ(bool ƛ) {
         Ɨ += "Target dist: " + Ϣ + "m\n";
         Ɨ += "Wp count: " + ˋ.Count + "\n";
         Ɨ += "Wp left: " + Ԋ + "\n";
-    } else if (Є == ϸ.ϯ) {
+    } else if (Є == Enum1.ϯ) {
         List<IMyTerminalBlock> ʢ = į();
         if (ο)
             ϑ++;
@@ -1463,27 +1469,27 @@ String ϣ(bool ƛ) {
             ϑ = 0;
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Next"))
-            Љ(ϸ.Ϯ);
+            Љ(Enum1.Ϯ);
 
         Ɨ += ƶ;
         Ɨ += "Version: " + VERSION + "\n";
         Ɨ += "Ship load: " + Math.Round(ŏ, 1) + "% " + Math.Round(œ, 1) + " / " + Math.Round(ł, 1) + "\n";
         Ɨ += "Uranium: " + (Ц.Count == 0 ? "No reactors" : Math.Round(Ĺ, 1) + "Kg " + ĸ) + "\n";
-        Ɨ += "Battery: " + (ĥ == И.ɗ ? "" : Ĩ + "% ") + ϗ(ĥ) + "\n";
+        Ɨ += "Battery: " + (ĥ == Enum12.ɗ ? "" : Ĩ + "% ") + ϗ(ĥ) + "\n";
         Ɨ += "Hydrogen: " + (Ф.Count == 0 ? "No tanks" : Math.Round(ļ, 1) + "% ") + "\n";
         Ɨ += "Damage: " + (ʢ.Count == 0 ? "None" : "" + (ϑ + 1) + "/" + ʢ.Count + " " + ʢ[ϑ].CustomName) + "\n";
-    } else if (Є == ϸ.Ϯ) {
+    } else if (Є == Enum1.Ϯ) {
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Back"))
-            Љ(ϸ.Ϸ);
+            Љ(Enum1.Ϸ);
 
         Ɨ += ƶ;
         Ɨ += "Next scan: " + Ϊ + "s\n";
         Ɨ += "Ship size: " + Math.Round(Й, 1) + "m " + Math.Round(Я, 1) + "m " + Math.Round(Ю, 1) + "m \n";
         Ɨ += "Broadcast: " + (ɯ ? "Online - " + ɮ : "Offline") + "\n";
         Ɨ += "Max Instructions: " + Math.Round(Ψ * 100f, 1) + "% \n";
-    } else if (Є == ϸ.ϭ) {
+    } else if (Є == Enum1.ϭ) {
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Back"))
-            Љ(ϸ.Ϸ);
+            Љ(Enum1.Ϸ);
 
         Ɨ += ƶ;
         Ɨ += "1. Dock to your docking station\n";
@@ -1514,9 +1520,9 @@ void ʠ(bool ʟ, float ʗ) {
     Ҕ();
     Қ(true, false);
     if (ʟ)
-        ʈ(ref ɼ, ʗ, ʉ.ʍ, false);
+        ʈ(ref ɼ, ʗ, Enum7.ʍ, false);
     else
-        ʈ(ref ɲ, ʗ, ʉ.ʍ, false);
+        ʈ(ref ɲ, ʗ, Enum7.ʍ, false);
 
     Ѳ();
     Ş(true, true, 0, 0);
@@ -1544,7 +1550,7 @@ String ʙ(ref int E) {
 }
 
 void ʘ(string Ô) {
-    if (Ӄ != ӌ.Ӊ)
+    if (Ӄ != Enum9.Ӊ)
         return;
 
     if (Ô == "")
@@ -1588,28 +1594,40 @@ void ʸ(bool ʷ) {
     ʃ = Math.Max(ʃ, 1);
     ʂ = Math.Max(ʂ, 1);
     ʁ = Math.Max(ʁ, 0);
-    Ş(Є == ϸ.ϴ, false, 0, 0);
+    Ş(Є == Enum1.ϴ, false, 0, 0);
 }
 
-public enum ʶ {
+/**
+ * Original: ʶ
+ */ 
+public enum Enum3 {
     ʵ,
     ʴ,
     ʳ
 }
 
-public enum ʲ {
+/**
+ * Original: ʲ
+ */
+public enum Enum4 {
     ʱ,
     ʰ
 }
 
-public enum ʯ {
+/**
+ * Original: ʯ
+ */
+public enum Enum5 {
     ʮ,
     ʭ,
     ʬ,
     ʫ
 }
 
-public enum ʪ {
+/**
+ * Original: ʪ
+ */
+public enum Enum6 {
     ɗ,
     ʩ,
     ʨ,
@@ -1621,18 +1639,18 @@ public enum ʪ {
 
 Class5 ʔ = new Class5();
 Class5 ʒ = new Class5();
-ʯ ʆ = ʯ.ʮ;
+Enum5 ʆ = Enum5.ʮ;
 bool ʅ = true;
-ʲ ʄ = ʲ.ʱ;
+Enum4 ʄ = Enum4.ʱ;
 int ʃ = 3;
 int ʂ = 3;
 int ʁ = 30;
-ʶ ʀ = ʶ.ʵ;
+Enum3 ʀ = Enum3.ʵ;
 bool ɿ = true;
 bool ɾ = true;
 bool ʇ = true;
 bool ɽ = false;
-ʪ ɻ = ʪ.ɗ;
+Enum6 ɻ = Enum6.ɗ;
 bool ɺ = true;
 float ɹ = 90;
 float ɸ = 20;
@@ -1643,7 +1661,11 @@ float ɴ = 1.50f;
 float ɳ = 2.50f;
 float ɼ = 0f;
 float ɲ = 0f;
-public enum ʉ {
+
+/**
+ * Original: ʉ
+ */
+public enum Enum7 {
     ʓ,
     ª,
     Ă,
@@ -1655,7 +1677,7 @@ public enum ʉ {
     ʍ
 };
 
-bool ʈ(ref float A, bool ʌ, ʉ ž, String O, String ʊ) {
+bool ʈ(ref float A, bool ʌ, Enum7 ž, String O, String ʊ) {
     if (O == "")
         return false;
 
@@ -1675,54 +1697,54 @@ bool ʈ(ref float A, bool ʌ, ʉ ž, String O, String ʊ) {
     return true;
 }
 
-void ʈ(ref float A, float ő, ʉ ž, bool ʊ) {
+void ʈ(ref float A, float ő, Enum7 ž, bool ʊ) {
     ʈ(ref A, A + ő, ž, ʊ, true);
 }
 
-void ʈ(ref float A, float ʻ, ʉ ž, bool ʊ, bool Έ) {
+void ʈ(ref float A, float ʻ, Enum7 ž, bool ʊ, bool Έ) {
     float ĝ = 0;
     float ȵ = 0;
-    if (ž == ʉ.ʓ) {
+    if (ž == Enum7.ʓ) {
         ȵ = 0.5f;
         ĝ = 10f;
     }
 
-    if (ž == ʉ.ª) {
+    if (ž == Enum7.ª) {
         ȵ = 0.1f;
         ĝ = 1f;
     }
 
-    if (ž == ʉ.ʑ) {
+    if (ž == Enum7.ʑ) {
         ȵ = 50f;
         ĝ = 100f;
     }
 
-    if (ž == ʉ.ʐ) {
+    if (ž == Enum7.ʐ) {
         ȵ = 5f;
         ĝ = 30f;
     }
 
-    if (ž == ʉ.ʏ) {
+    if (ž == Enum7.ʏ) {
         ȵ = 1f;
         ĝ = 25f;
     }
 
-    if (ž == ʉ.Ă) {
+    if (ž == Enum7.Ă) {
         ȵ = 10f;
         ĝ = 95f;
     }
 
-    if (ž == ʉ.ʎ) {
+    if (ž == Enum7.ʎ) {
         ȵ = 10f;
         ĝ = 90f;
     }
 
-    if (ž == ʉ.K) {
+    if (ž == Enum7.K) {
         ȵ = 10f;
         ĝ = 1800;
     }
 
-    if (ž == ʉ.ʍ) {
+    if (ž == Enum7.ʍ) {
         ȵ = 0.0f;
         ĝ = 0.75f;
     }
@@ -1842,7 +1864,7 @@ void ʹ() {
     Α = new Class1(Β);
     ΐ = new Class1(Ǟ);
     Β.Ͷ = false;
-    if (ƽ == В.Ͼ)
+    if (ƽ == Enum13.Ͼ)
         Ǟ.Ͷ = false;
 
     for (int A = 0; A < ä.Count; A++)
@@ -1852,7 +1874,7 @@ void ʹ() {
     Ώ = false;
     Ύ = false;
     Ό = false;
-    Љ(ϸ.ϵ);
+    Љ(Enum1.ϵ);
 }
 
 void ˎ() {
@@ -1866,7 +1888,7 @@ void ˎ() {
 
     ˍ = false;
     Ҕ();
-    Љ(ϸ.Ϸ);
+    Љ(Enum1.Ϸ);
 }
 
 bool ˍ = false;
@@ -1879,7 +1901,7 @@ void ˇ() {
     if (!ˍ)
         return;
 
-    if (Ҡ != ҍ.Д) {
+    if (Ҡ != Enum10.Д) {
         ˎ();
         return;
     }
@@ -1903,7 +1925,7 @@ void ˇ() {
         else
             ˉ = 0;
         if (ˉ >= 5) {
-            if (ƽ == В.Ͼ && (Β.Ͷ || Ώ) && Vector3.Distance(Β.ɉ, º.GetPosition()) > 5) {
+            if (ƽ == Enum13.Ͼ && (Β.Ͷ || Ώ) && Vector3.Distance(Β.ɉ, º.GetPosition()) > 5) {
                 Ǟ.Ï = Э.WorldMatrix.Forward;
                 Ǟ.ĕ = Э.WorldMatrix.Left;
                 Ǟ.ç = Э.WorldMatrix.Down;
@@ -1972,7 +1994,7 @@ bool ʼ(Vector3 ɉ) {
         }
     }
 
-    if (ƽ == В.Ͼ) {
+    if (ƽ == Enum13.Ͼ) {
         if (Ǟ.Ͷ && ˋ.Count >= 1) {
             Vector3 Ͳ = new Vector3();
             ˠ(Ǟ, dockDist * Ю, false, out Ͳ);
@@ -1985,7 +2007,7 @@ bool ʼ(Vector3 ɉ) {
             }
         }
     } else {
-        if (Ӄ != ӌ.Ӌ)
+        if (Ӄ != Enum9.Ӌ)
             if (ˋ.Count > 0 && Vector3.Distance(Ǟ.ɉ, ˋ.First().ɉ) < Vector3.Distance(Ǟ.ɉ, ˋ.Last().ɉ))
                 J.Insert(0, Ǟ.ɉ);
             else
@@ -2012,14 +2034,14 @@ bool ʼ(Vector3 ɉ) {
 }
 
 Class1 ˤ = null;
-void ˣ(Class1 B, ӌ ˢ) {
+void ˣ(Class1 B, Enum9 ˢ) {
     ˤ = B;
-    if (Ӄ == ӌ.Ӊ)
+    if (Ӄ == Enum9.Ӊ)
         ҟ = ˢ;
 }
 
 Class1 ˡ() {
-    if (ƽ != В.Ͼ)
+    if (ƽ != Enum13.Ͼ)
         return Β;
 
     return ˤ;
@@ -2060,7 +2082,10 @@ Vector3 Һ(Vector3 ҹ, float Ҿ) {
     return ҹ + (Ӆ * Ҿ);
 }
 
-public enum Ҹ {
+/**
+ * Original: Ҹ
+ */
+public enum Enum8 {
     ҷ,
     Ҷ,
     ґ,
@@ -2069,69 +2094,69 @@ public enum Ҹ {
     Ҵ
 }
 
-Ҹ ҳ() {
+Enum8 ҳ() {
     float Ʌ = -1;
-    Ҹ ª = Ҹ.ҷ;
-    if (ƽ != В.Ͼ) {
-        if (Ӄ != ӌ.Ӌ) {
+    Enum8 ª = Enum8.ҷ;
+    if (ƽ != Enum13.Ͼ) {
+        if (Ӄ != Enum9.Ӌ) {
             Vector3 ț = ȕ(Ӆ, ӄ * -1, ɉ - Ǟ.ɉ);
             if (Math.Abs(ț.X) <= (float)(Ӂ * Й) / 2f && Math.Abs(ț.Y) <= (float)(Ӏ * Я) / 2f) {
                 if (ț.Z <= -1 && ț.Z >= -Ҍ * 2)
-                    return Ҹ.Ҍ;
+                    return Enum8.Ҍ;
 
                 if (ț.Z > -1 && ț.Z < Ю * 2)
-                    return Ҹ.ҷ;
+                    return Enum8.ҷ;
             }
 
             if (Ӎ(Ǟ.ɉ, ref Ʌ))
-                ª = Ҹ.ҷ;
+                ª = Enum8.ҷ;
         }
 
         if (Β.Ͷ) {
             if (Ӎ(Β.ɉ, ref Ʌ))
-                ª = Ҹ.ґ;
+                ª = Enum8.ґ;
 
             for (int A = 0; A < ˋ.Count; A++) {
                 if (Ӎ(ˋ[A].ɉ, ref Ʌ))
-                    ª = Ҹ.Ҷ;
+                    ª = Enum8.Ҷ;
             }
 
             if (Vector3.Distance(ɉ, Β.ɉ) < dockDist * Ю)
-                ª = Ҹ.ґ;
+                ª = Enum8.ґ;
 
             if (Ò(MyShipConnectorStatus.Connectable) != null || Ò(MyShipConnectorStatus.Connected) != null)
-                ª = Ҹ.ґ;
+                ª = Enum8.ґ;
         }
     } else {
         Vector3 ɉ = new Vector3();
         IMyShipConnector Ä = Ò(MyShipConnectorStatus.Connected);
         if (Β.Ͷ) {
             if (Ӎ(Β.ɉ, ref Ʌ))
-                ª = Ҹ.ґ;
+                ª = Enum8.ґ;
 
             if (ˠ(Β, dockDist, true, out ɉ))
                 if (Ӎ(ɉ, ref Ʌ))
-                    ª = Ҹ.ґ;
+                    ª = Enum8.ґ;
 
             if (Ä != null && Vector3.Distance(Ä.GetPosition(), Β.ɉ) < 5)
-                return Ҹ.ҵ;
+                return Enum8.ҵ;
         }
 
         for (int A = 0; A < ˋ.Count; A++)
             if (Vector3.Distance(ˋ[A].ɉ, Β.ɉ) > dockDist * Ю && Vector3.Distance(ˋ[A].ɉ, Ǟ.ɉ) > dockDist * Ю)
                 if (Ӎ(ˋ[A].ɉ, ref Ʌ))
-                    ª = Ҹ.Ҷ;
+                    ª = Enum8.Ҷ;
 
         if (Ǟ.Ͷ) {
             if (Ӎ(Ǟ.ɉ, ref Ʌ))
-                ª = Ҹ.ҷ;
+                ª = Enum8.ҷ;
 
             if (ˠ(Ǟ, dockDist, true, out ɉ))
                 if (Ӎ(ɉ, ref Ʌ))
-                    ª = Ҹ.ҷ;
+                    ª = Enum8.ҷ;
 
             if (Ä != null && Vector3.Distance(Ä.GetPosition(), Ǟ.ɉ) < 5)
-                return Ҹ.Ҵ;
+                return Enum8.Ҵ;
         }
     }
 
@@ -2148,7 +2173,10 @@ bool Ӎ(Vector3 ø, ref float Ʌ) {
     return false;
 }
 
-public enum ӌ {
+/**
+ * Original: ӌ
+ */
+public enum Enum9 {
     Ӌ,
     ӊ,
     Ӊ,
@@ -2163,8 +2191,8 @@ public enum ӌ {
 Class1 Ǟ = new Class1();
 Vector3 Ӆ;
 Vector3 ӄ;
-ӌ Ӄ = ӌ.Ӌ;
-ʲ ӂ = ʲ.ʱ;
+Enum9 Ӄ = Enum9.Ӌ;
+Enum4 ӂ = Enum4.ʱ;
 int Ӂ = 0;
 int Ӏ = 0;
 double ӎ = 0;
@@ -2176,7 +2204,7 @@ void Ұ() {
         return;
     }
 
-    if (ƽ == В.Ͼ) {
+    if (ƽ == Enum13.Ͼ) {
         қ();
         return;
     }
@@ -2192,19 +2220,19 @@ void Ұ() {
         ӄ = Э.WorldMatrix.Backward;
 
     Қ(true, true);
-    Ҝ(ҍ.ʟ);
+    Ҝ(Enum10.ʟ);
     ҕ();
 }
 
 void Қ(bool Ç, bool ҙ) {
-    if (Ӄ == ӌ.Ӌ && !Ç)
+    if (Ӄ == Enum9.Ӌ && !Ç)
         return;
 
-    bool Ҙ = Ç || Ӄ == ӌ.ΰ || Ӂ != ʃ || Ӏ != ʂ || ӂ != ʄ;
+    bool Ҙ = Ç || Ӄ == Enum9.ΰ || Ӂ != ʃ || Ӏ != ʂ || ӂ != ʄ;
 
     if (Ҙ) {
-        if (Ӄ != ӌ.Ӌ) {
-            Ӄ = ӌ.Ғ;
+        if (Ӄ != Enum9.Ӌ) {
+            Ӄ = Enum9.Ғ;
             Ҽ(ԓ, Ԓ, ҙ);
             ώ = "Job changed, lost progress";
         }
@@ -2230,14 +2258,14 @@ void җ() {
 int Җ = 0;
 
 void ҕ() {
-    Ͻ(Ѓ.Ђ);
+    Ͻ(Enum2.Ђ);
     җ();
     ť(Ч, false);
     Ũ(ũ);
-    Ӄ = ӌ.Ӊ;
+    Ӄ = Enum9.Ӊ;
     È(true);
     ҟ = Ӄ;
-    Љ(ϸ.ϳ);
+    Љ(Enum1.ϳ);
     К();
     Ҳ = true;
     Җ = 0;
@@ -2250,12 +2278,12 @@ void ҕ() {
 }
 
 void Ҕ() {
-    if (Ӄ == ӌ.Ӊ) {
-        Ӄ = ӌ.ӊ;
+    if (Ӄ == Enum9.Ӊ) {
+        Ӄ = Enum9.ӊ;
         ώ = "Job paused";
     }
 
-    Ҝ(ҍ.Д);
+    Ҝ(Enum10.Д);
     ҟ = Ӄ;
     á(false, 0, 0, 0, 0);
     å();
@@ -2264,7 +2292,7 @@ void Ҕ() {
     ŧ(ChargeMode.Auto);
     Ŕ(false);
     ű(true);
-    Ӿ(ҍ.Д);
+    Ӿ(Enum10.Д);
     Ş(false, false, 0, 0);
     Ŗ(Ш, false);
     Ŗ(Ъ, true);
@@ -2273,90 +2301,90 @@ void Ҕ() {
     Ҳ = false;
     Ɔ = false;
     Μ = false;
-    if (Є != ϸ.Ϸ && Є != ϸ.ϱ && Є != ϸ.ϰ && Є != ϸ.Џ)
-        Љ(ϸ.Ϸ);
+    if (Є != Enum1.Ϸ && Є != Enum1.ϱ && Є != Enum1.ϰ && Є != Enum1.Џ)
+        Љ(Enum1.Ϸ);
 }
 
 void қ() {
-    Ҹ Ҏ = ҳ();
-    if (ƽ == В.Ͼ) {
+    Enum8 Ҏ = ҳ();
+    if (ƽ == Enum13.Ͼ) {
         if (!Ǟ.Ͷ || !Β.Ͷ)
             return;
 
         ҕ();
         bool ғ = Vector3.Distance(ɉ, Β.ɉ) < Vector3.Distance(ɉ, Ǟ.ɉ);
 
-        if (ɛ == ӌ.Ӈ)
+        if (ɛ == Enum9.Ӈ)
             ғ = true;
 
-        if (ɛ == ӌ.ӆ)
+        if (ɛ == Enum9.ӆ)
             ғ = false;
 
         if (ғ) {
-            ˣ(Β, ӌ.Ӈ);
+            ˣ(Β, Enum9.Ӈ);
             switch (Ҏ) {
-                case Ҹ.ҵ:
-                    Ҝ(ҍ.ҡ);
+                case Enum8.ҵ:
+                    Ҝ(Enum10.ҡ);
                     break;
 
-                case Ҹ.Ҷ:
-                    Ҝ(ҍ.Ү);
+                case Enum8.Ҷ:
+                    Ҝ(Enum10.Ү);
                     break;
 
-                case Ҹ.ґ:
-                    Ҝ(ҍ.Ҭ);
+                case Enum8.ґ:
+                    Ҝ(Enum10.Ҭ);
                     break;
 
                 default:
-                    Ҝ(ҍ.ҧ);
+                    Ҝ(Enum10.ҧ);
                     break;
             }
         } else {
-            ˣ(Ǟ, ӌ.ӆ);
+            ˣ(Ǟ, Enum9.ӆ);
             switch (Ҏ) {
-                case Ҹ.Ҵ:
-                    Ҝ(ҍ.ҡ);
+                case Enum8.Ҵ:
+                    Ҝ(Enum10.ҡ);
                     break;
 
-                case Ҹ.ҷ:
-                    Ҝ(ҍ.Ҭ);
+                case Enum8.ҷ:
+                    Ҝ(Enum10.Ҭ);
                     break;
 
-                case Ҹ.Ҷ:
-                    Ҝ(ҍ.Ү);
+                case Enum8.Ҷ:
+                    Ҝ(Enum10.Ү);
                     break;
 
                 default:
-                    Ҝ(ҍ.ҧ);
+                    Ҝ(Enum10.ҧ);
                     break;
             }
         }
     } else {
-        if (Ӄ != ӌ.ӊ && Ӄ != ӌ.Ғ)
+        if (Ӄ != Enum9.ӊ && Ӄ != Enum9.Ғ)
             return;
 
-        bool Ғ = Ӄ == ӌ.Ғ;
+        bool Ғ = Ӄ == Enum9.Ғ;
         ҕ();
         bool ґ = Ű(false) && Β.Ͷ;
         switch (Ҏ) {
-            case Ҹ.ҷ:
-                Ҝ(ґ ? ҍ.Ҧ : ҍ.ʟ);
+            case Enum8.ҷ:
+                Ҝ(ґ ? Enum10.Ҧ : Enum10.ʟ);
                 break;
 
-            case Ҹ.Ҷ:
-                Ҝ(ґ ? ҍ.ү : ҍ.Ү);
+            case Enum8.Ҷ:
+                Ҝ(ґ ? Enum10.ү : Enum10.Ү);
                 break;
 
-            case Ҹ.ґ:
-                Ҝ(ґ ? ҍ.Ҭ : ҍ.Ҩ);
+            case Enum8.ґ:
+                Ҝ(ґ ? Enum10.Ҭ : Enum10.Ҩ);
                 break;
 
-            case Ҹ.Ҍ:
+            case Enum8.Ҍ:
                 {
                     if (Ԑ != ԑ || Ғ)
-                        Ҝ(ҍ.ҝ);
+                        Ҝ(Enum10.ҝ);
                     else
-                        Ҝ(ҍ.Ҍ);
+                        Ҝ(Enum10.Ҍ);
                 }
                 break;
 
@@ -2367,69 +2395,69 @@ void қ() {
 }
 
 void Ґ() {
-    if (Ӄ == ӌ.Ӌ && !Β.Ͷ)
+    if (Ӄ == Enum9.Ӌ && !Β.Ͷ)
         return;
 
-    if (ƽ == В.Ͼ && (!Ǟ.Ͷ || !Β.Ͷ))
+    if (ƽ == Enum13.Ͼ && (!Ǟ.Ͷ || !Β.Ͷ))
         return;
 
     ώ = "Move to job";
-    Ҹ Ҏ = ҳ();
+    Enum8 Ҏ = ҳ();
 
-    if (ƽ == В.Ͼ) {
-        ˣ(Ǟ, ӌ.ӆ);
+    if (ƽ == Enum13.Ͼ) {
+        ˣ(Ǟ, Enum9.ӆ);
         switch (Ҏ) {
-            case Ҹ.ҷ:
-                Ҝ(ҍ.Ҭ);
+            case Enum8.ҷ:
+                Ҝ(Enum10.Ҭ);
                 break;
 
-            case Ҹ.Ҷ:
-                Ҝ(ҍ.Ү);
+            case Enum8.Ҷ:
+                Ҝ(Enum10.Ү);
                 break;
 
-            case Ҹ.Ҵ:
+            case Enum8.Ҵ:
                 return;
 
             default:
-                Ҝ(ҍ.ҧ);
+                Ҝ(Enum10.ҧ);
                 break;
         }
 
-        Ӿ(ҍ.ҡ);
+        Ӿ(Enum10.ҡ);
     } else {
         switch (Ҏ) {
-            case Ҹ.ҷ:
-                Ҝ(ҍ.Ү);
+            case Enum8.ҷ:
+                Ҝ(Enum10.Ү);
                 break;
 
-            case Ҹ.Ҷ:
-                Ҝ(ҍ.Ү);
+            case Enum8.Ҷ:
+                Ҝ(Enum10.Ү);
                 break;
 
-            case Ҹ.ґ:
-                Ҝ(ҍ.Ҩ);
+            case Enum8.ґ:
+                Ҝ(Enum10.Ҩ);
                 break;
 
-            case Ҹ.Ҍ:
-                Ҝ(ҍ.ҝ);
+            case Enum8.Ҍ:
+                Ҝ(Enum10.ҝ);
                 break;
 
             default:
                 break;
         }
 
-        if (Ӄ == ӌ.Ӌ)
-            Ӿ(ҍ.Ү);
+        if (Ӄ == Enum9.Ӌ)
+            Ӿ(Enum10.Ү);
         else
-            Ӿ(ҍ.Ҫ);
+            Ӿ(Enum10.Ҫ);
 
         ԋ = true;
     }
 
     җ();
-    Љ(ϸ.ϲ);
+    Љ(Enum1.ϲ);
     ť(Ч, false);
-    ҟ = ӌ.ӈ;
+    ҟ = Enum9.ӈ;
 }
 
 void ҏ() {
@@ -2437,78 +2465,83 @@ void ҏ() {
         return;
 
     ώ = "Move home";
-    Ҹ Ҏ = ҳ();
+    Enum8 Ҏ = ҳ();
 
-    if (ƽ == В.Ͼ) {
-        ˣ(Β, ӌ.Ӈ);
+    if (ƽ == Enum13.Ͼ) {
+        ˣ(Β, Enum9.Ӈ);
         switch (Ҏ) {
-            case Ҹ.Ҷ:
-                Ҝ(ҍ.ү);
+            case Enum8.Ҷ:
+                Ҝ(Enum10.ү);
                 break;
 
-            case Ҹ.ґ:
-                Ҝ(ҍ.Ҭ);
+            case Enum8.ґ:
+                Ҝ(Enum10.Ҭ);
                 break;
 
-            case Ҹ.ҵ:
+            case Enum8.ҵ:
                 return;
 
             default:
-                Ҝ(ҍ.ҧ);
+                Ҝ(Enum10.ҧ);
                 break;
         }
 
-        Ӿ(ҍ.ҡ);
+        Ӿ(Enum10.ҡ);
     } else {
         if (Ò(MyShipConnectorStatus.Connected) != null)
             return;
 
         if (Ò(MyShipConnectorStatus.Connectable) != null) {
-            Ҝ(ҍ.ґ);
-            Ӿ(ҍ.Ҩ);
+            Ҝ(Enum10.ґ);
+            Ӿ(Enum10.Ҩ);
             return;
         }
 
         switch (Ҏ) {
-            case Ҹ.ҷ:
-                Ҝ(ҍ.Ҧ);
+            case Enum8.ҷ:
+                Ҝ(Enum10.Ҧ);
                 break;
 
-            case Ҹ.Ҷ:
-                Ҝ(ҍ.ү);
+            case Enum8.Ҷ:
+                Ҝ(Enum10.ү);
                 break;
 
-            case Ҹ.ґ:
-                Ҝ(ҍ.ү);
+            case Enum8.ґ:
+                Ҝ(Enum10.ү);
                 break;
 
-            case Ҹ.Ҍ:
-                Ҝ(ҍ.ұ);
+            case Enum8.Ҍ:
+                Ҝ(Enum10.ұ);
                 break;
 
             default:
                 break;
         }
 
-        Ӿ(ҍ.Ҩ);
+        Ӿ(Enum10.Ҩ);
     }
 
     җ();
-    Љ(ϸ.ϲ);
+    Љ(Enum1.ϲ);
     ť(Ч, false);
-    ҟ = ӌ.ғ;
+    ҟ = Enum9.ғ;
 }
 
-public enum ҍ { Д, ʟ, Ҍ, ҝ, ұ, ү, Ү, ҭ, Ҭ, ґ, ҫ, Ҫ, ҩ, Ҩ, ҧ, Ҧ, Ŧ, ļ, Ĺ, ҥ, Ҥ, ң, Ң, ҡ, }
+/**
+ * Original: ҍ
+ */
+public enum Enum10 {
+    Д, ʟ, Ҍ, ҝ, ұ, ү, Ү, ҭ, Ҭ, ґ, ҫ, Ҫ, ҩ, Ҩ, ҧ, Ҧ, Ŧ, ļ, Ĺ, ҥ, Ҥ, ң, Ң, ҡ,
+}
 
-ҍ Ҡ;
-ӌ ҟ;
+Enum10 Ҡ;
+Enum9 ҟ;
 
-void Ҝ(ҍ Ҟ) {
-    if (Ҟ == ҍ.Д)
-        ӏ = ҍ.Д;
+void Ҝ(Enum10 Ҟ) {
+    if (Ҟ == Enum10.Д)
+        ӏ = Enum10.Д;
 
-    if (ӏ != ҍ.Д && Ҡ == ӏ && Ҟ != ӏ) {
+    if (ӏ != Enum10.Д && Ҡ == ӏ && Ҟ != ӏ) {
         Ҕ();
         return;
     }
@@ -2517,9 +2550,9 @@ void Ҝ(ҍ Ҟ) {
     Ҡ = Ҟ;
 }
 
-ҍ ӏ;
+Enum10 ӏ;
 
-void Ӿ(ҍ ӏ) {
+void Ӿ(Enum10 ӏ) {
     this.ӏ = ӏ;
 }
 
@@ -2538,19 +2571,22 @@ class Class2 {
     public Vector3 Ӵ = new Vector3();
 }
 
-public enum ӳ {
+/**
+ * Original: ӳ
+ */
+public enum Enum11 {
     Ӳ, ӱ, Ӱ
 }
 
 int[] ӯ = null;
-ӳ Ӯ(int ӭ, bool Ç) {
+Enum11 Ӯ(int ӭ, bool Ç) {
     if (Ç) {
         ӯ = null;
         ԓ = 0;
         Ԓ = 0;
     }
 
-    if (ʄ == ʲ.ʱ) {
+    if (ʄ == Enum4.ʱ) {
         int Ӭ = ӭ + 1;
         Ԓ = (int)Math.Floor(µ(ӭ, Ӂ));
         if (Ԓ % 2 == 0)
@@ -2559,10 +2595,10 @@ int[] ӯ = null;
             ԓ = Ӂ - 1 - (ӭ - (Ԓ * Ӂ));
 
         if (Ԓ >= Ӏ)
-            return ӳ.ӱ;
+            return Enum11.ӱ;
         else
-            return ӳ.Ӳ;
-    } else if (ʄ == ʲ.ʰ) {
+            return Enum11.Ӳ;
+    } else if (ʄ == Enum4.ʰ) {
         if (ӯ == null)
             ӯ = new int[] { 0, -1, 0, 0 };
 
@@ -2573,7 +2609,7 @@ int[] ӯ = null;
         int Ԕ = 0;
         while (ӯ[2] < Math.Pow(Math.Max(Ӂ, Ӏ), 2)) {
             if (Ԕ > 200)
-                return ӳ.Ӱ;
+                return Enum11.Ӱ;
 
             Ԕ++;
             ӯ[2]++;
@@ -2581,7 +2617,7 @@ int[] ӯ = null;
                 if (ӯ[3] == ӭ) {
                     this.ԓ = ԓ - 1 + ӫ;
                     this.Ԓ = Ԓ - 1 + Ӫ;
-                    return ӳ.Ӳ;
+                    return Enum11.Ӳ;
                 }
 
                 ӯ[3]++;
@@ -2598,7 +2634,7 @@ int[] ӯ = null;
         }
     }
 
-    return ӳ.ӱ;
+    return Enum11.ӱ;
 }
 
 int ԓ = 0;
@@ -2632,7 +2668,7 @@ DateTime ż = new DateTime();
 Class1 Ә = null;
 
 void ӗ() {
-    if (Ҡ == ҍ.ʟ) {
+    if (Ҡ == Enum10.ʟ) {
         if (Ԏ) {
             ԉ = 0;
             if (Ԑ != ԑ) {
@@ -2643,24 +2679,24 @@ void ӗ() {
         }
 
         if (ԉ == 0) {
-            ӳ J = Ӯ(ԑ, Ԏ);
-            if (J == ӳ.ӱ) {
-                Ӄ = ӌ.ΰ;
+            Enum11 J = Ӯ(ԑ, Ԏ);
+            if (J == Enum11.ӱ) {
+                Ӄ = Enum9.ΰ;
                 ώ = "Job done";
                 if (ʅ && Β.Ͷ) {
-                    Ҝ(ҍ.Ҧ);
-                    Ӿ(ҍ.Ҩ);
-                    ҟ = ӌ.ғ;
+                    Ҝ(Enum10.Ҧ);
+                    Ӿ(Enum10.Ҩ);
+                    ҟ = Enum9.ғ;
                 } else {
-                    Ҝ(ҍ.ҭ);
-                    Ӿ(ҍ.Ҫ);
-                    ҟ = ӌ.ӈ;
+                    Ҝ(Enum10.ҭ);
+                    Ӿ(Enum10.Ҫ);
+                    ҟ = Enum9.ӈ;
                 }
 
                 return;
             }
 
-            if (J == ӳ.Ӳ) {
+            if (J == Enum11.Ӳ) {
                 ԉ = 1;
                 Ŗ(Ш, true);
                 ԍ = Ҽ(ԓ, Ԓ, true);
@@ -2669,13 +2705,13 @@ void ӗ() {
             }
         } else {
             if (Ԍ < wpReachedDist) {
-                Ҝ(ҍ.Ҍ);
+                Ҝ(Enum10.Ҍ);
                 return;
             }
         }
     }
 
-    if (Ҡ == ҍ.Ҍ) {
+    if (Ҡ == Enum10.Ҍ) {
         if (Ԏ) {
             Ŗ(Ш, true);
             Ũ(false);
@@ -2692,18 +2728,18 @@ void ӗ() {
         }
 
         if (!Ĳ()) {
-            Ҝ(ҍ.ұ);
+            Ҝ(Enum10.ұ);
             return;
         }
 
         if (Ű(true)) {
-            ԇ = Ő("", "ORE", ŉ.ņ);
-            if ((ɻ == ʪ.ʧ || ɻ == ʪ.ʦ || ɻ == ʪ.ʥ || ɻ == ʪ.ʺ) && ƽ != В.ψ)
-                Ҝ(ҍ.ң);
-            else if ((ɻ == ʪ.ʩ || ɻ == ʪ.ʨ) && ƽ != В.ψ)
-                Ҝ(ҍ.ҥ);
+            ԇ = Ő("", "ORE", Enum14.ņ);
+            if ((ɻ == Enum6.ʧ || ɻ == Enum6.ʦ || ɻ == Enum6.ʥ || ɻ == Enum6.ʺ) && ƽ != Enum13.ψ)
+                Ҝ(Enum10.ң);
+            else if ((ɻ == Enum6.ʩ || ɻ == Enum6.ʨ) && ƽ != Enum13.ψ)
+                Ҝ(Enum10.ҥ);
             else
-                Ҝ(ҍ.ұ);
+                Ҝ(Enum10.ұ);
 
             return;
         }
@@ -2714,7 +2750,7 @@ void ӗ() {
             ө = false;
         }
 
-        if (ƽ == В.ψ && Ж() == MyDetectedEntityType.SmallGrid)
+        if (ƽ == Enum13.ψ && Ж() == MyDetectedEntityType.SmallGrid)
             Ԅ += 2;
         else
             Ԅ -= 2;
@@ -2758,11 +2794,11 @@ void ӗ() {
         }
 
         bool ΰ = false;
-        if (ʀ == ʶ.ʳ || ʀ == ʶ.ʴ) {
+        if (ʀ == Enum3.ʳ || ʀ == Enum3.ʴ) {
             if (!ӕ) {
                 float Ӓ = 0;
                 foreach (IMyTerminalBlock q in Ш)
-                    Ӓ += ō(q, "", "", ʀ == ʶ.ʴ ? new string[] { "STONE" } : null);
+                    Ӓ += ō(q, "", "", ʀ == Enum3.ʴ ? new string[] { "STONE" } : null);
 
                 if (Ӓ > ԃ || ԁ < ʁ || ө) {
                     Ԉ = 0;
@@ -2779,24 +2815,24 @@ void ӗ() {
             ΰ = ԁ >= Ҍ;
 
         if (Ԑ != ԑ) {
-            Ҝ(ҍ.ҝ);
+            Ҝ(Enum10.ҝ);
             ԁ = 0;
             return;
         }
 
         if (ΰ) {
             ԑ++;
-            Ҝ(ҍ.ҝ);
+            Ҝ(Enum10.ҝ);
             ԁ = 0;
             return;
         }
     }
 
-    if (Ҡ == ҍ.Ң) {
+    if (Ҡ == Enum10.Ң) {
         bool ΰ = false;
         if (Ԏ) {
             Ũ(true);
-            if ((ɻ == ʪ.ʧ || ɻ == ʪ.ʦ) && ù() && Ȱ(Ӆ, Э.GetNaturalGravity()) < 25 && Ӂ >= 2 && Ӏ >= 2) {
+            if ((ɻ == Enum6.ʧ || ɻ == Enum6.ʦ) && ù() && Ȱ(Ӆ, Э.GetNaturalGravity()) < 25 && Ӂ >= 2 && Ӏ >= 2) {
                 Vector3 ӑ = ɉ;
                 if (ԓ > 0 && Ԓ < Ӏ - 1)
                     ӑ = Ҽ(ԓ - 1, Ԓ + 1, true);
@@ -2820,24 +2856,24 @@ void ӗ() {
             ΰ = true;
 
         if (ΰ) {
-            Ҝ(ҍ.Ҥ);
+            Ҝ(Enum10.Ҥ);
             return;
         }
     }
 
-    if (Ҡ == ҍ.ҥ || Ҡ == ҍ.Ҥ) {
+    if (Ҡ == Enum10.ҥ || Ҡ == Enum10.Ҥ) {
         if (Ԏ) {
             ñ(true, true, false, ɉ, 0);
             Ŗ(Ш, false);
             Ũ(true);
             ԉ = -1;
-            Ԅ = ɻ == ʪ.ʥ || ɻ == ʪ.ʺ ? 0 : -1;
+            Ԅ = ɻ == Enum6.ʥ || ɻ == Enum6.ʺ ? 0 : -1;
         }
 
         bool J = !Ĳ();
-        int Ń = Ő("STONE", "ORE", ŉ.ņ);
-        if (ɻ == ʪ.ʨ || ɻ == ʪ.ʺ || ɻ == ʪ.ʦ)
-            Ń += Ő("ICE", "ORE", ŉ.ņ);
+        int Ń = Ő("STONE", "ORE", Enum14.ņ);
+        if (ɻ == Enum6.ʨ || ɻ == Enum6.ʺ || ɻ == Enum6.ʦ)
+            Ń += Ő("ICE", "ORE", Enum14.ņ);
 
         bool Ӑ = Ń > 0;
         bool ɘ = false;
@@ -2864,39 +2900,39 @@ void ӗ() {
 
         if (!Ӑ || J || ɘ) {
             if (!J) {
-                int Ө = Ő("", "ORE", ŉ.ņ);
+                int Ө = Ő("", "ORE", Enum14.ņ);
                 if (Ű(true))
                     J = true;
                 else if (100 - (µ(Ө, ԇ) * 100) < minEjection) {
                     J = true;
                 } else
-                    Ͻ(Ѓ.Ђ);
+                    Ͻ(Enum2.Ђ);
             }
 
             if (ɘ && J)
                 ώ = "Ejection failed";
 
-            if (Ҡ == ҍ.Ҥ) {
+            if (Ҡ == Enum10.Ҥ) {
                 if (J) {
                     if (Β.Ͷ)
-                        Ҝ(ҍ.Ҧ);
+                        Ҝ(Enum10.Ҧ);
                     else {
                         Ҕ();
                         Ґ();
                         ώ = "Can´t return, no dock found";
                     }
                 } else
-                    Ҝ(ҍ.ʟ);
+                    Ҝ(Enum10.ʟ);
             } else if (J)
-                Ҝ(ҍ.ұ);
+                Ҝ(Enum10.ұ);
             else
-                Ҝ(ҍ.Ҍ);
+                Ҝ(Enum10.Ҍ);
 
             return;
         }
     }
 
-    if (Ҡ == ҍ.ҝ || Ҡ == ҍ.ұ || Ҡ == ҍ.ң) {
+    if (Ҡ == Enum10.ҝ || Ҡ == Enum10.ұ || Ҡ == Enum10.ң) {
         if (Ԏ) {
             ԍ = Ҽ(ԓ, Ԓ, false);
             ë(Ǟ.ç, Ǟ.Ï, Ǟ.ĕ, false);
@@ -2914,18 +2950,18 @@ void ӗ() {
         }
 
         if (Ԍ < wpReachedDist) {
-            if (Ҡ == ҍ.ҝ && ԋ)
-                Ҝ(ҍ.ҭ);
+            if (Ҡ == Enum10.ҝ && ԋ)
+                Ҝ(Enum10.ҭ);
 
-            if (Ҡ == ҍ.ҝ)
-                Ҝ(ҍ.ʟ);
+            if (Ҡ == Enum10.ҝ)
+                Ҝ(Enum10.ʟ);
 
-            if (Ҡ == ҍ.ң)
-                Ҝ(ҍ.Ң);
+            if (Ҡ == Enum10.ң)
+                Ҝ(Enum10.Ң);
 
-            if (Ҡ == ҍ.ұ) {
+            if (Ҡ == Enum10.ұ) {
                 if (Β.Ͷ)
-                    Ҝ(ҍ.Ҧ);
+                    Ҝ(Enum10.Ҧ);
                 else {
                     Ҕ();
                     Ґ();
@@ -2937,7 +2973,7 @@ void ӗ() {
         }
     }
 
-    if (Ҡ == ҍ.Ҧ) {
+    if (Ҡ == Enum10.Ҧ) {
         if (Ԏ) {
             Ũ(true);
             Ŗ(Ш, false);
@@ -2952,7 +2988,7 @@ void ӗ() {
             }
 
             if (E == -1) {
-                Ҝ(ҍ.ү);
+                Ҝ(Enum10.ү);
                 return;
             }
 
@@ -2962,15 +2998,15 @@ void ӗ() {
         }
 
         if (Ԍ < wpReachedDist) {
-            Ҝ(ҍ.ү);
+            Ҝ(Enum10.ү);
             return;
         }
     }
 
-    if (Ҡ == ҍ.ү || Ҡ == ҍ.Ү) {
-        if (Ҡ == ҍ.Ү && Ӄ == ӌ.Ӊ && ƽ != В.Ͼ) {
+    if (Ҡ == Enum10.ү || Ҡ == Enum10.Ү) {
+        if (Ҡ == Enum10.Ү && Ӄ == Enum9.Ӊ && ƽ != Enum13.Ͼ) {
             if (!Ĳ() || Ű(true)) {
-                Ҝ(ҍ.ү);
+                Ҝ(Enum10.ү);
                 return;
             }
         }
@@ -2982,7 +3018,7 @@ void ӗ() {
         bool ӣ = false;
         Class1 B = null;
         if (Ԏ) {
-            if (Ҡ == ҍ.ү || ƽ == В.Ͼ) {
+            if (Ҡ == Enum10.ү || ƽ == Enum13.Ͼ) {
                 Class1 ҋ = ˡ();
                 Ӽ = new Class2();
                 Ӽ.Ӻ = ҋ;
@@ -2996,7 +3032,7 @@ void ӗ() {
                 else
                     Ӽ.Ӹ *= 1.5f;
 
-                if (ƽ == В.Ͼ) {
+                if (ƽ == Enum13.Ͼ) {
                     if (ҋ == Β)
                         Ӽ.Ӵ = Ǟ.ɉ;
 
@@ -3005,7 +3041,7 @@ void ӗ() {
 
                     Ӽ.ӵ = dockDist * Ю * 1.1f;
                 }
-            } else if (Ҡ == ҍ.Ү) {
+            } else if (Ҡ == Enum10.Ү) {
                 Ӽ = new Class2();
                 Ӽ.Ӻ = Ǟ;
                 Ӽ.Ӹ = followPathJob * Ю;
@@ -3014,7 +3050,7 @@ void ӗ() {
                 Ӽ.Ӵ = Β.ɉ;
                 Ӽ.ӵ = dockDist * Ю * 1.1f;
                 Ӽ.ӹ.Add(Ǟ.ɉ);
-                if (Ӄ == ӌ.Ӌ) {
+                if (Ӄ == Enum9.Ӌ) {
                     if (!Β.Ͷ || ˋ.Count == 0) {
                         Ҕ();
                         return;
@@ -3097,28 +3133,28 @@ void ӗ() {
         ñ(true, false, true, ĉ, Ԇ, Ә == null ? 0 : Ә.Ί, Ӥ);
         if (ΰ) {
             Ԋ = 0;
-            if (Ҡ == ҍ.ү || ƽ == В.Ͼ) {
-                Ҝ(ҍ.Ҭ);
+            if (Ҡ == Enum10.ү || ƽ == Enum13.Ͼ) {
+                Ҝ(Enum10.Ҭ);
                 return;
             }
 
-            if (Ҡ == ҍ.Ү && ԋ) {
-                Ҝ(ҍ.ҭ);
+            if (Ҡ == Enum10.Ү && ԋ) {
+                Ҝ(Enum10.ҭ);
                 return;
             }
 
-            if (Ҡ == ҍ.Ү) {
-                Ҝ(ҍ.ʟ);
+            if (Ҡ == Enum10.Ү) {
+                Ҝ(Enum10.ʟ);
                 return;
             }
         }
     }
 
-    if (Ҡ == ҍ.Ҭ || Ҡ == ҍ.ҩ) {
+    if (Ҡ == Enum10.Ҭ || Ҡ == Enum10.ҩ) {
         Class1 ҋ = ˡ();
         if (Ԏ) {
             if (!ˠ(ҋ, dockDist * Ю, true, out ĉ)) {
-                Ͻ(Ѓ.Ё);
+                Ͻ(Enum2.Ё);
                 Ҕ();
                 return;
             }
@@ -3133,22 +3169,22 @@ void ӗ() {
         }
 
         if (Ò(MyShipConnectorStatus.Connectable) != null || Ò(MyShipConnectorStatus.Connected) != null) {
-            Ҝ(ҍ.ґ);
+            Ҝ(Enum10.ґ);
             return;
         }
 
         if (Ԍ < wpReachedDist / 2 && Ԍ != -1) {
-            Ҝ(ҍ.ҫ);
+            Ҝ(Enum10.ҫ);
             return;
         }
     }
 
-    if (Ҡ == ҍ.ҫ || Ҡ == ҍ.Ҫ) {
+    if (Ҡ == Enum10.ҫ || Ҡ == Enum10.Ҫ) {
         if (Ԏ) {
-            if (Ҡ == ҍ.ҫ) {
+            if (Ҡ == Enum10.ҫ) {
                 Class1 ҋ = ˡ();
                 if (!ˠ(ҋ, dockDist * Ю, true, out ĉ)) {
-                    Ͻ(Ѓ.Ё);
+                    Ͻ(Enum2.Ё);
                     Ҕ();
                     return;
                 }
@@ -3157,7 +3193,7 @@ void ӗ() {
                 ë(ҋ.ç, ҋ.Ï, ҋ.ĕ, 10, false);
             }
 
-            if (Ҡ == ҍ.Ҫ) {
+            if (Ҡ == Enum10.Ҫ) {
                 ë(Ǟ.ç, Ǟ.Ï, Ǟ.ĕ, 0.5f, false);
                 ĉ = Ǟ.ɉ;
                 ñ(true, true, false, ĉ, 0);
@@ -3166,22 +3202,22 @@ void ӗ() {
 
         if (ě) {
             á(false, 0, 0, 0, 0);
-            if (Ҡ == ҍ.ҫ)
-                Ҝ(ҍ.ґ);
+            if (Ҡ == Enum10.ҫ)
+                Ҝ(Enum10.ґ);
 
-            if (Ҡ == ҍ.Ҫ)
+            if (Ҡ == Enum10.Ҫ)
                 Ҕ();
 
             return;
         }
     }
 
-    if (Ҡ == ҍ.ґ) {
+    if (Ҡ == Enum10.ґ) {
         if (Ò(MyShipConnectorStatus.Connected) != null) {
-            if (ƽ == В.Ͼ)
-                Ҝ(ҍ.ҡ);
+            if (ƽ == Enum13.Ͼ)
+                Ҝ(Enum10.ҡ);
             else
-                Ҝ(ҍ.Ҩ);
+                Ҝ(Enum10.Ҩ);
 
             return;
         }
@@ -3200,7 +3236,7 @@ void ӗ() {
         float й = dockingSpeed * 5;
         float и = Math.Max(1.5f, Math.Min(5f, Ю * 0.15f));
         if (!ˠ(ҋ, 0, true, out ĉ) || !ˠ(ҋ, и, true, out Ԇ) || ʣ == null || !ʣ.FatBlock.IsFunctional) {
-            Ͻ(Ѓ.Ё);
+            Ͻ(Enum2.Ё);
             Ҕ();
             return;
         }
@@ -3226,10 +3262,10 @@ void ӗ() {
             if (ԉ < -5) {
                 Ä.Connect();
                 if (Ä.Status == MyShipConnectorStatus.Connected) {
-                    if (ƽ == В.Ͼ)
-                        Ҝ(ҍ.ҡ);
+                    if (ƽ == Enum13.Ͼ)
+                        Ҝ(Enum10.ҡ);
                     else
-                        Ҝ(ҍ.Ҩ);
+                        Ҝ(Enum10.Ҩ);
 
                     å();
                     ť(Ч, true);
@@ -3245,16 +3281,16 @@ void ӗ() {
                 ԉ++;
 
             if (ԉ > 20) {
-                Ҝ(ҍ.ҩ);
+                Ҝ(Enum10.ҩ);
                 return;
             }
         }
     }
 
-    if (Ҡ == ҍ.Ҩ || Ҡ == ҍ.ҡ || Ҡ == ҍ.Ĺ || Ҡ == ҍ.ļ || Ҡ == ҍ.Ŧ) {
+    if (Ҡ == Enum10.Ҩ || Ҡ == Enum10.ҡ || Ҡ == Enum10.Ĺ || Ҡ == Enum10.ļ || Ҡ == Enum10.Ŧ) {
         bool л = false;
         bool е = false;
-        if (ƽ == В.Ͼ) {
+        if (ƽ == Enum13.Ͼ) {
             if (ˡ() == Β)
                 л = true;
             else if (ˡ() == Ǟ)
@@ -3264,7 +3300,7 @@ void ӗ() {
         if (Ԏ) {
             Ɔ = false;
             if (Ò(MyShipConnectorStatus.Connected) == null) {
-                Ҝ(ҍ.ҧ);
+                Ҝ(Enum10.ҧ);
                 return;
             }
 
@@ -3283,25 +3319,25 @@ void ӗ() {
 
         if (Ò(MyShipConnectorStatus.Connected) == null) {
             Ҕ();
-            Ͻ(Ѓ.Ͽ);
+            Ͻ(Enum2.Ͽ);
             return;
         }
 
-        if (Ӄ != ӌ.Ӊ || ɸ == -1 || ĥ == И.ɗ)
+        if (Ӄ != Enum9.Ӊ || ɸ == -1 || ĥ == Enum12.ɗ)
             ә = true;
         else if (Ĩ >= 100f)
             ә = true;
         else if (Ĩ <= 99f)
             ә = false;
 
-        if (Ӄ != ӌ.Ӊ || ɶ == -1 || Ф.Count == 0)
+        if (Ӄ != Enum9.Ӊ || ɶ == -1 || Ф.Count == 0)
             Ӛ = true;
         else if (ļ >= 100f)
             Ӛ = true;
         else if (ļ <= 99)
             Ӛ = false;
 
-        if (Ӄ != ӌ.Ӊ || ɷ == -1 || Ц.Count == 0)
+        if (Ӄ != Enum9.Ӊ || ɷ == -1 || Ц.Count == 0)
             ӧ = true;
         else
             ӧ = Ĺ >= ɷ;
@@ -3313,42 +3349,42 @@ void ӗ() {
         if (е)
             ƌ = ʒ;
 
-        if (ƌ != null && (ƌ.Ų == ſ.Ÿ || ƌ.Ų == ſ.ŷ))
+        if (ƌ != null && (ƌ.Ų == Enum15.Ÿ || ƌ.Ų == Enum15.ŷ))
             ә = true;
 
-        if (ƌ != null && (ƌ.Ų == ſ.Ź))
+        if (ƌ != null && (ƌ.Ų == Enum15.Ź))
             if (!ӛ)
                 ә = false;
 
-        if (ƌ != null && (ƌ.Ų == ſ.ŵ || ƌ.Ų == ſ.Ŵ))
+        if (ƌ != null && (ƌ.Ų == Enum15.ŵ || ƌ.Ų == Enum15.Ŵ))
             Ӛ = true;
 
-        if (ƌ != null && (ƌ.Ų == ſ.Ŷ))
+        if (ƌ != null && (ƌ.Ų == Enum15.Ŷ))
             if (!ӛ)
                 Ӛ = false;
 
         if (ο) {
             ChargeMode д = ә ? ChargeMode.Auto : ChargeMode.Recharge;
-            if (ƌ != null && (ƌ.Ų == ſ.ŷ || ƌ.Ų == ſ.Ÿ))
+            if (ƌ != null && (ƌ.Ų == Enum15.ŷ || ƌ.Ų == Enum15.Ÿ))
                 д = ChargeMode.Discharge;
 
             ŧ(д); Ŕ(!Ӛ);
         }
 
         if (!ӛ) {
-            if (ƽ == В.Ͼ)
-                ӛ = Ӄ != ӌ.Ӊ || Ɖ(Ԏ, true) || Μ;
+            if (ƽ == Enum13.Ͼ)
+                ӛ = Ӄ != Enum9.Ӊ || Ɖ(Ԏ, true) || Μ;
             else
-                ӛ = Ӄ != ӌ.Ӊ || ş();
+                ӛ = Ӄ != Enum9.Ӊ || ş();
         } else {
             if (!ә)
-                Ҝ(ҍ.Ŧ);
+                Ҝ(Enum10.Ŧ);
 
             if (!Ӛ)
-                Ҝ(ҍ.ļ);
+                Ҝ(Enum10.ļ);
 
             if (!ӧ)
-                Ҝ(ҍ.Ĺ);
+                Ҝ(Enum10.Ĺ);
 
             Ԏ = false;
         }
@@ -3356,30 +3392,30 @@ void ӗ() {
         if (ӛ && ә && Ӛ && ӧ) {
             ŧ(ChargeMode.Auto);
             Ŕ(false);
-            if (Ӄ == ӌ.Ӊ) {
-                if (ƽ == В.Ͼ) {
+            if (Ӄ == Enum9.Ӊ) {
+                if (ƽ == Enum13.Ͼ) {
                     if (ˡ() == Β)
                         ʘ(ʔ.ƕ);
                     else if (ˡ() == Ǟ)
                         ʘ(ʒ.ƕ);
 
                     if (ˡ() == Β)
-                        ˣ(Ǟ, ӌ.ӆ);
+                        ˣ(Ǟ, Enum9.ӆ);
                     else
-                        ˣ(Β, ӌ.Ӈ);
+                        ˣ(Β, Enum9.Ӈ);
                 }
             }
 
-            Ҝ(ҍ.ҧ);
+            Ҝ(Enum10.ҧ);
             return;
         }
     }
 
-    if (Ҡ == ҍ.ҧ) {
+    if (Ҡ == Enum10.ҧ) {
         if (Ԏ) {
             IMyShipConnector Ä = Ò(MyShipConnectorStatus.Connected);
             if (Ä == null) {
-                Ҝ(ҍ.Ү);
+                Ҝ(Enum10.Ү);
                 return;
             }
 
@@ -3395,7 +3431,7 @@ void ӗ() {
 
             if (B != null) {
                 if (!ˠ(B, dockDist * Ю, true, out ĉ)) {
-                    Ͻ(Ѓ.Ё);
+                    Ͻ(Enum2.Ё);
                     Ҕ();
                     return;
                 }
@@ -3405,18 +3441,18 @@ void ӗ() {
             } else
                 ñ(ɉ + г.WorldMatrix.Forward * dockDist * Ю, 5);
 
-            if (Ӄ == ӌ.Ӊ)
-                Ͻ(Ѓ.Ђ);
+            if (Ӄ == Enum9.Ӊ)
+                Ͻ(Enum2.Ђ);
         }
 
         if (Ԍ < wpReachedDist) {
             Ŗ(Ъ, true);
-            Ҝ(ҍ.Ү);
+            Ҝ(Enum10.Ү);
             return;
         }
     }
 
-    if (Ҡ == ҍ.ҭ) {
+    if (Ҡ == Enum10.ҭ) {
         if (Ԏ) {
             Ũ(true);
             Ŗ(Ш, false);
@@ -3426,7 +3462,7 @@ void ӗ() {
         }
 
         if (Ԍ < wpReachedDist / 2) {
-            Ҝ(ҍ.Ҫ);
+            Ҝ(Enum10.Ҫ);
             return;
         }
     }
@@ -3526,7 +3562,7 @@ void З(bool Ç) {
         return;
     }
 
-    if (ƽ == В.Ͼ)
+    if (ƽ == Enum13.Ͼ)
         return;
 
     float ʝ = ԑ * Math.Max(1, ʁ);
@@ -3550,21 +3586,27 @@ MyDetectedEntityType Ж() {
 }
 
 float Е(bool Ï) {
-    if (ƽ == В.ψ && Ж() == MyDetectedEntityType.None && !ƃ(Ь, true))
+    if (ƽ == Enum13.ψ && Ж() == MyDetectedEntityType.None && !ƃ(Ь, true))
         return fastSpeed;
     else
         return Ï ? ɴ : ɳ;
 }
 
-public enum И {
+/**
+ * Original: И
+ */
+public enum Enum12 {
     ɗ, Ŧ, Д, Г
 }
 
-public enum В {
+/**
+ * Original: В
+ */
+public enum Enum13 {
     ǻ, Б, ψ, А, Ͼ
 }
 
-В ƽ = В.ǻ;
+Enum13 ƽ = Enum13.ǻ;
 int ɘ = 0;
 float Й = 0;
 float Я = 0;
@@ -3714,24 +3756,24 @@ void Ѹ() {
     else
         Ь = null;
 
-    if (ƽ == В.Б) {
+    if (ƽ == Enum13.Б) {
         χ.GetBlocksOfType(Ш, q => q.CubeGrid == Me.CubeGrid && q is IMyShipDrill);
         if (Ш.Count == 0) {
             ɘ = 1;
             ώ = "Drills are missing";
         }
-    } else if (ƽ == В.ψ) {
+    } else if (ƽ == Enum13.ψ) {
         χ.GetBlocksOfType(Ш, q => q.CubeGrid == Me.CubeGrid && q is IMyShipGrinder);
         if (Ш.Count == 0) {
             ɘ = 1;
             ώ = "Grinders are missing";
         }
 
-        if (ƽ == В.ψ && Ь == null) {
+        if (ƽ == Enum13.ψ && Ь == null) {
             ɘ = 1;
             ώ = "Sensor is missing";
         }
-    } else if (ƽ == В.Ͼ) {
+    } else if (ƽ == Enum13.Ͼ) {
         χ.GetBlocksOfType(Ы, q => q.CubeGrid == Me.CubeGrid);
     }
 
@@ -3750,7 +3792,7 @@ void Ѹ() {
 
     Ю = (float)Э.CubeGrid.WorldVolume.Radius * 2;
     М = null;
-    if (ƽ != В.Ͼ) {
+    if (ƽ != Enum13.Ͼ) {
         Ѳ();
         if (Ш.Count > 0 && М != null) {
             if (Ь != null && (М.WorldMatrix.Forward != Ь.WorldMatrix.Forward || !(Э.WorldMatrix.Forward == Ь.WorldMatrix.Up || Э.WorldMatrix.Down == Ь.WorldMatrix.Down))) {
@@ -3836,7 +3878,7 @@ bool ѹ(IMyTerminalBlock q) {
     if (q.InventoryCount == 0)
         return false;
 
-    if (ƽ == В.Ͼ)
+    if (ƽ == Enum13.Ͼ)
         return true;
 
     for (int ã = 0; ã < Ш.Count; ã++) {
@@ -4026,7 +4068,10 @@ float ō(IMyTerminalBlock Ō, String Ô, String ń, String[] ŋ) {
     return J;
 }
 
-public enum ŉ {
+/**
+ * Original: ŉ
+ */
+public enum Enum14 {
     ň, Ň, ņ
 }
 
@@ -4037,8 +4082,8 @@ class Class4 {
     public String Ô = "";
     public String ń = "";
     public int Ń = 0;
-    public ŉ ĭ = ŉ.ņ;
-    public Class4(String Ô, String ń, int Ń, ŉ ĭ) {
+    public Enum14 ĭ = Enum14.ņ;
+    public Class4(String Ô, String ń, int Ń, Enum14 ĭ) {
         this.Ô = Ô;
         this.ń = ń;
         this.Ń = Ń;
@@ -4046,12 +4091,12 @@ class Class4 {
     }
 }
 
-Class4 Œ(String Ô, String ń, ŉ ĭ, bool ő) {
+Class4 Œ(String Ô, String ń, Enum14 ĭ, bool ő) {
     Ô = Ô.ToUpper();
     ń = ń.ToUpper();
     for (int A = 0; A < ŀ.Count; A++) {
         Class4 Ĵ = ŀ[A];
-        if (Ĵ.Ô.ToUpper() == Ô && Ĵ.ń.ToUpper() == ń && (Ĵ.ĭ == ĭ || ĭ == ŉ.ņ))
+        if (Ĵ.Ô.ToUpper() == Ô && Ĵ.ń.ToUpper() == ń && (Ĵ.ĭ == ĭ || ĭ == Enum14.ņ))
             return Ĵ;
     }
 
@@ -4064,11 +4109,11 @@ Class4 Œ(String Ô, String ń, ŉ ĭ, bool ő) {
     return J;
 }
 
-int Ő(String Ô, String ń, ŉ ĭ) {
+int Ő(String Ô, String ń, Enum14 ĭ) {
     return Ő(Ô, ń, ĭ, null);
 }
 
-int Ő(String Ô, String ń, ŉ ĭ, String[] ŋ) {
+int Ő(String Ô, String ń, Enum14 ĭ, String[] ŋ) {
     int Ń = 0;
     Ô = Ô.ToUpper();
     ń = ń.ToUpper();
@@ -4077,14 +4122,14 @@ int Ő(String Ô, String ń, ŉ ĭ, String[] ŋ) {
         if (ŋ != null && ŋ.Contains(Ĵ.Ô.ToUpper()))
             continue;
 
-        if ((Ô == "" || Ĵ.Ô.ToUpper() == Ô) && (ń == "" || Ĵ.ń.ToUpper() == ń) && (Ĵ.ĭ == ĭ || ĭ == ŉ.ņ))
+        if ((Ô == "" || Ĵ.Ô.ToUpper() == Ô) && (ń == "" || Ĵ.ń.ToUpper() == ń) && (Ĵ.ĭ == ĭ || ĭ == Enum14.ņ))
             Ń += Ĵ.Ń;
     }
 
     return Ń;
 }
 
-float ŏ = 0; float œ = 0; float ł = 0; List<Class4> ŀ = new List<Class4>(); void Į(IMyTerminalBlock q, ŉ ĭ) {
+float ŏ = 0; float œ = 0; float ł = 0; List<Class4> ŀ = new List<Class4>(); void Į(IMyTerminalBlock q, Enum14 ĭ) {
     for (int A = 0; A < q.InventoryCount; A++) {
         List<MyInventoryItem> Ĭ = new List<MyInventoryItem>(); q.GetInventory(A).GetItems(Ĭ);
         for (int ã = 0; ã < Ĭ.Count; ã++) {
@@ -4112,16 +4157,16 @@ void ħ() {
             if (!Ƃ(q, true))
                 continue;
 
-            Į(q, ŉ.ň);
+            Į(q, Enum14.ň);
         }
 
-        if (ɻ != ʪ.ɗ) {
+        if (ɻ != Enum6.ɗ) {
             for (int A = 0; A < С.Count; A++) {
                 IMyTerminalBlock q = С[A];
                 if (!Ƃ(q, true))
                     continue;
 
-                Į(q, ŉ.Ň);
+                Į(q, Enum14.Ň);
             }
         }
 
@@ -4151,7 +4196,7 @@ void Ħ() {
 }
 
 float Ĩ = 0;
-И ĥ;
+Enum12 ĥ;
 
 void İ() {
     float Ł = 0, Ŀ = 0, ľ = 0, Ľ = 0;
@@ -4168,15 +4213,15 @@ void İ() {
 
     Ĩ = (float)Math.Round(µ(Ŀ, Ł) * 100, 1);
     if (ľ >= Ľ)
-        ĥ = И.Ŧ;
+        ĥ = Enum12.Ŧ;
     else
-        ĥ = И.Г;
+        ĥ = Enum12.Г;
 
     if (ľ == 0 && Ľ == 0 || Ĩ == 100.0)
-        ĥ = И.Д;
+        ĥ = Enum12.Д;
 
     if (Р.Count == 0)
-        ĥ = И.ɗ;
+        ĥ = Enum12.ɗ;
 }
 
 float ļ = 0;
@@ -4227,12 +4272,12 @@ void ĳ() {
     if (Ҳ) {
         if (į().Count > Җ) {
             Ҳ = false;
-            if (ʆ != ʯ.ʫ) {
+            if (ʆ != Enum5.ʫ) {
                 Ҕ();
-                if (ʆ == ʯ.ʭ)
+                if (ʆ == Enum5.ʭ)
                     Ґ();
 
-                if (ʆ == ʯ.ʮ)
+                if (ʆ == Enum5.ʮ)
                     if (Β.Ͷ)
                         ҏ();
                     else
@@ -4248,8 +4293,8 @@ bool Ĳ() {
     if (!λ)
         return true;
 
-    if (Ӄ == ӌ.Ӊ) {
-        if (ɸ > 0 && ĥ != И.ɗ) {
+    if (Ӄ == Enum9.Ӊ) {
+        if (ɸ > 0 && ĥ != Enum12.ɗ) {
             if (Ĩ <= ɸ) {
                 ώ = "Low energy! Move home";
                 return false;
@@ -4304,7 +4349,10 @@ bool Ƃ(IMyTerminalBlock q, bool Ɓ) {
     }
 }
 
-public enum ſ {
+/**
+ * Original: ſ
+ */
+public enum Enum15 {
     ž, Ž, ż, Ż, ź, Ź, Ÿ, ŷ, Ŷ, ŵ, Ŵ
 }
 
@@ -4312,7 +4360,7 @@ public enum ſ {
  * Original: ų
  */ 
 class Class5 {
-    public ſ Ų = ſ.ž;
+    public Enum15 Ų = Enum15.ž;
     public float Ƅ = 0;
     public float ƅ = 0;
     public string Ɣ = "";
@@ -4346,10 +4394,10 @@ class Class5 {
 
     public bool Ǝ() {
         switch (Ų) {
-            case ſ.Ž:
+            case Enum15.Ž:
                 return true;
 
-            case ſ.ż:
+            case Enum15.ż:
                 return true;
         }
 
@@ -4366,75 +4414,75 @@ bool ƍ(Class5 ƌ, bool Ç, bool ƈ) {
     bool J = false;
     String O = "";
     switch (ƌ.Ų) {
-        case ſ.ž:
+        case Enum15.ž:
             {
                 O = "Waiting for command";
                 J = false;
                 break;
             }
 
-        case ſ.Ż:
+        case Enum15.Ż:
             {
                 O = "Waiting for cargo";
                 J = Ű(true);
                 break;
             }
 
-        case ſ.ź:
+        case Enum15.ź:
             {
                 O = "Unloading";
                 J = ş();
                 break;
             }
 
-        case ſ.ż:
+        case Enum15.ż:
             {
                 J = true;
                 break;
             }
 
-        case ſ.Ź:
+        case Enum15.Ź:
             {
                 O = "Charging batteries";
                 J = Ĩ >= 100f;
                 break;
             }
 
-        case ſ.Ÿ:
+        case Enum15.Ÿ:
             {
                 O = "Discharging batteries";
                 J = Ĩ <= 25f;
                 break;
             }
-        case ſ.ŷ:
+        case Enum15.ŷ:
             {
                 O = "Discharging batteries";
                 J = Ĩ <= 0f;
                 break;
             }
 
-        case ſ.Ŷ:
+        case Enum15.Ŷ:
             {
                 O = "Filling up hydrogen";
                 J = ļ >= 100f;
                 break;
             }
 
-        case ſ.ŵ:
+        case Enum15.ŵ:
             {
                 O = "Unloading hydrogen";
                 J = ļ <= 25f;
                 break;
             }
 
-        case ſ.Ŵ:
+        case Enum15.Ŵ:
             {
                 O = "Unloading hydrogen";
                 J = ļ <= 0f;
                 break;
             }
 
-        case ſ.Ž:
+        case Enum15.Ž:
             {
                 bool Ƌ = ů();
                 if (!Ƌ)
@@ -4478,7 +4526,7 @@ float Ƈ = 0;
 bool Ɔ = false;
 
 bool Ű(bool š) {
-    if (ɿ && ƽ != В.Ͼ)
+    if (ɿ && ƽ != Enum13.Ͼ)
         if (Ƈ != -1 && ϋ >= Ƈ) {
             ώ = "Ship too heavy";
             return true;
@@ -4508,13 +4556,13 @@ bool ş() {
     if (!ɺ)
         ŋ = new string[] { "ICE" };
 
-    if (ƽ == В.Б)
-        return Ő("", "ORE", ŉ.ň, ŋ) == 0;
+    if (ƽ == Enum13.Б)
+        return Ő("", "ORE", Enum14.ň, ŋ) == 0;
 
-    if (ƽ == В.ψ)
-        return Ő("", "COMPONENT", ŉ.ň, ŋ) == 0;
+    if (ƽ == Enum13.ψ)
+        return Ő("", "COMPONENT", Enum14.ň, ŋ) == 0;
     else
-        return Ő("", "", ŉ.ň, ŋ) == 0;
+        return Ő("", "", Enum14.ň, ŋ) == 0;
 }
 
 void Ş(bool ŝ, bool Ŝ, float ś, float Š) {
@@ -4666,7 +4714,7 @@ void È(bool Ç) {
         Ƈ = -1;
         Ê = 0;
         É = null;
-        if (Ӄ != ӌ.Ӌ && Ǟ.Í.Length() != 0) {
+        if (Ӄ != Enum9.Ӌ && Ǟ.Í.Length() != 0) {
             Æ = Å * Ð(Ǟ.Ï, Ǟ.ç * -1, Ǟ.Í, null);
             if (Æ < Ƈ || Ƈ == -1)
                 Ƈ = Æ;
@@ -5386,7 +5434,7 @@ String Ȗ(String[] O, int A) {
 }
 
 bool ɜ = false; void Save() {
-    if (ɜ || ƽ == В.А) {
+    if (ɜ || ƽ == Enum13.А) {
         Storage = "";
         return;
     }
@@ -5420,7 +5468,7 @@ bool ɜ = false; void Save() {
     ȗ(ɵ);
     ȗ(ɿ);
     ȗ(ɺ);
-    if (ƽ == В.Ͼ) {
+    if (ƽ == Enum13.Ͼ) {
         ȗ((int)ʔ.Ų);
         ȗ(ʔ.Ƅ);
         ȗ(ʔ.ƅ);
@@ -5467,18 +5515,22 @@ bool ɜ = false; void Save() {
         ȗ(Ȝ(ˋ[A]), A > 0);
 }
 
-ӌ ɛ = ӌ.Ӌ;
-public enum ɚ {
+Enum9 ɛ = Enum9.Ӌ;
+
+/**
+ * Original: ɚ
+ */
+public enum Enum16 {
     ə, ɘ, ɗ, Ə
 }
 
-ɚ ɖ() {
+Enum16 ɖ() {
     if (Storage == "")
-        return ɚ.ɗ;
+        return Enum16.ɗ;
 
     String[] ɕ = Storage.Split(';');
     if (Ȗ(ɕ, 0) != DATAREV) {
-        return ɚ.Ə;
+        return Enum16.Ə;
     }
 
     int A = 0;
@@ -5503,9 +5555,9 @@ public enum ɚ {
         ӄ = ȉ(Ȗ(O, A++));
         O = Ȗ(ɕ, 2).Split('\n');
         A = 0;
-        ƽ = (В)int.Parse(Ȗ(O, A++));
-        Ӄ = (ӌ)int.Parse(Ȗ(O, A++));
-        ҟ = (ӌ)int.Parse(Ȗ(O, A++));
+        ƽ = (Enum13)int.Parse(Ȗ(O, A++));
+        Ӄ = (Enum9)int.Parse(Ȗ(O, A++));
+        ҟ = (Enum9)int.Parse(Ȗ(O, A++));
         ɹ = int.Parse(Ȗ(O, A++));
         ɸ = int.Parse(Ȗ(O, A++));
         ɷ = int.Parse(Ȗ(O, A++));
@@ -5513,23 +5565,23 @@ public enum ɚ {
         ɵ = float.Parse(Ȗ(O, A++));
         ɿ = bool.Parse(Ȗ(O, A++));
         ɺ = bool.Parse(Ȗ(O, A++));
-        if (ƽ == В.Ͼ) {
-            ʔ.Ų = (ſ)int.Parse(Ȗ(O, A++));
+        if (ƽ == Enum13.Ͼ) {
+            ʔ.Ų = (Enum15)int.Parse(Ȗ(O, A++));
             ʔ.Ƅ = float.Parse(Ȗ(O, A++));
             ʔ.ƅ = float.Parse(Ȗ(O, A++));
             ʔ.Ɣ = Ȗ(O, A++);
             ʔ.ƕ = Ȗ(O, A++);
-            ʒ.Ų = (ſ)int.Parse(Ȗ(O, A++));
+            ʒ.Ų = (Enum15)int.Parse(Ȗ(O, A++));
             ʒ.Ƅ = float.Parse(Ȗ(O, A++));
             ʒ.ƅ = float.Parse(Ȗ(O, A++));
             ʒ.Ɣ = Ȗ(O, A++);
             ʒ.ƕ = Ȗ(O, A++);
         } else {
-            ʄ = (ʲ)int.Parse(Ȗ(O, A++));
-            ʆ = (ʯ)int.Parse(Ȗ(O, A++));
-            ɻ = (ʪ)int.Parse(Ȗ(O, A++));
-            ʀ = (ʶ)int.Parse(Ȗ(O, A++));
-            ӂ = (ʲ)int.Parse(Ȗ(O, A++));
+            ʄ = (Enum4)int.Parse(Ȗ(O, A++));
+            ʆ = (Enum5)int.Parse(Ȗ(O, A++));
+            ɻ = (Enum6)int.Parse(Ȗ(O, A++));
+            ʀ = (Enum3)int.Parse(Ȗ(O, A++));
+            ӂ = (Enum4)int.Parse(Ȗ(O, A++));
             ʅ = bool.Parse(Ȗ(O, A++));
             ɽ = bool.Parse(Ȗ(O, A++));
             ɾ = bool.Parse(Ȗ(O, A++));
@@ -5560,12 +5612,12 @@ public enum ɚ {
                 ˋ.Add(Ț(Ȗ(O, ã)));
     }
     catch {
-        return ɚ.ɘ;
+        return Enum16.ɘ;
     }
 
     ɛ = ҟ;
     Ҕ();
-    return ɚ.ə;
+    return Enum16.ə;
 }
 
 String ɔ(String Ǡ) {
@@ -5605,7 +5657,7 @@ void ɪ() {
         }
     }
 
-    String ɨ = (ƽ != В.А ? "[PAM-Ship]" : "[PAM-Controller]") + " Broadcast-settings";
+    String ɨ = (ƽ != Enum13.А ? "[PAM-Ship]" : "[PAM-Controller]") + " Broadcast-settings";
     try {
         if (Me.CustomData.Length == 0 || Me.CustomData.Split('\n')[0] != ɨ)
             ɣ(ɨ);
@@ -5615,7 +5667,7 @@ void ɪ() {
         bool ɧ = false;
         bool ɦ = true;
         if (ɯ) {
-            if (ƽ != В.А) {
+            if (ƽ != Enum13.А) {
                 ɮ = ɔ(ɓ(O, "Ship_Name", ref ɩ)).Replace(ɟ, "");
             }
 
@@ -5642,10 +5694,10 @@ void ɪ() {
                 ώ = "Antenna not ready";
 
             ɧ = ɥ.Count == 0 || !ɤ;
-            if (ɰ && !ɧ && ƽ != В.А)
+            if (ɰ && !ɧ && ƽ != Enum13.А)
                 ώ = "Antenna ok";
         }
-        else if (ƽ == В.А)
+        else if (ƽ == Enum13.А)
             ώ = "Offline - Enable in PB custom data";
 
         ɰ = ɧ;
@@ -5666,13 +5718,13 @@ void ɪ() {
 }
 
 void ɣ(String ɢ) {
-    String Ǩ = ɢ + "\n\n" + "Enable_Broadcast=" + (ƽ == В.А ? "true" : "false") + " \n";
-    Ǩ += ƽ != В.А ? "Ship_Name=Your_ship_name_here\n" : "";
+    String Ǩ = ɢ + "\n\n" + "Enable_Broadcast=" + (ƽ == Enum13.А ? "true" : "false") + " \n";
+    Ǩ += ƽ != Enum13.А ? "Ship_Name=Your_ship_name_here\n" : "";
     Me.CustomData = Ǩ + "Broadcast_Channel=#default";
 }
 
 String ɡ() {
-    if (ƽ != В.А)
+    if (ƽ != Enum13.А)
         return "" + Me.GetId();
 
     return ɟ;
@@ -5727,7 +5779,7 @@ bool Ȼ(ref String ƿ, out String ǋ, out String ȹ) {
     if (!Ƚ(ref ƿ, out ǋ, ɞ))
         return false;
 
-    if (!Ƚ(ref ƿ, out O, ɞ) || (O != ɡ() && (O != "*" && ƽ != В.А)))
+    if (!Ƚ(ref ƿ, out O, ɞ) || (O != ɡ() && (O != "*" && ƽ != Enum13.А)))
         return false;
 
     if (!Ƚ(ref ƿ, out O, ɞ) || (O != ɭ))
@@ -5750,8 +5802,8 @@ void ȸ(String ȷ) {
     ƿ += ǅ(ɉ.X) + "" + ȶ;
     ƿ += ǅ(ɉ.Y) + ȶ;
     ƿ += ǅ(ɉ.Z) + ȶ;
-    if (ƽ != В.Ͼ)
-        ƿ += Ϝ(ҟ) + (ҟ == ӌ.Ӊ ? " " + Math.Round(ӎ, 1) + "%" : "") + ȶ;
+    if (ƽ != Enum13.Ͼ)
+        ƿ += Ϝ(ҟ) + (ҟ == Enum9.Ӊ ? " " + Math.Round(ӎ, 1) + "%" : "") + ȶ;
     else
         ƿ += Ϝ(ҟ) + ȶ;
 
@@ -5761,7 +5813,7 @@ void ȸ(String ȷ) {
     ƿ += œ + ȶ;
     ƿ += ł + ȶ;
     for (int A = 0; A < ŀ.Count; A++) {
-        if (ŀ[A].ĭ != ŉ.ň)
+        if (ŀ[A].ĭ != Enum14.ň)
             continue;
 
         ƿ += ŀ[A].Ô + "/" + ŀ[A].ń + "/" + ŀ[A].Ń + ȶ;
@@ -5770,7 +5822,10 @@ void ȸ(String ȷ) {
     ɝ(ƿ, ȷ);
 }
 
-public enum Ⱥ {
+/**
+ * Original: Ⱥ
+ */
+public enum Enum17 {
     ǻ, Ɂ, ɒ, ɑ
 }
 
@@ -5789,8 +5844,8 @@ class Class6 {
     public String Ɋ = "";
     public Vector3 ɉ = new Vector3();
     public List<Class4> Ƿ = new List<Class4>();
-    public В ƽ = В.ǻ;
-    public Ⱥ Ɉ;
+    public Enum13 ƽ = Enum13.ǻ;
+    public Enum17 Ɉ;
     public float ɇ;
     public float Ɇ;
     public int Ʋ;
@@ -5802,7 +5857,7 @@ class Class6 {
     }
 
     public bool ɂ() {
-        if (Ɉ != Ⱥ.Ɂ)
+        if (Ɉ != Enum17.Ɂ)
             return false;
 
         return (DateTime.Now - Ɏ).TotalSeconds >= 4;
@@ -5812,26 +5867,26 @@ class Class6 {
         this.ǃ = ǃ;
     }
 
-    public Ⱥ ǫ(String ǃ, bool ő, bool ǂ, bool ǁ) {
+    public Enum17 ǫ(String ǃ, bool ő, bool ǂ, bool ǁ) {
         if (ǃ == "" && !ǂ)
-            return Ⱥ.ǻ;
+            return Enum17.ǻ;
 
-        if (Ɉ == Ⱥ.Ɂ && ɂ())
-            Ɉ = Ⱥ.ɑ;
+        if (Ɉ == Enum17.Ɂ && ɂ())
+            Ɉ = Enum17.ɑ;
 
         if (ő) {
             Ɋ = ǃ;
-            Ɉ = Ⱥ.Ɂ; Ɏ = DateTime.Now; return Ɉ;
+            Ɉ = Enum17.Ɂ; Ɏ = DateTime.Now; return Ɉ;
         } else if (ǂ) {
-            Ɋ = ""; Ɉ = Ⱥ.ǻ;
+            Ɋ = ""; Ɉ = Enum17.ǻ;
         } else if (Ɋ == ǃ) {
             if (ǁ)
-                Ɉ = Ⱥ.ɒ;
+                Ɉ = Enum17.ɒ;
 
             return Ɉ;
         }
 
-        return Ⱥ.ǻ;
+        return Enum17.ǻ;
     }
 }
 
@@ -5871,7 +5926,7 @@ void ǀ(Class6 Ʀ, String ƿ) {
         if (!int.TryParse(O[2], out ƻ))
             continue;
 
-        Ʀ.Ƿ.Add(new Class4(O[0], O[1], ƻ, ŉ.ň));
+        Ʀ.Ƿ.Add(new Class4(O[0], O[1], ƻ, Enum14.ň));
     }
 
     int ƺ = 0;
@@ -5879,7 +5934,7 @@ void ǀ(Class6 Ʀ, String ƿ) {
         Ʀ.Ʋ = 0;
 
     if (!int.TryParse(ƽ, out ƺ))
-        Ʀ.ƽ = В.ǻ;
+        Ʀ.ƽ = Enum13.ǻ;
 
     if (!float.TryParse(ø[0], out Ʀ.ɉ.X))
         Ʀ.ɉ.X = 0;
@@ -5896,7 +5951,7 @@ void ǀ(Class6 Ʀ, String ƿ) {
     if (!float.TryParse(Ǆ, out Ʀ.ɇ))
         Ʀ.ɇ = 0;
 
-    Ʀ.ƽ = (В)ƺ;
+    Ʀ.ƽ = (Enum13)ƺ;
     Ʀ.Ʌ = (int)Math.Round(Vector3.Distance(Me.GetPosition(), Ʀ.ɉ));
     Ʀ.Ʉ = 0;
     for (int ã = 0; ã < Ʀ.Ƿ.Count(); ã++)
@@ -5912,7 +5967,7 @@ void ƹ(string Ƹ) {
     var Ƽ = ª.ElementAtOrDefault(0);
     var Ʒ = ª.ElementAtOrDefault(1);
     String ǆ = "Invalid argument: " + Ƹ;
-    if (Є == ϸ.Ϭ) {
+    if (Є == Enum1.Ϭ) {
         if (ƞ != null) {
             switch (Ƽ) {
                 case "UP":
@@ -6067,19 +6122,19 @@ List<Class6> Ǎ = null; void ǌ(string Ƹ) {
     Ǘ();
 }
 
-Ⱥ ǈ(Class6 Ʀ, bool Ǉ, string ǃ) {
-    Ⱥ J = Ⱥ.ǻ;
+Enum17 ǈ(Class6 Ʀ, bool Ǉ, string ǃ) {
+    Enum17 J = Enum17.ǻ;
     if (Ʀ == null) {
         for (int A = 0; A < Ǎ.Count; A++) {
             Ʀ = Ǎ[A];
-            Ⱥ Ƶ = Ʀ.ǫ(ǃ, false, Ǉ, false);
-            if (Ƶ == Ⱥ.ɒ)
+            Enum17 Ƶ = Ʀ.ǫ(ǃ, false, Ǉ, false);
+            if (Ƶ == Enum17.ɒ)
                 J = Ƶ;
 
-            if (Ƶ == Ⱥ.ɑ)
+            if (Ƶ == Enum17.ɑ)
                 return Ƶ;
 
-            if (Ƶ == Ⱥ.Ɂ)
+            if (Ƶ == Enum17.Ɂ)
                 return Ƶ;
         }
 
@@ -6127,7 +6182,7 @@ void Ƥ() {
 void Ơ() {
     Ǎ.Clear();
     ƞ = null;
-    Љ(ϸ.Ϸ);
+    Љ(Enum1.Ϸ);
     Ѕ = 0;
 }
 
@@ -6141,7 +6196,7 @@ String Ɯ(bool ƛ, int ƚ, ref int ƙ, bool Ƙ, int Ɵ) {
     String Ɨ = "";
     String Ʃ = "——————————————————\n";
     String ƶ = "--------------------------------------------\n";
-    if (ƞ == null || Є == ϸ.Ϸ || Є == ϸ.ϻ)
+    if (ƞ == null || Є == Enum1.Ϸ || Є == Enum1.ϻ)
         Ɨ += "[PAM]-Controller | " + Ǎ.Count + " Connected ships" + "\n";
     else
         Ɨ += Ʈ(ƞ) + "\n";
@@ -6152,13 +6207,13 @@ String Ɯ(bool ƛ, int ƚ, ref int ƙ, bool Ƙ, int Ɵ) {
     І = 0;
     if (ώ != "") {
         ύ(ref Ɨ, ƴ, A++, ƛ, ώ);
-    } else if (Є == ϸ.Ϸ) {
+    } else if (Є == Enum1.Ϸ) {
         if (ƞ == null && Ǎ.Count >= 1)
             ƞ = Ǎ[0];
 
         String Ƴ = "";
         if (ύ(ref Ƴ, ƴ, A++, ƛ, " Send command to all"))
-            Љ(ϸ.ϻ);
+            Љ(Enum1.ϻ);
 
         int Ʋ = 0;
         for (int ã = 0; ã < Ǎ.Count; ã++) {
@@ -6172,7 +6227,7 @@ String Ɯ(bool ƛ, int ƚ, ref int ƙ, bool Ƙ, int Ɵ) {
 
             if (ύ(ref Ƴ, ƴ, A++, ƛ, " " + Ʈ(Ʊ))) {
                 ƞ = Ʊ;
-                Љ(ϸ.Ϭ);
+                Љ(Enum1.Ϭ);
                 ƞ.ǫ("", false, true, false);
             }
 
@@ -6181,17 +6236,17 @@ String Ɯ(bool ƛ, int ƚ, ref int ƙ, bool Ƙ, int Ɵ) {
 
             if (ύ(ref Ƴ, ƴ, A++, ƛ, " " + (Ƙ ? "" : "  ") + ƭ(Ʊ))) {
                 ƞ = Ʊ;
-                Љ(ϸ.Ƿ);
+                Љ(Enum1.Ƿ);
             }
         }
 
         int ư = Ɵ - 2;
         ư += Math.Max(0, (ƚ - 1)) * Ɵ;
         Ɨ += ǧ(ư, Ƴ, Ʋ, ref ƙ);
-    } else if (Є == ϸ.ž || Є == ϸ.ϻ) {
-        ϸ J = Є == ϸ.ž ? ϸ.Ϭ : ϸ.Ϸ;
+    } else if (Є == Enum1.ž || Є == Enum1.ϻ) {
+        Enum1 J = Є == Enum1.ž ? Enum1.Ϭ : Enum1.Ϸ;
         Class6 Ʀ = null;
-        if (Є == ϸ.ž)
+        if (Є == Enum1.ž)
             Ʀ = ƞ;
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Back")) {
@@ -6218,19 +6273,19 @@ String Ɯ(bool ƛ, int ƚ, ref int ƙ, bool Ƙ, int Ɵ) {
             Ƨ(Ʀ, "FULL");
         }
 
-        if (Ʀ != null && Ʀ.ƽ == В.Ͼ)
+        if (Ʀ != null && Ʀ.ƽ == Enum13.Ͼ)
             if (ύ(ref Ɨ, ƴ, A++, ƛ, " [Undock] " + Ǔ(Ʀ, "UNDOCK"))) {
                 Ƨ(Ʀ, "UNDOCK");
             }
     }
-    else if (Є == ϸ.Ϭ) {
+    else if (Є == Enum1.Ϭ) {
         String Ư = "";
         if (ύ(ref Ư, ƴ, A++, ƛ, " Back")) {
-            Љ(ϸ.Ϸ);
+            Љ(Enum1.Ϸ);
         };
         Ɨ += Ư.Substring(0, Ư.Length - 1).PadRight(36, ' ');
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Send cmd")) {
-            Љ(ϸ.ž);
+            Љ(Enum1.ž);
         }
 
         if (!ƞ.Ƀ() && !ƞ.ɂ())
@@ -6240,9 +6295,9 @@ String Ɯ(bool ƛ, int ƚ, ref int ƙ, bool Ƙ, int Ɵ) {
             Ɨ += "No answer received...";
         else
             Ɨ += ƪ(ƞ, ƞ.Ǹ);
-    } else if (Є == ϸ.Ƿ) {
+    } else if (Є == Enum1.Ƿ) {
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Back")) {
-            Љ(ϸ.Ϸ);
+            Љ(Enum1.Ϸ);
         }
 
         Ɨ += ƶ;
@@ -6290,7 +6345,10 @@ String ƪ(Class6 Ʀ, String O) {
     return O;
 }
 
-public enum Ǒ {
+/**
+ * Original: Ǒ
+ */
+public enum Enum18 {
     ǻ, ǹ, Ǹ, Ƿ, Ƕ, ǵ, Ǵ
 }
 
@@ -6301,24 +6359,24 @@ String ǳ(bool ǲ) {
     return J;
 }
 
-void Ǳ(IMyTerminalBlock ƨ, out Ǒ ǰ, out String ǩ) {
+void Ǳ(IMyTerminalBlock ƨ, out Enum18 ǰ, out String ǩ) {
     bool Ɲ = true;
     String ƽ = ɔ(ɓ(ƨ.CustomData.Split('\n'), "mode", ref Ɲ)).ToUpper();
     String[] ǯ = ƽ.Split(':');
     String Ǯ = ǭ(ǯ, 0);
     ǩ = ǭ(ǯ, 1);
-    ǰ = Ǒ.ǻ;
+    ǰ = Enum18.ǻ;
     if (Ǯ == "MAIN")
-        ǰ = Ǒ.ǹ;
+        ǰ = Enum18.ǹ;
     else if (Ǯ == "MAINX")
-        ǰ = Ǒ.Ǵ;
+        ǰ = Enum18.Ǵ;
     else if (Ǯ == "MENU")
-        ǰ = Ǒ.Ǹ;
+        ǰ = Enum18.Ǹ;
     else if (Ǯ == "INVENTORY")
-        ǰ = Ǒ.Ƿ;
+        ǰ = Enum18.Ƿ;
     else if (Ǯ == "DEBUG")
-        ǰ = Ǒ.Ƕ;
-    if (ǰ == Ǒ.ǻ)
+        ǰ = Enum18.Ƕ;
+    if (ǰ == Enum18.ǻ)
         ǩ = ƽ;
 }
 
@@ -6336,7 +6394,7 @@ int ȇ = 0;
 int Ȉ = 0;
 int Ȇ = 0;
 int ȅ = 0;
-String Ȅ(Ǒ ƽ, String ǩ, bool Ç) {
+String Ȅ(Enum18 ƽ, String ǩ, bool Ç) {
     int ȃ = 15;
     if (Ç) {
         Ǻ = Ǭ;
@@ -6346,7 +6404,7 @@ String Ȅ(Ǒ ƽ, String ǩ, bool Ç) {
     }
 
     String J = "";
-    if (ƽ == Ǒ.ǹ) {
+    if (ƽ == Enum18.ǹ) {
         int E = 0;
         J = Ɯ(false, Ǻ, ref Ȉ, true, ȃ);
         if (!int.TryParse(ǩ, out E))
@@ -6354,7 +6412,7 @@ String Ȅ(Ǒ ƽ, String ǩ, bool Ç) {
 
         E--;
         return Ǣ(E, ȃ, J);
-    } else if (ƽ == Ǒ.Ǵ) {
+    } else if (ƽ == Enum18.Ǵ) {
         int E = 0;
         J = Ɯ(false, ȇ, ref Ȇ, false, ȃ);
         if (!int.TryParse(ǩ, out E))
@@ -6365,9 +6423,9 @@ String Ȅ(Ǒ ƽ, String ǩ, bool Ç) {
         return Ǣ(E, ȃ, J);
     }
 
-    if (ƽ == Ǒ.ǵ) {
+    if (ƽ == Enum18.ǵ) {
         return Ɯ(false, 0, ref ȅ, true, ȃ);
-    } else if (ƽ == Ǒ.Ƿ || ƽ == Ǒ.Ǹ || ƽ == Ǒ.Ƕ) {
+    } else if (ƽ == Enum18.Ƿ || ƽ == Enum18.Ǹ || ƽ == Enum18.Ƕ) {
         Class6 Ʀ = ƞ;
         if (ǩ != "") {
             Ʀ = ǎ("", ǩ);
@@ -6382,13 +6440,13 @@ String Ȅ(Ǒ ƽ, String ǩ, bool Ç) {
         String Ʃ = "—————————————————————\n";
         String Ȃ = "";
         String ȁ = "";
-        if (ƽ == Ǒ.Ǹ) {
+        if (ƽ == Enum18.Ǹ) {
             Ȃ = "Menu";
             ȁ = ƪ(Ʀ, Ʀ.Ǹ);
-        } else if (ƽ == Ǒ.Ƿ) {
+        } else if (ƽ == Enum18.Ƿ) {
             Ȃ = "Inventory";
             ȁ = ƪ(Ʀ, ǘ(Ʀ));
-        } else if (ƽ == Ǒ.Ƕ) {
+        } else if (ƽ == Enum18.Ƕ) {
             return ƪ(Ʀ, Ǚ(Ʀ));
         }
 
@@ -6481,14 +6539,14 @@ String Ǖ(int ǔ) {
 }
 
 String Ǔ(Class6 Ʀ, String ž) {
-    Ⱥ Ƶ = ǈ(Ʀ, false, ž);
-    if (Ƶ == Ⱥ.ɒ)
+    Enum17 Ƶ = ǈ(Ʀ, false, ž);
+    if (Ƶ == Enum17.ɒ)
         return "received!";
 
-    if (Ƶ == Ⱥ.Ɂ)
+    if (Ƶ == Enum17.Ɂ)
         return "pending...";
 
-    if (Ƶ == Ⱥ.ɑ)
+    if (Ƶ == Enum17.ɑ)
         return "no answer!";
 
     return "";
@@ -6511,10 +6569,10 @@ void Ǘ() {
         " e.g.: \"SENDALL homepos\"\n\n";
 
     for (int A = 0; A < О.Count; A++)
-        О[A].WriteText(Ȅ(Ǒ.ǵ, "0", false));
+        О[A].WriteText(Ȅ(Enum18.ǵ, "0", false));
 
     for (int A = 0; A < П.Count; A++) {
-        Ǒ ƽ = Ǒ.ǻ;
+        Enum18 ƽ = Enum18.ǻ;
         String ǩ = "";
         Ǳ(П[A], out ƽ, out ǩ);
         П[A].WriteText(Ȅ(ƽ, ǩ, A == 0));
