@@ -96,30 +96,33 @@ Program()
      */
     GTS = GridTerminalSystem;
     Runtime.UpdateFrequency = UpdateFrequency.Update10;
-    if (ї(Me, controllerTag, true)) ƽ = Enum13.А; Љ(Enum1.Ϸ);
-    if (ƽ != Enum13.А) {
-        G_VAR12 = "Welcome to [PAM]!";
+    if (ї(Me, controllerTag, true))
+        pamMode = PamMode.CONTROLLER;
+
+    Љ(Enum1.Ϸ);
+    if (pamMode != PamMode.CONTROLLER) {
+        pamStatus = "Welcome to [PAM]!";
         Enum16 ϊ = ɖ();
-        if (ƽ == Enum13.ǻ) {
-            List<IMyShipDrill> ω = new List<IMyShipDrill>();
-            List<IMyShipGrinder> ψ = new List<IMyShipGrinder>();
-            GTS.GetBlocksOfType(ω, q => q.CubeGrid == Me.CubeGrid);
-            GTS.GetBlocksOfType(ψ, q => q.CubeGrid == Me.CubeGrid);
-            if (ω.Count > 0) {
-                ƽ = Enum13.Б;
-                G_VAR12 = "Miner mode enabled!";
-            } else if (ψ.Count > 0) {
-                ƽ = Enum13.ψ;
-                G_VAR12 = "Grinder mode enabled!";
+        if (pamMode == PamMode.UNDEFINED) {
+            List<IMyShipDrill> drills = new List<IMyShipDrill>();
+            List<IMyShipGrinder> grinders = new List<IMyShipGrinder>();
+            GTS.GetBlocksOfType(drills, q => q.CubeGrid == Me.CubeGrid);
+            GTS.GetBlocksOfType(grinders, q => q.CubeGrid == Me.CubeGrid);
+            if (drills.Count > 0) {
+                pamMode = PamMode.MINING;
+                pamStatus = "Miner mode enabled!";
+            } else if (grinders.Count > 0) {
+                pamMode = PamMode.GRINDING;
+                pamStatus = "Grinder mode enabled!";
             } else {
-                ƽ = Enum13.Ͼ;
+                pamMode = PamMode.SHUTTLE;
                 Ͻ(Enum2.Ͼ);
             }
         }
 
         if (ϊ == Enum16.ə) ν = false;
-        if (ϊ == Enum16.ɘ) G_VAR12 = "Data restore failed!";
-        if (ϊ == Enum16.Ə) G_VAR12 = "New version, wipe data";
+        if (ϊ == Enum16.ɘ) pamStatus = "Data restore failed!";
+        if (ϊ == Enum16.Ə) pamStatus = "New version, wipe data";
     }
 }
 
@@ -180,7 +183,7 @@ void Main(string Ƹ, UpdateType Ρ) {
         if (Ƹ != "")
             ȿ = Ƹ;
 
-        if (ƽ != Enum13.А)
+        if (pamMode != PamMode.CONTROLLER)
             Λ(Ƹ);
         else
             ǌ(Ƹ);
@@ -191,7 +194,7 @@ void Main(string Ƹ, UpdateType Ρ) {
             int Ο = Runtime.CurrentInstructionCount;
             float A = µ(Ο, Runtime.MaxInstructionCount);
             if (A > 0.90)
-                G_VAR12 = "Max. instructions >90%";
+                pamStatus = "Max. instructions >90%";
 
             if (A > Ψ)
                 Ψ = A;
@@ -289,10 +292,10 @@ void Λ(string Ƹ) {
                 Ҕ();
             }
             if (ƿ && ɘ == 0)
-                G_VAR12 = "Setup complete";
+                pamStatus = "Setup complete";
         }
         else {
-            if (G_VAR61_Enum9 == Enum9.Ӊ && ƽ != Enum13.Ͼ) {
+            if (G_VAR61_Enum9 == Enum9.Ӊ && pamMode != PamMode.SHUTTLE) {
                 ô();
                 ѓ();
                 ó("Inv balance");
@@ -398,7 +401,7 @@ void Λ(string Ƹ) {
                         if (ù()) {
                             ë(σ, υ, τ, 0.25f, true);
                             Ĕ();
-                            G_VAR12 = "Aligning to planet: " + Math.Round(ė - 0.25f, 2) + "°";
+                            pamStatus = "Aligning to planet: " + Math.Round(ė - 0.25f, 2) + "°";
                             if (ě)
                                 α(true, true);
                         } else
@@ -529,7 +532,7 @@ void η(string Ƹ) {
             break;
     }
 
-    if (ƽ != Enum13.Ͼ) {
+    if (pamMode != PamMode.SHUTTLE) {
         switch (Ƽ) {
             case "SHUTTLE":
                 {
@@ -539,42 +542,42 @@ void η(string Ƹ) {
 
             case "CFGS":
                 {
-                    if (!ί(Ʒ, ζ, ε)) G_VAR12 = ǆ;
+                    if (!ί(Ʒ, ζ, ε)) pamStatus = ǆ;
                 }
                 break;
 
             case "CFGB":
                 {
                     if (!Ϲ(Ʒ, ζ))
-                        G_VAR12 = ǆ;
+                        pamStatus = ǆ;
                 }
                 break;
 
             case "CFGL":
                 {
                     if (!ʈ(ref G_VAR34_float, true, Enum7.Ă, Ʒ, "") || !Ϻ(ζ))
-                        G_VAR12 = ǆ;
+                        pamStatus = ǆ;
                 }
                 break;
 
             case "CFGE":
                 {
                     if (!ʈ(ref G_VAR36_float, true, Enum7.ʏ, Ʒ, "IG") || !ʈ(ref G_VAR35_float, true, Enum7.ʐ, ζ, "IG") || !ʈ(ref G_VAR37_float, true, Enum7.ʎ, ε, "IG"))
-                        G_VAR12 = ǆ;
+                        pamStatus = ǆ;
                 }
                 break;
 
             case "CFGA":
                 {
                     if (!ʈ(ref G_VAR38_float, false, Enum7.ª, Ʒ, ""))
-                        G_VAR12 = ǆ;
+                        pamStatus = ǆ;
                 }
                 break;
 
             case"CFGW":
                 {
                     if (!ʈ(ref G_VAR39_float, false, Enum7.ʓ, Ʒ, "") || !ʈ(ref G_VAR40_float, false, Enum7.ʓ, ζ, ""))
-                        G_VAR12 = ǆ;
+                        pamStatus = ǆ;
                 }
                 break;
 
@@ -592,7 +595,7 @@ void η(string Ƹ) {
 
             default:
                 if (δ)
-                    G_VAR12 = ǆ;
+                    pamStatus = ǆ;
 
                 break;
         }
@@ -606,7 +609,7 @@ void η(string Ƹ) {
 
             default:
                 if (δ)
-                    G_VAR12 = ǆ;
+                    pamStatus = ǆ;
                 break;
         }
     }
@@ -632,7 +635,7 @@ String γ() {
         "[ALIGN] Align the ship to planet\n" + 
         "[RESET] Reset all data\n";
 
-    if (ƽ != Enum13.Ͼ)
+    if (pamMode != PamMode.SHUTTLE)
         O += "[SHUTTLE] Enable shuttle mode\n" + 
             "[NEXT] Next hole\n" + 
             "[PREV] Previous hole\n\n" + 
@@ -673,22 +676,22 @@ String γ() {
 
 void β() {
     Ҕ();
-    ƽ = Enum13.Ͼ;
+    pamMode = PamMode.SHUTTLE;
     Ͻ(Enum2.Ͼ);
     G_VAR58_Class1.Ͷ = false;
     G_VAR43_Class1.Ͷ = false;
     sensor = null;
-    Ш.Clear();
+    drillsOrGrinders.Clear();
     G_VAR61_Enum9 = Enum9.Ӌ;
 }
 
 void α(bool ά, bool ΰ)
 {
     if (!ά)
-        G_VAR12 = "Aligning canceled";
+        pamStatus = "Aligning canceled";
 
     if (ΰ)
-        G_VAR12 = "Aligning done";
+        pamStatus = "Aligning done";
 
     if (ΰ || !ά) {
         μ = false;
@@ -799,7 +802,7 @@ void Љ(Enum1 ʻ) {
         G_VAR6 = 0;
 
     G_VAR7 = ʻ;
-    if (ƽ != Enum13.А)
+    if (pamMode != PamMode.CONTROLLER)
         Ş(G_VAR7 == Enum1.ϴ, false, 0, 0);
 
     G_VAR4 = true;
@@ -848,23 +851,23 @@ public enum Enum2 {
 String Ͻ(Enum2 ƿ) {
     switch (ƿ) {
         case Enum2.Ђ:
-            G_VAR12 = "Job is running";
+            pamStatus = "Job is running";
             break;
 
         case Enum2.Ё:
-            G_VAR12 = "Connector not ready!";
+            pamStatus = "Connector not ready!";
             break;
 
         case Enum2.Ѐ:
-            G_VAR12 = "Ship modified, path outdated!";
+            pamStatus = "Ship modified, path outdated!";
             break;
 
         case Enum2.Ͽ:
-            G_VAR12 = "Interrupted by player!";
+            pamStatus = "Interrupted by player!";
             break;
 
         case Enum2.Ͼ:
-            G_VAR12 = "Shuttle mode enabled!";
+            pamStatus = "Shuttle mode enabled!";
             break;
     }
 
@@ -887,7 +890,7 @@ String ϝ(Enum4 ϫ) {
 String ϝ(Enum3 Ϫ) {
     switch (Ϫ) {
         case Enum3.ʴ:
-            return "Auto" + (ƽ == Enum13.Б ? " (Ore)" : "");
+            return "Auto" + (pamMode == PamMode.MINING ? " (Ore)" : "");
 
         case Enum3.ʳ:
             return "Auto (+Stone)";
@@ -993,7 +996,7 @@ String ϗ(Enum12 ϖ) {
 }
 
 String ϕ(Enum10 ϛ) {
-    String O = ƽ == Enum13.Ͼ ? "target" : "job";
+    String O = pamMode == PamMode.SHUTTLE ? "target" : "job";
     switch (ϛ) {
         case Enum10.Д:
             return "Idle";
@@ -1002,7 +1005,7 @@ String ϕ(Enum10 ϛ) {
             return "Flying to XY position";
 
         case Enum10.Ҍ:
-            return ƽ == Enum13.ψ ? "Grinding" : "Mining";
+            return pamMode == PamMode.GRINDING ? "Grinding" : "Mining";
 
         case Enum10.ҝ:
             return "Returning";
@@ -1132,7 +1135,7 @@ int G_VAR11 = 0;
  * Original: ώ
  * Looks like a status message.
  */
-String G_VAR12 = "";
+String pamStatus = "";
 
 bool ύ(ref String J, int ϔ, int ό, bool ƛ, String ū) {
     G_VAR5 += 1;
@@ -1187,19 +1190,19 @@ String ϣ(bool ƛ) {
 
     double Ϣ = Math.Max(Math.Round(this.Ԍ), 0);
     if (G_VAR7 == Enum1.Ϸ) {
-        bool O = ƽ == Enum13.Ͼ;
+        bool O = pamMode == PamMode.SHUTTLE;
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Record path & set home"))
             ʹ();
 
-        if (ƽ == Enum13.Б)
+        if (pamMode == PamMode.MINING)
             if (ύ(ref Ɨ, ƴ, A++, ƛ, " Setup mining job"))
                 Љ(Enum1.ϴ);
 
-        if (ƽ == Enum13.ψ)
+        if (pamMode == PamMode.GRINDING)
             if (ύ(ref Ɨ, ƴ, A++, ƛ, " Setup grinding job"))
                 Љ(Enum1.ϴ);
 
-        if (ƽ == Enum13.Ͼ)
+        if (pamMode == PamMode.SHUTTLE)
             if (ύ(ref Ɨ, ƴ, A++, ƛ, " Setup shuttle job"))
                 Љ(Enum1.Ѝ);
 
@@ -1221,7 +1224,7 @@ String ϣ(bool ƛ) {
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Info"))
             Љ(Enum1.ϯ);
 
-        if (ƽ != Enum13.Ͼ)
+        if (pamMode != PamMode.SHUTTLE)
             if (ύ(ref Ɨ, ƴ, A++, ƛ, " Help"))
                 Љ(Enum1.ϭ);
     } else if (G_VAR7 == Enum1.ϴ) {
@@ -1274,7 +1277,7 @@ String ϣ(bool ƛ) {
             G_VAR23_Enum4 = ͼ(G_VAR23_Enum4);
         }
 
-        if (ƽ == Enum13.ψ && G_VAR27_Enum3 == Enum3.ʳ)
+        if (pamMode == PamMode.GRINDING && G_VAR27_Enum3 == Enum3.ʳ)
             G_VAR27_Enum3 = ͼ(G_VAR27_Enum3);
 
         Ɨ += ǧ(8, Ι, ƴ, ref G_VAR17);
@@ -1357,7 +1360,7 @@ String ϣ(bool ƛ) {
             }
         }
 
-        bool O = ƽ == Enum13.Ͼ;
+        bool O = pamMode == PamMode.SHUTTLE;
         if (!O && G_VAR28_bool && Ƈ != -1 && G_VAR10 == 0)
             ϟ = Ƈ < 1000000 ? Math.Round(Ƈ) + " Kg" : Math.Round(Ƈ / 1000) + " t";
 
@@ -1448,10 +1451,10 @@ String ϣ(bool ƛ) {
                 Љ(Enum1.Ϸ);
         }
 
-        if (ύ(ref Ɨ, ƴ, A++, ƛ, (ƽ == Enum13.ψ ? " Grinder" : " Drill") + " inv. balancing: " + (G_VAR29_bool ? "On" : "Off")))
+        if (ύ(ref Ɨ, ƴ, A++, ƛ, (pamMode == PamMode.GRINDING ? " Grinder" : " Drill") + " inv. balancing: " + (G_VAR29_bool ? "On" : "Off")))
             G_VAR29_bool = !G_VAR29_bool;
 
-        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Enable" + (ƽ == Enum13.ψ ? " grinders" : " drills") + ": " + (G_VAR30_bool ? "Fwd + Bwd" : "Fwd")))
+        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Enable" + (pamMode == PamMode.GRINDING ? " grinders" : " drills") + ": " + (G_VAR30_bool ? "Fwd + Bwd" : "Fwd")))
             G_VAR30_bool = !G_VAR30_bool;
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Work speed fwd.: " + G_VAR39_float + "m/s"))
@@ -1507,7 +1510,7 @@ String ϣ(bool ƛ) {
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Stop path recording"))
             ˎ();
 
-        if (ƽ != Enum13.Ͼ) {
+        if (pamMode != PamMode.SHUTTLE) {
             if (ύ(ref Ɨ, ƴ, A++, ƛ, " Home: " + (G_VAR46_bool ? "Use old home" : (G_VAR43_Class1.Ͷ ? "Was set! " : "none "))))
                 G_VAR46_bool = !G_VAR46_bool;
         } else {
@@ -1587,7 +1590,7 @@ String ϣ(bool ƛ) {
         Ɨ += "\n";
 
     Ɨ += Ʃ;
-    Ɨ += "Last: " + G_VAR12 + "\n";
+    Ɨ += "Last: " + pamStatus + "\n";
     return Ɨ;
 }
 
@@ -1634,7 +1637,7 @@ void ʘ(string Ô) {
 
     IMyTerminalBlock q = GTS.GetBlockWithName(Ô);
     if (q == null || !(q is IMyTimerBlock)) {
-        G_VAR12 = "Timerblock " + Ô + " not found!";
+        pamStatus = "Timerblock " + Ô + " not found!";
         return;
     } 
     
@@ -2061,7 +2064,7 @@ void ʹ() {
     G_VAR44_Class1 = new Class1(G_VAR43_Class1);
     G_VAR45_Class1 = new Class1(G_VAR58_Class1);
     G_VAR43_Class1.Ͷ = false;
-    if (ƽ == Enum13.Ͼ)
+    if (pamMode == PamMode.SHUTTLE)
         G_VAR58_Class1.Ͷ = false;
 
     for (int A = 0; A < ä.Count; A++)
@@ -2146,7 +2149,7 @@ void ˇ() {
         else
             G_VAR53_int = 0;
         if (G_VAR53_int >= 5) {
-            if (ƽ == Enum13.Ͼ && (G_VAR43_Class1.Ͷ || G_VAR46_bool) && Vector3.Distance(G_VAR43_Class1.ɉ, º.GetPosition()) > 5) {
+            if (pamMode == PamMode.SHUTTLE && (G_VAR43_Class1.Ͷ || G_VAR46_bool) && Vector3.Distance(G_VAR43_Class1.ɉ, º.GetPosition()) > 5) {
                 G_VAR58_Class1.Ï = remoteControl.WorldMatrix.Forward;
                 G_VAR58_Class1.ĕ = remoteControl.WorldMatrix.Left;
                 G_VAR58_Class1.ç = remoteControl.WorldMatrix.Down;
@@ -2215,7 +2218,7 @@ bool ʼ(Vector3 ɉ) {
         }
     }
 
-    if (ƽ == Enum13.Ͼ) {
+    if (pamMode == PamMode.SHUTTLE) {
         if (G_VAR58_Class1.Ͷ && G_VAR51_List_Class1.Count >= 1) {
             Vector3 Ͳ = new Vector3();
             ˠ(G_VAR58_Class1, dockDist * Ю, false, out Ͳ);
@@ -2266,7 +2269,7 @@ void ˣ(Class1 B, Enum9 ˢ) {
 }
 
 Class1 ˡ() {
-    if (ƽ != Enum13.Ͼ)
+    if (pamMode != PamMode.SHUTTLE)
         return G_VAR43_Class1;
 
     return G_VAR55_Class1;
@@ -2329,7 +2332,7 @@ public enum Enum8 {
 Enum8 ҳ() {
     float Ʌ = -1;
     Enum8 ª = Enum8.ҷ;
-    if (ƽ != Enum13.Ͼ) {
+    if (pamMode != PamMode.SHUTTLE) {
         if (G_VAR61_Enum9 != Enum9.Ӌ) {
             Vector3 ț = ȕ(G_VAR59_Vector3, G_VAR60_Vector3 * -1, ɉ - G_VAR58_Class1.ɉ);
             if (Math.Abs(ț.X) <= (float)(G_VAR63_int * Й) / 2f && Math.Abs(ț.Y) <= (float)(G_VAR64_int * Я) / 2f) {
@@ -2467,11 +2470,11 @@ bool G_VAR66_bool = false;
 
 void Ұ() {
     if (ɘ > 0) {
-        G_VAR12 = "Setup error! Can't start";
+        pamStatus = "Setup error! Can't start";
         return;
     }
 
-    if (ƽ == Enum13.Ͼ) {
+    if (pamMode == PamMode.SHUTTLE) {
         қ();
         return;
     }
@@ -2481,7 +2484,7 @@ void Ұ() {
     G_VAR58_Class1.Ï = υ;
     G_VAR58_Class1.ç = σ;
     G_VAR58_Class1.ĕ = τ;
-    G_VAR59_Vector3 = М.WorldMatrix.Forward;
+    G_VAR59_Vector3 = firstDrillOrGrinder.WorldMatrix.Forward;
     G_VAR60_Vector3 = G_VAR58_Class1.ç;
     if (G_VAR59_Vector3 == remoteControl.WorldMatrix.Down)
         G_VAR60_Vector3 = remoteControl.WorldMatrix.Backward;
@@ -2501,7 +2504,7 @@ void Қ(bool Ç, bool ҙ) {
         if (G_VAR61_Enum9 != Enum9.Ӌ) {
             G_VAR61_Enum9 = Enum9.Ғ;
             Ҽ(ԓ, Ԓ, ҙ);
-            G_VAR12 = "Job changed, lost progress";
+            pamStatus = "Job changed, lost progress";
         }
 
         G_VAR62_Enum4 = G_VAR23_Enum4;
@@ -2544,13 +2547,13 @@ void ҕ() {
             G_VAR67_int++;
 
     if (G_VAR67_int > 0)
-        G_VAR12 = "Started with damage";
+        pamStatus = "Started with damage";
 }
 
 void Ҕ() {
     if (G_VAR61_Enum9 == Enum9.Ӊ) {
         G_VAR61_Enum9 = Enum9.ӊ;
-        G_VAR12 = "Job paused";
+        pamStatus = "Job paused";
     }
 
     Ҝ(Enum10.Д);
@@ -2564,7 +2567,7 @@ void Ҕ() {
     ű(true);
     Ӿ(Enum10.Д);
     Ş(false, false, 0, 0);
-    Ŗ(Ш, false);
+    Ŗ(drillsOrGrinders, false);
     Ŗ(connectors, true);
     Ũ(true);
     ԋ = false;
@@ -2577,7 +2580,7 @@ void Ҕ() {
 
 void қ() {
     Enum8 Ҏ = ҳ();
-    if (ƽ == Enum13.Ͼ) {
+    if (pamMode == PamMode.SHUTTLE) {
         if (!G_VAR58_Class1.Ͷ || !G_VAR43_Class1.Ͷ)
             return;
 
@@ -2668,13 +2671,13 @@ void Ґ() {
     if (G_VAR61_Enum9 == Enum9.Ӌ && !G_VAR43_Class1.Ͷ)
         return;
 
-    if (ƽ == Enum13.Ͼ && (!G_VAR58_Class1.Ͷ || !G_VAR43_Class1.Ͷ))
+    if (pamMode == PamMode.SHUTTLE && (!G_VAR58_Class1.Ͷ || !G_VAR43_Class1.Ͷ))
         return;
 
-    G_VAR12 = "Move to job";
+    pamStatus = "Move to job";
     Enum8 Ҏ = ҳ();
 
-    if (ƽ == Enum13.Ͼ) {
+    if (pamMode == PamMode.SHUTTLE) {
         ˣ(G_VAR58_Class1, Enum9.ӆ);
         switch (Ҏ) {
             case Enum8.ҷ:
@@ -2734,10 +2737,10 @@ void ҏ() {
     if (!G_VAR43_Class1.Ͷ)
         return;
 
-    G_VAR12 = "Move home";
+    pamStatus = "Move home";
     Enum8 Ҏ = ҳ();
 
-    if (ƽ == Enum13.Ͼ) {
+    if (pamMode == PamMode.SHUTTLE) {
         ˣ(G_VAR43_Class1, Enum9.Ӈ);
         switch (Ҏ) {
             case Enum8.Ҷ:
@@ -2969,7 +2972,7 @@ void ӗ() {
             Enum11 J = Ӯ(ԑ, Ԏ);
             if (J == Enum11.ӱ) {
                 G_VAR61_Enum9 = Enum9.ΰ;
-                G_VAR12 = "Job done";
+                pamStatus = "Job done";
                 if (G_VAR22_bool && G_VAR43_Class1.Ͷ) {
                     Ҝ(Enum10.Ҧ);
                     Ӿ(Enum10.Ҩ);
@@ -2985,7 +2988,7 @@ void ӗ() {
 
             if (J == Enum11.Ӳ) {
                 ԉ = 1;
-                Ŗ(Ш, true);
+                Ŗ(drillsOrGrinders, true);
                 ԍ = Ҽ(ԓ, Ԓ, true);
                 ñ(ԍ, 10);
                 ë(G_VAR58_Class1.ç, G_VAR58_Class1.Ï, G_VAR58_Class1.ĕ, false);
@@ -3000,7 +3003,7 @@ void ӗ() {
 
     if (G_VAR67_Enum10 == Enum10.Ҍ) {
         if (Ԏ) {
-            Ŗ(Ш, true);
+            Ŗ(drillsOrGrinders, true);
             Ũ(false);
             ԍ = Ҽ(ԓ, Ԓ, false);
             ñ(Һ(ԍ, 0), 0);
@@ -3021,9 +3024,9 @@ void ӗ() {
 
         if (Ű(true)) {
             ԇ = Ő("", "ORE", Enum14.ņ);
-            if ((G_VAR32_Enum6 == Enum6.ʧ || G_VAR32_Enum6 == Enum6.ʦ || G_VAR32_Enum6 == Enum6.ʥ || G_VAR32_Enum6 == Enum6.ʺ) && ƽ != Enum13.ψ)
+            if ((G_VAR32_Enum6 == Enum6.ʧ || G_VAR32_Enum6 == Enum6.ʦ || G_VAR32_Enum6 == Enum6.ʥ || G_VAR32_Enum6 == Enum6.ʺ) && pamMode != PamMode.GRINDING)
                 Ҝ(Enum10.ң);
-            else if ((G_VAR32_Enum6 == Enum6.ʩ || G_VAR32_Enum6 == Enum6.ʨ) && ƽ != Enum13.ψ)
+            else if ((G_VAR32_Enum6 == Enum6.ʩ || G_VAR32_Enum6 == Enum6.ʨ) && pamMode != PamMode.GRINDING)
                 Ҝ(Enum10.ҥ);
             else
                 Ҝ(Enum10.ұ);
@@ -3037,7 +3040,7 @@ void ӗ() {
             ө = false;
         }
 
-        if (ƽ == Enum13.ψ && Ж() == MyDetectedEntityType.SmallGrid)
+        if (pamMode == PamMode.GRINDING && Ж() == MyDetectedEntityType.SmallGrid)
             Ԅ += 2;
         else
             Ԅ -= 2;
@@ -3052,7 +3055,7 @@ void ӗ() {
                 ԉ++;
         } else {
             if (ԉ > 0) {
-                G_VAR12 = "Ship stuck! Retrying";
+                pamStatus = "Ship stuck! Retrying";
                 ԅ = ԁ;
                 ԉ = 0;
                 Ş(false, true, 0, Ю * sensorRange);
@@ -3084,7 +3087,7 @@ void ӗ() {
         if (G_VAR27_Enum3 == Enum3.ʳ || G_VAR27_Enum3 == Enum3.ʴ) {
             if (!ӕ) {
                 float Ӓ = 0;
-                foreach (IMyTerminalBlock q in Ш)
+                foreach (IMyTerminalBlock q in drillsOrGrinders)
                     Ӓ += ō(q, "", "", G_VAR27_Enum3 == Enum3.ʴ ? new string[] { "STONE" } : null);
 
                 if (Ӓ > ԃ || ԁ < G_VAR26_int || ө) {
@@ -3151,7 +3154,7 @@ void ӗ() {
     if (G_VAR67_Enum10 == Enum10.ҥ || G_VAR67_Enum10 == Enum10.Ҥ) {
         if (Ԏ) {
             ñ(true, true, false, ɉ, 0);
-            Ŗ(Ш, false);
+            Ŗ(drillsOrGrinders, false);
             Ũ(true);
             ԉ = -1;
             Ԅ = G_VAR32_Enum6 == Enum6.ʥ || G_VAR32_Enum6 == Enum6.ʺ ? 0 : -1;
@@ -3197,7 +3200,7 @@ void ӗ() {
             }
 
             if (ɘ && J)
-                G_VAR12 = "Ejection failed";
+                pamStatus = "Ejection failed";
 
             if (G_VAR67_Enum10 == Enum10.Ҥ) {
                 if (J) {
@@ -3206,7 +3209,7 @@ void ӗ() {
                     else {
                         Ҕ();
                         Ґ();
-                        G_VAR12 = "Can´t return, no dock found";
+                        pamStatus = "Can´t return, no dock found";
                     }
                 } else
                     Ҝ(Enum10.ʟ);
@@ -3223,7 +3226,7 @@ void ӗ() {
         if (Ԏ) {
             ԍ = Ҽ(ԓ, Ԓ, false);
             ë(G_VAR58_Class1.ç, G_VAR58_Class1.Ï, G_VAR58_Class1.ĕ, false);
-            Ŗ(Ш, G_VAR30_bool);
+            Ŗ(drillsOrGrinders, G_VAR30_bool);
             Ũ(false);
             ԅ = Vector3.Distance(ɉ, ԍ);
             Ş(false, true, 0, Ю * sensorRange);
@@ -3231,9 +3234,9 @@ void ӗ() {
 
         ñ(ԍ, Е(false));
         if (Vector3.Distance(ɉ, ԍ) >= ԅ + 5) {
-            Ŗ(Ш, false);
+            Ŗ(drillsOrGrinders, false);
             Ũ(true);
-            G_VAR12 = "Can´t return!";
+            pamStatus = "Can´t return!";
         }
 
         if (Ԍ < wpReachedDist) {
@@ -3252,7 +3255,7 @@ void ӗ() {
                 else {
                     Ҕ();
                     Ґ();
-                    G_VAR12 = "Can´t return, no dock found";
+                    pamStatus = "Can´t return, no dock found";
                 }
             }
 
@@ -3263,7 +3266,7 @@ void ӗ() {
     if (G_VAR67_Enum10 == Enum10.Ҧ) {
         if (Ԏ) {
             Ũ(true);
-            Ŗ(Ш, false);
+            Ŗ(drillsOrGrinders, false);
             int E = -1;
             double ӟ = -1;
             for (int A = G_VAR51_List_Class1.Count - 1; A >= 0; A--) {
@@ -3291,7 +3294,7 @@ void ӗ() {
     }
 
     if (G_VAR67_Enum10 == Enum10.ү || G_VAR67_Enum10 == Enum10.Ү) {
-        if (G_VAR67_Enum10 == Enum10.Ү && G_VAR61_Enum9 == Enum9.Ӊ && ƽ != Enum13.Ͼ) {
+        if (G_VAR67_Enum10 == Enum10.Ү && G_VAR61_Enum9 == Enum9.Ӊ && pamMode != PamMode.SHUTTLE) {
             if (!Ĳ() || Ű(true)) {
                 Ҝ(Enum10.ү);
                 return;
@@ -3305,7 +3308,7 @@ void ӗ() {
         bool ӣ = false;
         Class1 B = null;
         if (Ԏ) {
-            if (G_VAR67_Enum10 == Enum10.ү || ƽ == Enum13.Ͼ) {
+            if (G_VAR67_Enum10 == Enum10.ү || pamMode == PamMode.SHUTTLE) {
                 Class1 ҋ = ˡ();
                 G_VAR71_Class2 = new Class2();
                 G_VAR71_Class2.Ӻ = ҋ;
@@ -3319,7 +3322,7 @@ void ӗ() {
                 else
                     G_VAR71_Class2.Ӹ *= 1.5f;
 
-                if (ƽ == Enum13.Ͼ) {
+                if (pamMode == PamMode.SHUTTLE) {
                     if (ҋ == G_VAR43_Class1)
                         G_VAR71_Class2.Ӵ = G_VAR58_Class1.ɉ;
 
@@ -3354,7 +3357,7 @@ void ӗ() {
 
             Ԇ = new Vector3();
             ӣ = !ʼ(ɉ);
-            Ŗ(Ш, false);
+            Ŗ(drillsOrGrinders, false);
             Ũ(true);
             ԏ = -1;
             double ӟ = -1;
@@ -3420,7 +3423,7 @@ void ӗ() {
         ñ(true, false, true, ĉ, Ԇ, Ә == null ? 0 : Ә.Ί, Ӥ);
         if (ΰ) {
             Ԋ = 0;
-            if (G_VAR67_Enum10 == Enum10.ү || ƽ == Enum13.Ͼ) {
+            if (G_VAR67_Enum10 == Enum10.ү || pamMode == PamMode.SHUTTLE) {
                 Ҝ(Enum10.Ҭ);
                 return;
             }
@@ -3501,7 +3504,7 @@ void ӗ() {
 
     if (G_VAR67_Enum10 == Enum10.ґ) {
         if (Ò(MyShipConnectorStatus.Connected) != null) {
-            if (ƽ == Enum13.Ͼ)
+            if (pamMode == PamMode.SHUTTLE)
                 Ҝ(Enum10.ҡ);
             else
                 Ҝ(Enum10.Ҩ);
@@ -3549,7 +3552,7 @@ void ӗ() {
             if (ԉ < -5) {
                 Ä.Connect();
                 if (Ä.Status == MyShipConnectorStatus.Connected) {
-                    if (ƽ == Enum13.Ͼ)
+                    if (pamMode == PamMode.SHUTTLE)
                         Ҝ(Enum10.ҡ);
                     else
                         Ҝ(Enum10.Ҩ);
@@ -3577,7 +3580,7 @@ void ӗ() {
     if (G_VAR67_Enum10 == Enum10.Ҩ || G_VAR67_Enum10 == Enum10.ҡ || G_VAR67_Enum10 == Enum10.Ĺ || G_VAR67_Enum10 == Enum10.ļ || G_VAR67_Enum10 == Enum10.Ŧ) {
         bool л = false;
         bool е = false;
-        if (ƽ == Enum13.Ͼ) {
+        if (pamMode == PamMode.SHUTTLE) {
             if (ˡ() == G_VAR43_Class1)
                 л = true;
             else if (ˡ() == G_VAR58_Class1)
@@ -3659,7 +3662,7 @@ void ӗ() {
         }
 
         if (!ӛ) {
-            if (ƽ == Enum13.Ͼ)
+            if (pamMode == PamMode.SHUTTLE)
                 ӛ = G_VAR61_Enum9 != Enum9.Ӊ || Ɖ(Ԏ, true) || G_VAR2;
             else
                 ӛ = G_VAR61_Enum9 != Enum9.Ӊ || ş();
@@ -3680,7 +3683,7 @@ void ӗ() {
             ŧ(ChargeMode.Auto);
             Ŕ(false);
             if (G_VAR61_Enum9 == Enum9.Ӊ) {
-                if (ƽ == Enum13.Ͼ) {
+                if (pamMode == PamMode.SHUTTLE) {
                     if (ˡ() == G_VAR43_Class1)
                         ʘ(G_VAR19_Class5.ƕ);
                     else if (ˡ() == G_VAR58_Class1)
@@ -3742,7 +3745,7 @@ void ӗ() {
     if (G_VAR67_Enum10 == Enum10.ҭ) {
         if (Ԏ) {
             Ũ(true);
-            Ŗ(Ш, false);
+            Ŗ(drillsOrGrinders, false);
             ĉ = G_VAR58_Class1.ɉ;
             ñ(ĉ, 20);
             ë(G_VAR58_Class1.ç, G_VAR58_Class1.Ï, G_VAR58_Class1.ĕ, false);
@@ -3849,7 +3852,7 @@ void З(bool Ç) {
         return;
     }
 
-    if (ƽ == Enum13.Ͼ)
+    if (pamMode == PamMode.SHUTTLE)
         return;
 
     float ʝ = ԑ * Math.Max(1, G_VAR26_int);
@@ -3873,7 +3876,7 @@ MyDetectedEntityType Ж() {
 }
 
 float Е(bool Ï) {
-    if (ƽ == Enum13.ψ && Ж() == MyDetectedEntityType.None && !ƃ(sensor, true))
+    if (pamMode == PamMode.GRINDING && Ж() == MyDetectedEntityType.None && !ƃ(sensor, true))
         return fastSpeed;
     else
         return Ï ? G_VAR39_float : G_VAR40_float;
@@ -3889,11 +3892,15 @@ public enum Enum12 {
 /**
  * Original: В
  */
-public enum Enum13 {
-    ǻ, Б, ψ, А, Ͼ
+public enum PamMode {
+    UNDEFINED,
+    MINER,
+    GRINDER,
+    CONTROLLER,
+    SHUTTLE
 }
 
-Enum13 ƽ = Enum13.ǻ;
+PamMode pamMode = PamMode.UNDEFINED;
 int ɘ = 0;
 float Й = 0;
 float Я = 0;
@@ -3904,7 +3911,7 @@ List<IMyTimerBlock> timers = new List<IMyTimerBlock>();
 List<IMyShipConnector> connectors = new List<IMyShipConnector>();
 List<IMyThrust> thrusters = new List<IMyThrust>();
 List<IMyGyro> gyroscopes = new List<IMyGyro>();
-List<IMyTerminalBlock> Ш = new List<IMyTerminalBlock>();
+List<IMyTerminalBlock> drillsOrGrinders = new List<IMyTerminalBlock>();
 List<IMyLandingGear> landingGears = new List<IMyLandingGear>();
 List<IMyReactor> reactors = new List<IMyReactor>();
 List<IMyConveyorSorter> conveyorSorters = new List<IMyConveyorSorter>();
@@ -3915,8 +3922,8 @@ List<IMyTerminalBlock> С = new List<IMyTerminalBlock>();
 List<IMyBatteryBlock> batteries = new List<IMyBatteryBlock>();
 List<IMyTextPanel> textPanels = new List<IMyTextPanel>();
 List<IMyTextSurface> textSurfaces = new List<IMyTextSurface>();
-List<IMyTextPanel> Н = new List<IMyTextPanel>();
-IMyTerminalBlock М = null;
+List<IMyTextPanel> textPanelsDebugOrInstructions = new List<IMyTextPanel>();
+IMyTerminalBlock firstDrillOrGrinder = null;
 bool Л(IMyTerminalBlock q) => q.CubeGrid == Me.CubeGrid;
 
 void К() {
@@ -3924,25 +3931,25 @@ void К() {
 }
 
 void э() {
-    Н.Clear();
+    textPanelsDebugOrInstructions.Clear();
     for (int i = textPanels.Count - 1; i >= 0; i--) {
-        String Ǩ = textPanels[i].CustomData.ToUpper();
-        bool Ѷ = false;
-        if (Ǩ == INSTRUCTIONS) {
-            Ѷ = true;
+        String customData = textPanels[i].CustomData.ToUpper();
+        bool debugOrInstructions = false;
+        if (customData == INSTRUCTIONS) {
+            debugOrInstructions = true;
             G_VAR1 = true;
         }
 
-        if (Ǩ == DEBUG)
-            Ѷ = true;
+        if (customData == DEBUG)
+            debugOrInstructions = true;
 
-        if (Ѷ) {
-            Н.Add(textPanels[i]);
+        if (debugOrInstructions) {
+            textPanelsDebugOrInstructions.Add(textPanels[i]);
             textPanels.RemoveAt(i);
         }
     }
 
-    Ţ(Н, false, 1, false);
+    Ţ(textPanelsDebugOrInstructions, false, 1, false);
 }
 
 void ѵ(List<IMyTerminalBlock> terminalBlocks) {
@@ -3975,20 +3982,21 @@ void Ѳ() {
     if (remoteControl == null)
         return;
 
-    М = null;
+    firstDrillOrGrinder = null;
     float ѱ = 0, Ѱ = 0, ѯ = 0, Ѯ = 0, ѭ = 0, Ѭ = 0;
-    List<IMyTerminalBlock> ѫ = Ѧ(Ш, pamTag, true);
-    bool Ѫ = ѫ.Count == 0;
-    if (ѫ.Count > 0)
-        М = ѫ[0];
-    else if (Ш.Count > 0)
-        М = Ш[0];
+    List<IMyTerminalBlock> taggedDrillsOrGrinders = Ѧ(drillsOrGrinders, pamTag, true);
+    bool Ѫ = taggedDrillsOrGrinders.Count == 0;
+    if (taggedDrillsOrGrinders.Count > 0)
+        firstDrillOrGrinder = taggedDrillsOrGrinders[0];
+    else if (drillsOrGrinders.Count > 0)
+        firstDrillOrGrinder = drillsOrGrinders[0];
 
     int Ř = 0;
-    for (int A = 0; A < Ш.Count; A++) {
-        if (Ш[A].WorldMatrix.Forward != М.WorldMatrix.Forward) {
+    for (int i = 0; i < drillsOrGrinders.Count; i++) {
+        if (drillsOrGrinders[i].WorldMatrix.Forward != firstDrillOrGrinder.WorldMatrix.Forward) {
             if (Ѫ) {
-                ɘ = 2; G_VAR12 = "Mining direction is unclear!";
+                ɘ = 2;
+                pamStatus = "Mining direction is unclear!";
                 return;
             }
 
@@ -3996,8 +4004,8 @@ void Ѳ() {
         }
 
         Ř++;
-        Vector3 ѷ = Ȓ(remoteControl, Ш[A].GetPosition());
-        if (A == 0) {
+        Vector3 ѷ = Ȓ(remoteControl, drillsOrGrinders[i].GetPosition());
+        if (i == 0) {
             ѱ = ѷ.X;
             Ѱ = ѷ.X;
             ѯ = ѷ.Y;
@@ -4016,7 +4024,7 @@ void Ѳ() {
 
     Й = (Ѱ - ѱ) * (1 - G_VAR41_float) + drillRadius * 2;
     Я = (Ѯ - ѯ) * (1 - G_VAR42_float) + drillRadius * 2;
-    if (М != null && М.WorldMatrix.Forward == remoteControl.WorldMatrix.Down)
+    if (firstDrillOrGrinder != null && firstDrillOrGrinder.WorldMatrix.Forward == remoteControl.WorldMatrix.Down)
         Я = (Ѭ - ѭ) * (1 - G_VAR42_float) + drillRadius * 2;
 }
 
@@ -4026,71 +4034,71 @@ void Ѹ() {
         return;
     }
 
-    List<IMyRemoteControl> ҁ = new List<IMyRemoteControl>();
-    List<IMySensorBlock> Ҋ = new List<IMySensorBlock>();
+    List<IMyRemoteControl> remoteControls = new List<IMyRemoteControl>();
+    List<IMySensorBlock> sensors = new List<IMySensorBlock>();
     List<IMyTerminalBlock> ƣ = new List<IMyTerminalBlock>();
-    GTS.GetBlocksOfType(ҁ, Л);
+    GTS.GetBlocksOfType(remoteControls, Л);
     GTS.GetBlocksOfType(textPanels, Л);
-    GTS.GetBlocksOfType(Ҋ, Л);
+    GTS.GetBlocksOfType(sensors, Л);
     GTS.SearchBlocksOfName(pamTag.Substring(0, pamTag.Length - 1) + ":", ƣ, q => q.CubeGrid == Me.CubeGrid && q is IMyTextSurfaceProvider);
     textPanels = Ѧ(textPanels, pamTag, true);
     э();
     ѵ(ƣ);
     Ţ(textPanels, setLCDFontAndSize, 1.4f, false);
     Ţ(textSurfaces, setLCDFontAndSize, 1.4f, true);
-    List<IMySensorBlock> O = Ѧ(Ҋ, pamTag, true);
-    if (O.Count > 0)
-        sensor = O[0];
+    List<IMySensorBlock> taggedSensors = Ѧ(sensors, pamTag, true);
+    if (taggedSensors.Count > 0)
+        sensor = taggedSensors[0];
     else
         sensor = null;
 
-    if (ƽ == Enum13.Б) {
-        GTS.GetBlocksOfType(Ш, q => q.CubeGrid == Me.CubeGrid && q is IMyShipDrill);
-        if (Ш.Count == 0) {
+    if (pamMode == PamMode.MINING) {
+        GTS.GetBlocksOfType(drillsOrGrinders, q => q.CubeGrid == Me.CubeGrid && q is IMyShipDrill);
+        if (drillsOrGrinders.Count == 0) {
             ɘ = 1;
-            G_VAR12 = "Drills are missing";
+            pamStatus = "Drills are missing";
         }
-    } else if (ƽ == Enum13.ψ) {
-        GTS.GetBlocksOfType(Ш, q => q.CubeGrid == Me.CubeGrid && q is IMyShipGrinder);
-        if (Ш.Count == 0) {
+    } else if (pamMode == PamMode.GRINDING) {
+        GTS.GetBlocksOfType(drillsOrGrinders, q => q.CubeGrid == Me.CubeGrid && q is IMyShipGrinder);
+        if (drillsOrGrinders.Count == 0) {
             ɘ = 1;
-            G_VAR12 = "Grinders are missing";
+            pamStatus = "Grinders are missing";
         }
 
-        if (ƽ == Enum13.ψ && sensor == null) {
+        if (pamMode == PamMode.GRINDING && sensor == null) {
             ɘ = 1;
-            G_VAR12 = "Sensor is missing";
+            pamStatus = "Sensor is missing";
         }
-    } else if (ƽ == Enum13.Ͼ) {
+    } else if (pamMode == PamMode.SHUTTLE) {
         GTS.GetBlocksOfType(timers, q => q.CubeGrid == Me.CubeGrid);
     }
 
-    List<IMyRemoteControl> Ķ = Ѧ(ҁ, pamTag, true);
-    if (Ķ.Count > 0)
-        ҁ = Ķ;
+    List<IMyRemoteControl> taggedRemoteControls = Ѧ(remoteControls, pamTag, true);
+    if (taggedRemoteControls.Count > 0)
+        remoteControls = taggedRemoteControls;
 
-    if (ҁ.Count > 0)
-        remoteControl = ҁ[0];
+    if (remoteControls.Count > 0)
+        remoteControl = remoteControls[0];
     else {
         remoteControl = null;
         ɘ = 2;
-        G_VAR12 = "Remote is missing";
+        pamStatus = "Remote is missing";
         return;
     }
 
     Ю = (float)remoteControl.CubeGrid.WorldVolume.Radius * 2;
-    М = null;
-    if (ƽ != Enum13.Ͼ) {
+    firstDrillOrGrinder = null;
+    if (pamMode != PamMode.SHUTTLE) {
         Ѳ();
-        if (Ш.Count > 0 && М != null) {
-            if (sensor != null && (М.WorldMatrix.Forward != sensor.WorldMatrix.Forward || !(remoteControl.WorldMatrix.Forward == sensor.WorldMatrix.Up || remoteControl.WorldMatrix.Down == sensor.WorldMatrix.Down))) {
+        if (drillsOrGrinders.Count > 0 && firstDrillOrGrinder != null) {
+            if (sensor != null && (firstDrillOrGrinder.WorldMatrix.Forward != sensor.WorldMatrix.Forward || !(remoteControl.WorldMatrix.Forward == sensor.WorldMatrix.Up || remoteControl.WorldMatrix.Down == sensor.WorldMatrix.Down))) {
                 ɘ = 1;
-                G_VAR12 = "Wrong sensor direction";
+                pamStatus = "Wrong sensor direction";
             }
 
-            if (М.WorldMatrix.Forward != remoteControl.WorldMatrix.Forward && М.WorldMatrix.Forward != remoteControl.WorldMatrix.Down) {
+            if (firstDrillOrGrinder.WorldMatrix.Forward != remoteControl.WorldMatrix.Forward && firstDrillOrGrinder.WorldMatrix.Forward != remoteControl.WorldMatrix.Down) {
                 ɘ = 2;
-                G_VAR12 = "Wrong remote direction";
+                pamStatus = "Wrong remote direction";
             }
         }
     }
@@ -4117,17 +4125,17 @@ void Ҁ() {
     if (ɘ <= 1) {
         if (connectors.Count == 0) {
             ɘ = 1;
-            G_VAR12 = "Connector is missing";
+            pamStatus = "Connector is missing";
         }
 
         if (gyroscopes.Count == 0) {
             ɘ = 1;
-            G_VAR12 = "Gyros are missing";
+            pamStatus = "Gyros are missing";
         }
 
         if (thrusters.Count == 0) {
             ɘ = 1;
-            G_VAR12 = "Thrusters are missing";
+            pamStatus = "Thrusters are missing";
         }
     }
 
@@ -4166,11 +4174,11 @@ bool ѹ(IMyTerminalBlock terminalBlock) {
     if (terminalBlock.InventoryCount == 0)
         return false;
 
-    if (ƽ == Enum13.Ͼ)
+    if (pamMode == PamMode.SHUTTLE)
         return true;
 
-    for (int ã = 0; ã < Ш.Count; ã++) {
-        IMyTerminalBlock K = Ш[ã];
+    for (int ã = 0; ã < drillsOrGrinders.Count; ã++) {
+        IMyTerminalBlock K = drillsOrGrinders[ã];
         if (K == null || !Ƃ(K, true) || K.InventoryCount == 0)
             continue;
 
@@ -4232,13 +4240,13 @@ void ѓ() {
     if (!G_VAR29_bool)
         return;
 
-    if (Ш.Count <= 1)
+    if (drillsOrGrinders.Count <= 1)
         return;
 
     float ђ = 0;
     float ё = 0;
-    for (int A = 0; A < Ш.Count; A++) {
-        IMyTerminalBlock ѐ = Ш[A];
+    for (int A = 0; A < drillsOrGrinders.Count; A++) {
+        IMyTerminalBlock ѐ = drillsOrGrinders[A];
         if (ƃ(ѐ, true))
             continue;
 
@@ -4247,15 +4255,15 @@ void ѓ() {
     }
 
     float я = (float)Math.Round(µ(ё, ђ), 5);
-    for (int A = 0; A < Math.Max(1, Math.Floor(Ш.Count / 10f)); A++) {
+    for (int A = 0; A < Math.Max(1, Math.Floor(drillsOrGrinders.Count / 10f)); A++) {
         float ю = 0;
         float њ = 0;
         float ѧ = 0;
         float ѥ = 0;
         IMyTerminalBlock ĝ = null;
         IMyTerminalBlock ȵ = null;
-        for (int ã = 0; ã < Ш.Count; ã++) {
-            IMyTerminalBlock ѐ = Ш[ã];
+        for (int ã = 0; ã < drillsOrGrinders.Count; ã++) {
+            IMyTerminalBlock ѐ = drillsOrGrinders[ã];
             if (ƃ(ѐ, true))
                 continue;
 
@@ -4279,7 +4287,7 @@ void ѓ() {
 
         if (checkConveyorSystem && !ĝ.GetInventory(0).IsConnectedTo(ȵ.GetInventory(0))) {
             if (є > 20)
-                G_VAR12 = "Inventory balancing failed";
+                pamStatus = "Inventory balancing failed";
             else
                 є++; return;
         }
@@ -4572,7 +4580,7 @@ void ĳ() {
                         Ґ();
             }
 
-            G_VAR12 = "Damage detected";
+            pamStatus = "Damage detected";
         }
     }
 }
@@ -4584,21 +4592,21 @@ bool Ĳ() {
     if (G_VAR61_Enum9 == Enum9.Ӊ) {
         if (G_VAR35_float > 0 && ĥ != Enum12.ɗ) {
             if (Ĩ <= G_VAR35_float) {
-                G_VAR12 = "Low energy! Move home";
+                pamStatus = "Low energy! Move home";
                 return false;
             }
         }
 
         if (G_VAR36_float > 0 && reactors.Count > 0) {
             if (Ĺ <= G_VAR36_float) {
-                G_VAR12 = "Low fuel: " + ĸ;
+                pamStatus = "Low fuel: " + ĸ;
                 return false;
             }
         }
 
         if (G_VAR37_float > 0 && gasTanks.Count > 0) {
             if (ļ <= G_VAR37_float) {
-                G_VAR12 = "Low hydrogen";
+                pamStatus = "Low hydrogen";
                 return false;
             }
         }
@@ -4814,15 +4822,15 @@ float Ƈ = 0;
 bool Ɔ = false;
 
 bool Ű(bool š) {
-    if (G_VAR28_bool && ƽ != Enum13.Ͼ)
+    if (G_VAR28_bool && pamMode != PamMode.SHUTTLE)
         if (Ƈ != -1 && ϋ >= Ƈ) {
-            G_VAR12 = "Ship too heavy";
+            pamStatus = "Ship too heavy";
             return true;
         }
 
     if (ŏ >= G_VAR34_float || Ɔ) {
         Ɔ = false;
-        G_VAR12 = "Ship is full";
+        pamStatus = "Ship is full";
         return true;
     }
 
@@ -4844,27 +4852,27 @@ bool ş() {
     if (!G_VAR33_bool)
         ŋ = new string[] { "ICE" };
 
-    if (ƽ == Enum13.Б)
+    if (pamMode == PamMode.MINING)
         return Ő("", "ORE", Enum14.ň, ŋ) == 0;
 
-    if (ƽ == Enum13.ψ)
+    if (pamMode == PamMode.GRINDING)
         return Ő("", "COMPONENT", Enum14.ň, ŋ) == 0;
     else
         return Ő("", "", Enum14.ň, ŋ) == 0;
 }
 
 void Ş(bool ŝ, bool Ŝ, float ś, float Š) {
-    if (sensor == null || Ш.Count == 0)
+    if (sensor == null || drillsOrGrinders.Count == 0)
         return;
 
     Vector3 Ś = new Vector3();
     int Ř = 0;
-    for (int A = 0; A < Ш.Count; A++) {
-        if (Ш[A].WorldMatrix.Forward != М.WorldMatrix.Forward)
+    for (int A = 0; A < drillsOrGrinders.Count; A++) {
+        if (drillsOrGrinders[A].WorldMatrix.Forward != firstDrillOrGrinder.WorldMatrix.Forward)
             continue;
 
         Ř++;
-        Ś += Ш[A].GetPosition();
+        Ś += drillsOrGrinders[A].GetPosition();
     }
 
     Ś = Ś / Ř;
@@ -5565,8 +5573,8 @@ void ȟ() {
         textSurfaces[i].WriteText(Ȟ);
 
     Echo(ǒ);
-    for (int A = 0; A < Н.Count; A++) {
-        IMyTextPanel ƨ = Н[A];
+    for (int A = 0; A < textPanelsDebugOrInstructions.Count; A++) {
+        IMyTextPanel ƨ = textPanelsDebugOrInstructions[A];
         String Ǩ = ƨ.CustomData.ToUpper();
         if (Ǩ == DEBUG)
             ƨ.WriteText(Ƕ + "\n" + ȡ);
@@ -5722,7 +5730,7 @@ String Ȗ(String[] O, int A) {
 }
 
 bool ɜ = false; void Save() {
-    if (ɜ || ƽ == Enum13.А) {
+    if (ɜ || pamMode == PamMode.CONTROLLER) {
         Storage = "";
         return;
     }
@@ -5746,7 +5754,7 @@ bool ɜ = false; void Save() {
     ȗ(Ȋ(G_VAR59_Vector3));
     ȗ(Ȋ(G_VAR60_Vector3));
     ȗ(";");
-    ȗ((int)ƽ, false);
+    ȗ((int)pamMode, false);
     ȗ((int)G_VAR61_Enum9);
     ȗ((int)G_VAR69_Enum9);
     ȗ(G_VAR34_float);
@@ -5756,7 +5764,7 @@ bool ɜ = false; void Save() {
     ȗ(G_VAR38_float);
     ȗ(G_VAR28_bool);
     ȗ(G_VAR33_bool);
-    if (ƽ == Enum13.Ͼ) {
+    if (pamMode == PamMode.SHUTTLE) {
         ȗ((int)G_VAR19_Class5.Ų);
         ȗ(G_VAR19_Class5.Ƅ);
         ȗ(G_VAR19_Class5.ƅ);
@@ -5843,7 +5851,7 @@ Enum16 ɖ() {
         G_VAR60_Vector3 = ȉ(Ȗ(O, A++));
         O = Ȗ(ɕ, 2).Split('\n');
         A = 0;
-        ƽ = (Enum13)int.Parse(Ȗ(O, A++));
+        pamMode = (PamMode)int.Parse(Ȗ(O, A++));
         G_VAR61_Enum9 = (Enum9)int.Parse(Ȗ(O, A++));
         G_VAR69_Enum9 = (Enum9)int.Parse(Ȗ(O, A++));
         G_VAR34_float = int.Parse(Ȗ(O, A++));
@@ -5853,7 +5861,7 @@ Enum16 ɖ() {
         G_VAR38_float = float.Parse(Ȗ(O, A++));
         G_VAR28_bool = bool.Parse(Ȗ(O, A++));
         G_VAR33_bool = bool.Parse(Ȗ(O, A++));
-        if (ƽ == Enum13.Ͼ) {
+        if (pamMode == PamMode.SHUTTLE) {
             G_VAR19_Class5.Ų = (Enum15)int.Parse(Ȗ(O, A++));
             G_VAR19_Class5.Ƅ = float.Parse(Ȗ(O, A++));
             G_VAR19_Class5.ƅ = float.Parse(Ȗ(O, A++));
@@ -5940,12 +5948,12 @@ void ɪ() {
     if (ɫ) {
         ɫ = false;
         if (Me.CustomData.Contains("Antenna_Name")) {
-            G_VAR12 = "Update custom data";
+            pamStatus = "Update custom data";
             Me.CustomData = "";
         }
     }
 
-    String ɨ = (ƽ != Enum13.А ? "[PAM-Ship]" : "[PAM-Controller]") + " Broadcast-settings";
+    String ɨ = (pamMode != PamMode.CONTROLLER ? "[PAM-Ship]" : "[PAM-Controller]") + " Broadcast-settings";
     try {
         if (Me.CustomData.Length == 0 || Me.CustomData.Split('\n')[0] != ɨ)
             ɣ(ɨ);
@@ -5955,7 +5963,7 @@ void ɪ() {
         bool ɧ = false;
         bool ɦ = true;
         if (ɯ) {
-            if (ƽ != Enum13.А) {
+            if (pamMode != PamMode.CONTROLLER) {
                 ɮ = ɔ(ɓ(O, "Ship_Name", ref ɩ)).Replace(ɟ, "");
             }
 
@@ -5977,16 +5985,16 @@ void ɪ() {
             }
 
             if (ɥ.Count == 0)
-                G_VAR12 = "No Antenna found";
+                pamStatus = "No Antenna found";
             else if (!ɤ)
-                G_VAR12 = "Antenna not ready";
+                pamStatus = "Antenna not ready";
 
             ɧ = ɥ.Count == 0 || !ɤ;
-            if (ɰ && !ɧ && ƽ != Enum13.А)
-                G_VAR12 = "Antenna ok";
+            if (ɰ && !ɧ && pamMode != PamMode.CONTROLLER)
+                pamStatus = "Antenna ok";
         }
-        else if (ƽ == Enum13.А)
-            G_VAR12 = "Offline - Enable in PB custom data";
+        else if (pamMode == PamMode.CONTROLLER)
+            pamStatus = "Offline - Enable in PB custom data";
 
         ɰ = ɧ;
         if (ɦ) {
@@ -6000,19 +6008,19 @@ void ɪ() {
     }
 
     if (!ɩ) {
-        G_VAR12 = "Reset custom data";
+        pamStatus = "Reset custom data";
         ɣ(ɨ);
     }
 }
 
 void ɣ(String ɢ) {
-    String Ǩ = ɢ + "\n\n" + "Enable_Broadcast=" + (ƽ == Enum13.А ? "true" : "false") + " \n";
-    Ǩ += ƽ != Enum13.А ? "Ship_Name=Your_ship_name_here\n" : "";
+    String Ǩ = ɢ + "\n\n" + "Enable_Broadcast=" + (pamMode == PamMode.CONTROLLER ? "true" : "false") + " \n";
+    Ǩ += pamMode != PamMode.CONTROLLER ? "Ship_Name=Your_ship_name_here\n" : "";
     Me.CustomData = Ǩ + "Broadcast_Channel=#default";
 }
 
 String ɡ() {
-    if (ƽ != Enum13.А)
+    if (pamMode != PamMode.CONTROLLER)
         return "" + Me.GetId();
 
     return ɟ;
@@ -6067,7 +6075,7 @@ bool Ȼ(ref String ƿ, out String ǋ, out String ȹ) {
     if (!Ƚ(ref ƿ, out ǋ, ɞ))
         return false;
 
-    if (!Ƚ(ref ƿ, out O, ɞ) || (O != ɡ() && (O != "*" && ƽ != Enum13.А)))
+    if (!Ƚ(ref ƿ, out O, ɞ) || (O != ɡ() && (O != "*" && pamMode != PamMode.CONTROLLER)))
         return false;
 
     if (!Ƚ(ref ƿ, out O, ɞ) || (O != ɭ))
@@ -6086,16 +6094,16 @@ void ȸ(String ȷ) {
     String ȶ = "" + ɞ;
     String ƿ = ƿ = VERSION + ȶ;
     ƿ += ɮ + ȶ;
-    ƿ += (int)ƽ + ȶ;
+    ƿ += (int)pamMode + ȶ;
     ƿ += ǅ(ɉ.X) + "" + ȶ;
     ƿ += ǅ(ɉ.Y) + ȶ;
     ƿ += ǅ(ɉ.Z) + ȶ;
-    if (ƽ != Enum13.Ͼ)
+    if (pamMode != PamMode.SHUTTLE)
         ƿ += Ϝ(G_VAR69_Enum9) + (G_VAR69_Enum9 == Enum9.Ӊ ? " " + Math.Round(G_VAR65_double, 1) + "%" : "") + ȶ;
     else
         ƿ += Ϝ(G_VAR69_Enum9) + ȶ;
 
-    ƿ += G_VAR12 + ȶ;
+    ƿ += pamStatus + ȶ;
     ƿ += G_VAR6 + "" + ȶ;
     ƿ += Ǹ + ȶ;
     ƿ += œ + ȶ;
@@ -6132,7 +6140,7 @@ class Class6 {
     public String Ɋ = "";
     public Vector3 ɉ = new Vector3();
     public List<Class4> Ƿ = new List<Class4>();
-    public Enum13 ƽ = Enum13.ǻ;
+    public PamMode pamMode = PamMode.UNDEFINED;
     public Enum17 Ɉ;
     public float ɇ;
     public float Ɇ;
@@ -6183,14 +6191,14 @@ void ǀ(Class6 Ʀ, String ƿ) {
     String Ä = "";
     String ƾ = "";
     String Ǆ = "";
-    String ƽ = "";
+    String pamMode = "";
     String[] ø = new string[3];
     Ƚ(ref ƿ, out Ʀ.ɍ, ɞ);
     Ƚ(ref ƿ, out Ʀ.Ô, ɞ);
     if (Ʀ.ɍ != VERSION)
         return;
 
-    Ƚ(ref ƿ, out ƽ, ɞ);
+    Ƚ(ref ƿ, out pamMode, ɞ);
     Ƚ(ref ƿ, out ø[0], ɞ);
     Ƚ(ref ƿ, out ø[1], ɞ);
     Ƚ(ref ƿ, out ø[2], ɞ);
@@ -6221,8 +6229,8 @@ void ǀ(Class6 Ʀ, String ƿ) {
     if (!int.TryParse(Ä, out Ʀ.Ʋ))
         Ʀ.Ʋ = 0;
 
-    if (!int.TryParse(ƽ, out ƺ))
-        Ʀ.ƽ = Enum13.ǻ;
+    if (!int.TryParse(pamMode, out ƺ))
+        Ʀ.pamMode = PamMode.UNDEFINED;
 
     if (!float.TryParse(ø[0], out Ʀ.ɉ.X))
         Ʀ.ɉ.X = 0;
@@ -6239,7 +6247,7 @@ void ǀ(Class6 Ʀ, String ƿ) {
     if (!float.TryParse(Ǆ, out Ʀ.ɇ))
         Ʀ.ɇ = 0;
 
-    Ʀ.ƽ = (Enum13)ƺ;
+    Ʀ.pamMode = (PamMode)ƺ;
     Ʀ.Ʌ = (int)Math.Round(Vector3.Distance(Me.GetPosition(), Ʀ.ɉ));
     Ʀ.Ʉ = 0;
     for (int ã = 0; ã < Ʀ.Ƿ.Count(); ã++)
@@ -6327,7 +6335,7 @@ void ƹ(string Ƹ) {
             return;
     }
 
-    G_VAR12 = ǆ;
+    pamStatus = ǆ;
 }
 
 void ǐ(String Ƹ) {
@@ -6336,7 +6344,7 @@ void ǐ(String Ƹ) {
 
     var ª = Ƹ.Split(':');
     if (ª.Length != 2) {
-        G_VAR12 = "Missing separator \":\"";
+        pamStatus = "Missing separator \":\"";
         return;
     };
 
@@ -6346,7 +6354,7 @@ void ǐ(String Ƹ) {
     if (Ʀ != null)
         Ƨ(Ʀ, ª.ElementAtOrDefault(1).Trim());
     else
-        G_VAR12 = "Unknown ship: " + Ǐ;
+        pamStatus = "Unknown ship: " + Ǐ;
 }
 
 Class6 ǎ(String ǃ, String Ô) {
@@ -6399,7 +6407,7 @@ List<Class6> Ǎ = null; void ǌ(string Ƹ) {
 
     if (ο || ρ) {
         if (Ϊ <= 0 || ρ) {
-            G_VAR12 = "";
+            pamStatus = "";
             ρ = false;
             Ƥ();
             ɪ();
@@ -6493,8 +6501,8 @@ String Ɯ(bool param1, int param2, ref int param3, bool param4, int param5) {
     int A = 0;
     int ƴ = G_VAR6;
     G_VAR5 = 0;
-    if (G_VAR12 != "") {
-        ύ(ref result, ƴ, A++, param1, G_VAR12);
+    if (pamStatus != "") {
+        ύ(ref result, ƴ, A++, param1, pamStatus);
     } else if (G_VAR7 == Enum1.Ϸ) {
         if (ƞ == null && Ǎ.Count >= 1)
             ƞ = Ǎ[0];
@@ -6561,7 +6569,7 @@ String Ɯ(bool param1, int param2, ref int param3, bool param4, int param5) {
             Ƨ(Ʀ, "FULL");
         }
 
-        if (Ʀ != null && Ʀ.ƽ == Enum13.Ͼ)
+        if (Ʀ != null && Ʀ.pamMode == PamMode.SHUTTLE)
             if (ύ(ref result, ƴ, A++, param1, " [Undock] " + Ǔ(Ʀ, "UNDOCK"))) {
                 Ƨ(Ʀ, "UNDOCK");
             }
@@ -6640,17 +6648,19 @@ public enum Enum18 {
     ǻ, ǹ, Ǹ, Ƿ, Ƕ, ǵ, Ǵ
 }
 
-String ǳ(bool ǲ) {
-    String J = "";
-    if (ǲ) J += "mode=main:1\n\n";
-    J += "//Available modes:\n" + "//main:<Page>\n" + "//mainX:<Page>  (no empty lines)\n" + "//menu\n" + "//inventory\n" + "//menu:<shipname>\n" + "//inventory:<shipname>";
-    return J;
+String ǳ(bool param1) {
+    String result = "";
+    if (param1)
+        result += "mode=main:1\n\n";
+
+    result += "//Available modes:\n" + "//main:<Page>\n" + "//mainX:<Page>  (no empty lines)\n" + "//menu\n" + "//inventory\n" + "//menu:<shipname>\n" + "//inventory:<shipname>";
+    return result;
 }
 
 void Ǳ(IMyTerminalBlock ƨ, out Enum18 ǰ, out String ǩ) {
     bool Ɲ = true;
-    String ƽ = ɔ(ɓ(ƨ.CustomData.Split('\n'), "mode", ref Ɲ)).ToUpper();
-    String[] ǯ = ƽ.Split(':');
+    String pamMode = ɔ(ɓ(ƨ.CustomData.Split('\n'), "mode", ref Ɲ)).ToUpper();
+    String[] ǯ = pamMode.Split(':');
     String Ǯ = ǭ(ǯ, 0);
     ǩ = ǭ(ǯ, 1);
     ǰ = Enum18.ǻ;
@@ -6665,7 +6675,7 @@ void Ǳ(IMyTerminalBlock ƨ, out Enum18 ǰ, out String ǩ) {
     else if (Ǯ == "DEBUG")
         ǰ = Enum18.Ƕ;
     if (ǰ == Enum18.ǻ)
-        ǩ = ƽ;
+        ǩ = pamMode;
 }
 
 String ǭ(String[] ª, int E) {
@@ -6863,15 +6873,15 @@ void Ǘ() {
         textSurfaces[i].WriteText(Ȅ(Enum18.ǵ, "0", false));
 
     for (int i = 0; i < textPanels.Count; i++) {
-        Enum18 ƽ = Enum18.ǻ;
+        Enum18 pamMode = Enum18.ǻ;
         String ǩ = "";
-        Ǳ(textPanels[i], out ƽ, out ǩ);
-        textPanels[i].WriteText(Ȅ(ƽ, ǩ, i == 0));
+        Ǳ(textPanels[i], out pamMode, out ǩ);
+        textPanels[i].WriteText(Ȅ(pamMode, ǩ, i == 0));
     }
 
     Echo(ǒ);
-    for (int i = 0; i < Н.Count; i++) {
-        IMyTextPanel ƨ = Н[i];
+    for (int i = 0; i < textPanelsDebugOrInstructions.Count; i++) {
+        IMyTextPanel ƨ = textPanelsDebugOrInstructions[i];
         String Ǩ = ƨ.CustomData.ToUpper();
         if (Ǩ == DEBUG)
             ƨ.WriteText(Ƕ + "\n" + ȡ);
