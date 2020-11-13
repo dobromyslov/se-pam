@@ -256,7 +256,7 @@ void Λ(string Ƹ) {
         }
     }
 
-    bool θ = λ && Ҡ == Enum10.Д && !μ && !Π && ι == 0 && !ˍ;
+    bool θ = λ && Ҡ == Enum10.Д && !μ && !Π && ι == 0 && !G_VAR49_bool;
     if (ο && Ҡ != Enum10.Д)
         Π = true;
 
@@ -473,7 +473,7 @@ void η(string Ƹ) {
             {
                 this.Ҕ();
                 this.ʹ();
-                Β.Ͷ = true;
+                G_VAR43_Class1.Ͷ = true;
             }
             break;
 
@@ -559,21 +559,21 @@ void η(string Ƹ) {
 
             case "CFGE":
                 {
-                    if (!ʈ(ref G_VAR36_float, true, Enum7.ʏ, Ʒ, "IG") || !ʈ(ref G_VAR35_float, true, Enum7.ʐ, ζ, "IG") || !ʈ(ref ɶ, true, Enum7.ʎ, ε, "IG"))
+                    if (!ʈ(ref G_VAR36_float, true, Enum7.ʏ, Ʒ, "IG") || !ʈ(ref G_VAR35_float, true, Enum7.ʐ, ζ, "IG") || !ʈ(ref G_VAR37_float, true, Enum7.ʎ, ε, "IG"))
                         G_VAR12 = ǆ;
                 }
                 break;
 
             case "CFGA":
                 {
-                    if (!ʈ(ref ɵ, false, Enum7.ª, Ʒ, ""))
+                    if (!ʈ(ref G_VAR38_float, false, Enum7.ª, Ʒ, ""))
                         G_VAR12 = ǆ;
                 }
                 break;
 
             case"CFGW":
                 {
-                    if (!ʈ(ref ɴ, false, Enum7.ʓ, Ʒ, "") || !ʈ(ref ɳ, false, Enum7.ʓ, ζ, ""))
+                    if (!ʈ(ref G_VAR39_float, false, Enum7.ʓ, Ʒ, "") || !ʈ(ref G_VAR40_float, false, Enum7.ʓ, ζ, ""))
                         G_VAR12 = ǆ;
                 }
                 break;
@@ -676,7 +676,7 @@ void β() {
     ƽ = Enum13.Ͼ;
     Ͻ(Enum2.Ͼ);
     Ǟ.Ͷ = false;
-    Β.Ͷ = false;
+    G_VAR43_Class1.Ͷ = false;
     Ь = null;
     Ш.Clear();
     Ӄ = Enum9.Ӌ;
@@ -1182,7 +1182,7 @@ String ϣ(bool ƛ) {
     String Ʃ = "———————————————\n";
     String ƶ = "--------------------------------------------\n";
     String Ɨ = "";
-    Ɨ += Ϝ(Ӄ) + " | " + (Β.Ͷ ? "Ready to dock" : "No dock") + "\n";
+    Ɨ += Ϝ(Ӄ) + " | " + (G_VAR43_Class1.Ͷ ? "Ready to dock" : "No dock") + "\n";
     Ɨ += Ʃ;
 
     double Ϣ = Math.Max(Math.Round(this.Ԍ), 0);
@@ -1391,7 +1391,7 @@ String ϣ(bool ƛ) {
             Ɨ += "Battery: " + (ĥ == Enum12.ɗ ? ϗ(ĥ) : Ĩ + "% " + (G_VAR35_float == -1 || O ? "" : " Min: " + G_VAR35_float + " %")) + "\n";
 
         if (G_VAR11 == 2)
-            Ɨ += "Hydrogen: " + (Ф.Count == 0 ? "No tanks" : Math.Round(ļ, 1) + "% " + (ɶ == -1 || O ? "" : " Min: " + ɶ + " %")) + "\n";
+            Ɨ += "Hydrogen: " + (Ф.Count == 0 ? "No tanks" : Math.Round(ļ, 1) + "% " + (G_VAR37_float == -1 || O ? "" : " Min: " + G_VAR37_float + " %")) + "\n";
     } else if (G_VAR7 == Enum1.ϱ) {
         String Ι = "";
         if (ύ(ref Ι, ƴ, A++, ƛ, " Back")) {
@@ -1426,8 +1426,8 @@ String ϣ(bool ƛ) {
         if (ύ(ref Ι, ƴ, A++, ƛ, " Battery: " + (G_VAR35_float == -1 ? "Ignore" : "Min " + G_VAR35_float + "%")))
             ʈ(ref G_VAR35_float, -5, Enum7.ʐ, true);
 
-        if (ύ(ref Ι, ƴ, A++, ƛ, " Hydrogen: " + (ɶ == -1 ? "Ignore" : "Min " + ɶ + "%")))
-            ʈ(ref ɶ, -10, Enum7.ʎ, true);
+        if (ύ(ref Ι, ƴ, A++, ƛ, " Hydrogen: " + (G_VAR37_float == -1 ? "Ignore" : "Min " + G_VAR37_float + "%")))
+            ʈ(ref G_VAR37_float, -10, Enum7.ʎ, true);
 
         if (ύ(ref Ι, ƴ, A++, ƛ, " When done: " + (G_VAR22_bool ? "Return home" : "Stop")))
             G_VAR22_bool = !G_VAR22_bool;
@@ -1454,20 +1454,20 @@ String ϣ(bool ƛ) {
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Enable" + (ƽ == Enum13.ψ ? " grinders" : " drills") + ": " + (G_VAR30_bool ? "Fwd + Bwd" : "Fwd")))
             G_VAR30_bool = !G_VAR30_bool;
 
-        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Work speed fwd.: " + ɴ + "m/s"))
-            ʈ(ref ɴ, 0.5f, Enum7.ʓ, false);
+        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Work speed fwd.: " + G_VAR39_float + "m/s"))
+            ʈ(ref G_VAR39_float, 0.5f, Enum7.ʓ, false);
 
-        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Work speed bwd.: " + ɳ + "m/s"))
-            ʈ(ref ɳ, 0.5f, Enum7.ʓ, false);
+        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Work speed bwd.: " + G_VAR40_float + "m/s"))
+            ʈ(ref G_VAR40_float, 0.5f, Enum7.ʓ, false);
 
-        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Acceleration: " + Math.Round(ɵ * 100f) + "%" + (ɵ > 0.80f ? " (risky)" : ""))) {
-            ʈ(ref ɵ, 0.1f, Enum7.ª, false);
+        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Acceleration: " + Math.Round(G_VAR38_float * 100f) + "%" + (G_VAR38_float > 0.80f ? " (risky)" : ""))) {
+            ʈ(ref G_VAR38_float, 0.1f, Enum7.ª, false);
         }
 
-        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Width overlap: " + ɼ * 100f + "%"))
+        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Width overlap: " + G_VAR41_float * 100f + "%"))
             ʠ(true, 0.05f);
 
-        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Height overlap: " + ɲ * 100f + "%"))
+        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Height overlap: " + G_VAR42_float * 100f + "%"))
             ʠ(false, 0.05f);
     } else if (G_VAR7 == Enum1.Џ) {
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Back")) {
@@ -1489,37 +1489,37 @@ String ϣ(bool ƛ) {
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Battery: " + (G_VAR35_float == -1 ? "Ignore" : "Charge up")))
             G_VAR35_float = (G_VAR35_float == -1 ? 1 : -1);
 
-        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Hydrogen: " + (ɶ == -1 ? "Ignore" : "Fill up")))
-            ɶ = (ɶ == -1 ? 1 : -1);
+        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Hydrogen: " + (G_VAR37_float == -1 ? "Ignore" : "Fill up")))
+            G_VAR37_float = (G_VAR37_float == -1 ? 1 : -1);
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " On damage: " + Ϛ(G_VAR21_Enum5))) {
             G_VAR21_Enum5 = ͼ(G_VAR21_Enum5);
         }
 
-        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Acceleration: " + Math.Round(ɵ * 100f) + "%" + (ɵ > 0.80f ? " (risky)" : ""))) {
-            ʈ(ref ɵ, 0.1f, Enum7.ª, false);
+        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Acceleration: " + Math.Round(G_VAR38_float * 100f) + "%" + (G_VAR38_float > 0.80f ? " (risky)" : ""))) {
+            ʈ(ref G_VAR38_float, 0.1f, Enum7.ª, false);
         }
     } else if (G_VAR7 == Enum1.ϵ) {
         double Ʌ = 0;
-        if (ˋ.Count > 0)
-            Ʌ = Vector3.Distance(ˋ.Last().ɉ, ɉ);
+        if (G_VAR51_List_Class1.Count > 0)
+            Ʌ = Vector3.Distance(G_VAR51_List_Class1.Last().ɉ, ɉ);
 
         if (ύ(ref Ɨ, ƴ, A++, ƛ, " Stop path recording"))
             ˎ();
 
         if (ƽ != Enum13.Ͼ) {
-            if (ύ(ref Ɨ, ƴ, A++, ƛ, " Home: " + (Ώ ? "Use old home" : (Β.Ͷ ? "Was set! " : "none "))))
-                Ώ = !Ώ;
+            if (ύ(ref Ɨ, ƴ, A++, ƛ, " Home: " + (G_VAR46_bool ? "Use old home" : (G_VAR43_Class1.Ͷ ? "Was set! " : "none "))))
+                G_VAR46_bool = !G_VAR46_bool;
         } else {
-            if (ύ(ref Ɨ, ƴ, A++, ƛ, " Connector 1: " + (Ώ ? "Use old connector" : (Β.Ͷ ? "Was set! " : "none "))))
-                Ώ = !Ώ;
+            if (ύ(ref Ɨ, ƴ, A++, ƛ, " Connector 1: " + (G_VAR46_bool ? "Use old connector" : (G_VAR43_Class1.Ͷ ? "Was set! " : "none "))))
+                G_VAR46_bool = !G_VAR46_bool;
 
-            if (ύ(ref Ɨ, ƴ, A++, ƛ, " Connector 2: " + (Ύ ? "Use old connector" : (Ǟ.Ͷ ? "Was set! " : "none "))))
-                Ύ = !Ύ;
+            if (ύ(ref Ɨ, ƴ, A++, ƛ, " Connector 2: " + (G_VAR47_bool ? "Use old connector" : (Ǟ.Ͷ ? "Was set! " : "none "))))
+                G_VAR47_bool = !G_VAR47_bool;
         }
 
-        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Path: " + (Ό ? "Use old path" : (ˋ.Count > 1 ? "Count: " + ˋ.Count : "none "))))
-            Ό = !Ό;
+        if (ύ(ref Ɨ, ƴ, A++, ƛ, " Path: " + (G_VAR48_bool ? "Use old path" : (G_VAR51_List_Class1.Count > 1 ? "Count: " + G_VAR51_List_Class1.Count : "none "))))
+            G_VAR48_bool = !G_VAR48_bool;
 
         Ɨ += ƶ;
         Ɨ += "Wp spacing: " + Math.Round(ˈ) + "m\n";
@@ -1533,7 +1533,7 @@ String ϣ(bool ƛ) {
         Ɨ += "State: " + ϕ(Ҡ) + " \n";
         Ɨ += "Speed: " + Math.Round(κ, 1) + "m/s\n";
         Ɨ += "Target dist: " + Ϣ + "m\n";
-        Ɨ += "Wp count: " + ˋ.Count + "\n";
+        Ɨ += "Wp count: " + G_VAR51_List_Class1.Count + "\n";
         Ɨ += "Wp left: " + Ԋ + "\n";
     } else if (G_VAR7 == Enum1.ϯ) {
         List<IMyTerminalBlock> ʢ = į();
@@ -1595,9 +1595,9 @@ void ʠ(bool ʟ, float ʗ) {
     Ҕ();
     Қ(true, false);
     if (ʟ)
-        ʈ(ref ɼ, ʗ, Enum7.ʍ, false);
+        ʈ(ref G_VAR41_float, ʗ, Enum7.ʍ, false);
     else
-        ʈ(ref ɲ, ʗ, Enum7.ʍ, false);
+        ʈ(ref G_VAR42_float, ʗ, Enum7.ʍ, false);
 
     Ѳ();
     Ş(true, true, 0, 0);
@@ -1802,12 +1802,38 @@ float G_VAR35_float = 20;
  * Original: ɷ
  */
 float G_VAR36_float = 5;
-float ɶ = 20;
-float ɵ = 0.70f;
-float ɴ = 1.50f;
-float ɳ = 2.50f;
-float ɼ = 0f;
-float ɲ = 0f;
+
+/**
+ * Original: ɶ
+ */
+float G_VAR37_float = 20;
+
+/**
+ * Original: ɵ
+ */
+float G_VAR38_float = 0.70f;
+
+/**
+ * Original: ɴ 
+ * Looks like down mining speed.
+ */
+float G_VAR39_float = 1.50f;
+
+/**
+ * Original: ɳ
+ * Looks like up mining speed.
+ */
+float G_VAR40_float = 2.50f;
+
+/**
+ * Original: ɼ
+ */
+float G_VAR41_float = 0f;
+
+/**
+ * Original: ɲ
+ */
+float G_VAR42_float = 0f;
 
 /**
  * Original: ʉ
@@ -1994,58 +2020,98 @@ class Class1 {
     }
 }
 
-Class1 Β = new Class1();
-Class1 Α = new Class1();
-Class1 ΐ = new Class1();
-bool Ώ = false;
-bool Ύ = false;
-bool Ό = false;
+/**
+ * Original: Β
+ */
+Class1 G_VAR43_Class1 = new Class1();
+
+/**
+ * Original: Α
+ */
+Class1 G_VAR44_Class1 = new Class1();
+
+/**
+ * Original: ΐ
+ */
+Class1 G_VAR45_Class1 = new Class1();
+
+/**
+ * Original: Ώ
+ */
+bool G_VAR46_bool = false;
+
+/**
+ * Original: Ύ 
+ */
+bool G_VAR47_bool = false;
+
+/**
+ * Original: Ό
+ */
+bool G_VAR48_bool = false;
+
 void ʹ() {
-    ˊ.Clear();
+    G_VAR52_List_Class1.Clear();
 
-    for (int A = 0; A < ˋ.Count; A++)
-        ˊ.Add(ˋ[A]);
+    for (int A = 0; A < G_VAR51_List_Class1.Count; A++)
+        G_VAR52_List_Class1.Add(G_VAR51_List_Class1[A]);
 
-    ˋ.Clear();
-    ˍ = true;
-    Α = new Class1(Β);
-    ΐ = new Class1(Ǟ);
-    Β.Ͷ = false;
+    G_VAR51_List_Class1.Clear();
+    G_VAR49_bool = true;
+    G_VAR44_Class1 = new Class1(G_VAR43_Class1);
+    G_VAR45_Class1 = new Class1(Ǟ);
+    G_VAR43_Class1.Ͷ = false;
     if (ƽ == Enum13.Ͼ)
         Ǟ.Ͷ = false;
 
     for (int A = 0; A < ä.Count; A++)
-        if (!ˌ.Contains(ä.Keys.ElementAt(A)))
-            ˌ.Add(ä.Keys.ElementAt(A));
+        if (!G_VAR50_List_String.Contains(ä.Keys.ElementAt(A)))
+            G_VAR50_List_String.Add(ä.Keys.ElementAt(A));
 
-    Ώ = false;
-    Ύ = false;
-    Ό = false;
+    G_VAR46_bool = false;
+    G_VAR47_bool = false;
+    G_VAR48_bool = false;
     Љ(Enum1.ϵ);
 }
 
 void ˎ() {
-    if (Ώ) Β = Α;
-    if (Ύ) Ǟ = ΐ;
-    if (Ό) {
-        ˋ.Clear();
-        for (int A = 0; A < ˊ.Count; A++)
-            ˋ.Add(ˊ[A]);
+    if (G_VAR46_bool) G_VAR43_Class1 = G_VAR44_Class1;
+    if (G_VAR47_bool) Ǟ = G_VAR45_Class1;
+    if (G_VAR48_bool) {
+        G_VAR51_List_Class1.Clear();
+        for (int A = 0; A < G_VAR52_List_Class1.Count; A++)
+            G_VAR51_List_Class1.Add(G_VAR52_List_Class1[A]);
     }
 
-    ˍ = false;
+    G_VAR49_bool = false;
     Ҕ();
     Љ(Enum1.Ϸ);
 }
 
-bool ˍ = false;
-List<String> ˌ = new List<string>();
-List<Class1> ˋ = new List<Class1>();
-List<Class1> ˊ = new List<Class1>();
+/**
+ * Original: ˍ
+ */
+bool G_VAR49_bool = false;
+
+/**
+ * Original: ˌ
+ */
+List<String> G_VAR50_List_String = new List<string>();
+
+/**
+ * Original: ˋ
+ */
+List<Class1> G_VAR51_List_Class1 = new List<Class1>();
+
+/**
+ * Original: ˊ
+ */
+List<Class1> G_VAR52_List_Class1 = new List<Class1>();
+
 int ˉ = 0;
 double ˈ = 0;
 void ˇ() {
-    if (!ˍ)
+    if (!G_VAR49_bool)
         return;
 
     if (Ҡ != Enum10.Д) {
@@ -2053,14 +2119,14 @@ void ˇ() {
         return;
     }
 
-    if (!Α.Ͷ)
-        Ώ = false;
+    if (!G_VAR44_Class1.Ͷ)
+        G_VAR46_bool = false;
 
-    if (!ΐ.Ͷ)
-        Ύ = false;
+    if (!G_VAR45_Class1.Ͷ)
+        G_VAR47_bool = false;
 
-    if (ˊ.Count <= 1)
-        Ό = false;
+    if (G_VAR52_List_Class1.Count <= 1)
+        G_VAR48_bool = false;
 
     IMyShipConnector º = Ò(MyShipConnectorStatus.Connectable);
     if (º == null)
@@ -2072,7 +2138,7 @@ void ˇ() {
         else
             ˉ = 0;
         if (ˉ >= 5) {
-            if (ƽ == Enum13.Ͼ && (Β.Ͷ || Ώ) && Vector3.Distance(Β.ɉ, º.GetPosition()) > 5) {
+            if (ƽ == Enum13.Ͼ && (G_VAR43_Class1.Ͷ || G_VAR46_bool) && Vector3.Distance(G_VAR43_Class1.ɉ, º.GetPosition()) > 5) {
                 Ǟ.Ï = Э.WorldMatrix.Forward;
                 Ǟ.ĕ = Э.WorldMatrix.Left;
                 Ǟ.ç = Э.WorldMatrix.Down;
@@ -2081,20 +2147,20 @@ void ˇ() {
                 Ǟ.Ͷ = true;
                 Ǟ.Ή = º.Position;
             } else {
-                Β.Ï = Э.WorldMatrix.Forward;
-                Β.ĕ = Э.WorldMatrix.Left;
-                Β.ç = Э.WorldMatrix.Down;
-                Β.Í = Э.GetNaturalGravity();
-                Β.ɉ = º.GetPosition();
-                Β.Ͷ = true;
-                Β.Ή = º.Position;
+                G_VAR43_Class1.Ï = Э.WorldMatrix.Forward;
+                G_VAR43_Class1.ĕ = Э.WorldMatrix.Left;
+                G_VAR43_Class1.ç = Э.WorldMatrix.Down;
+                G_VAR43_Class1.Í = Э.GetNaturalGravity();
+                G_VAR43_Class1.ɉ = º.GetPosition();
+                G_VAR43_Class1.Ͷ = true;
+                G_VAR43_Class1.Ή = º.Position;
             }
         }
     }
 
     double ˆ = -1;
-    if (ˋ.Count > 0) {
-        ˆ = Vector3.Distance(ɉ, ˋ.Last().ɉ);
+    if (G_VAR51_List_Class1.Count > 0) {
+        ˆ = Vector3.Distance(ɉ, G_VAR51_List_Class1.Last().ɉ);
     }
 
     double ğ = Math.Max(1.5, Math.Pow(κ / 100.0, 2));
@@ -2102,8 +2168,8 @@ void ˇ() {
     ˈ = ˁ;
     if ((ˆ == -1) || ˆ >= ˁ) {
         Class1 B = new Class1(ɉ, υ, σ, τ, Э.GetNaturalGravity());
-        B.Ε(Δ, ˌ);
-        ˋ.Add(B);
+        B.Ε(Δ, G_VAR50_List_String);
+        G_VAR51_List_Class1.Add(B);
     }
 }
 
@@ -2113,8 +2179,8 @@ int ˀ(Vector3 ý, int ʿ) {
 
     double ʾ = -1;
     int ʽ = -1;
-    for (int A = ˋ.Count - 1; A >= 0; A--) {
-        double Ʌ = Vector3.Distance(ˋ[A].ɉ, ý); if (ʾ == -1 || Ʌ < ʾ) {
+    for (int A = G_VAR51_List_Class1.Count - 1; A >= 0; A--) {
+        double Ʌ = Vector3.Distance(G_VAR51_List_Class1[A].ɉ, ý); if (ʾ == -1 || Ʌ < ʾ) {
             ʽ = A;
             ʾ = Ʌ;
         }
@@ -2125,27 +2191,27 @@ int ˀ(Vector3 ý, int ʿ) {
 
 bool ʼ(Vector3 ɉ) {
     List<Vector3> J = new List<Vector3>();
-    for (int A = 0; A < ˋ.Count; A++) {
-        J.Add(ˋ[A].ɉ);
+    for (int A = 0; A < G_VAR51_List_Class1.Count; A++) {
+        J.Add(G_VAR51_List_Class1[A].ɉ);
     }
 
-    if (Β.Ͷ && ˋ.Count >= 1) {
+    if (G_VAR43_Class1.Ͷ && G_VAR51_List_Class1.Count >= 1) {
         Vector3 ͳ = new Vector3();
-        ˠ(Β, dockDist * Ю, false, out ͳ);
-        if (Vector3.Distance(Β.ɉ, ˋ.First().ɉ) < Vector3.Distance(Β.ɉ, ˋ.Last().ɉ)) {
+        ˠ(G_VAR43_Class1, dockDist * Ю, false, out ͳ);
+        if (Vector3.Distance(G_VAR43_Class1.ɉ, G_VAR51_List_Class1.First().ɉ) < Vector3.Distance(G_VAR43_Class1.ɉ, G_VAR51_List_Class1.Last().ɉ)) {
             J.Insert(0, ͳ);
-            J.Insert(0, Β.ɉ);
+            J.Insert(0, G_VAR43_Class1.ɉ);
         } else {
             J.Add(ͳ);
-            J.Add(Β.ɉ);
+            J.Add(G_VAR43_Class1.ɉ);
         }
     }
 
     if (ƽ == Enum13.Ͼ) {
-        if (Ǟ.Ͷ && ˋ.Count >= 1) {
+        if (Ǟ.Ͷ && G_VAR51_List_Class1.Count >= 1) {
             Vector3 Ͳ = new Vector3();
             ˠ(Ǟ, dockDist * Ю, false, out Ͳ);
-            if (Vector3.Distance(Ǟ.ɉ, ˋ.First().ɉ) < Vector3.Distance(Ǟ.ɉ, ˋ.Last().ɉ)) {
+            if (Vector3.Distance(Ǟ.ɉ, G_VAR51_List_Class1.First().ɉ) < Vector3.Distance(Ǟ.ɉ, G_VAR51_List_Class1.Last().ɉ)) {
                 J.Insert(0, Ͳ); J.Insert(0, Ǟ.ɉ);
             }
             else {
@@ -2155,7 +2221,7 @@ bool ʼ(Vector3 ɉ) {
         }
     } else {
         if (Ӄ != Enum9.Ӌ)
-            if (ˋ.Count > 0 && Vector3.Distance(Ǟ.ɉ, ˋ.First().ɉ) < Vector3.Distance(Ǟ.ɉ, ˋ.Last().ɉ))
+            if (G_VAR51_List_Class1.Count > 0 && Vector3.Distance(Ǟ.ɉ, G_VAR51_List_Class1.First().ɉ) < Vector3.Distance(Ǟ.ɉ, G_VAR51_List_Class1.Last().ɉ))
                 J.Insert(0, Ǟ.ɉ);
             else
                 J.Add(Ǟ.ɉ);
@@ -2189,7 +2255,7 @@ void ˣ(Class1 B, Enum9 ˢ) {
 
 Class1 ˡ() {
     if (ƽ != Enum13.Ͼ)
-        return Β;
+        return G_VAR43_Class1;
 
     return ˤ;
 }
@@ -2259,16 +2325,16 @@ Enum8 ҳ() {
                 ª = Enum8.ҷ;
         }
 
-        if (Β.Ͷ) {
-            if (Ӎ(Β.ɉ, ref Ʌ))
+        if (G_VAR43_Class1.Ͷ) {
+            if (Ӎ(G_VAR43_Class1.ɉ, ref Ʌ))
                 ª = Enum8.ґ;
 
-            for (int A = 0; A < ˋ.Count; A++) {
-                if (Ӎ(ˋ[A].ɉ, ref Ʌ))
+            for (int A = 0; A < G_VAR51_List_Class1.Count; A++) {
+                if (Ӎ(G_VAR51_List_Class1[A].ɉ, ref Ʌ))
                     ª = Enum8.Ҷ;
             }
 
-            if (Vector3.Distance(ɉ, Β.ɉ) < dockDist * Ю)
+            if (Vector3.Distance(ɉ, G_VAR43_Class1.ɉ) < dockDist * Ю)
                 ª = Enum8.ґ;
 
             if (Ò(MyShipConnectorStatus.Connectable) != null || Ò(MyShipConnectorStatus.Connected) != null)
@@ -2277,21 +2343,21 @@ Enum8 ҳ() {
     } else {
         Vector3 ɉ = new Vector3();
         IMyShipConnector Ä = Ò(MyShipConnectorStatus.Connected);
-        if (Β.Ͷ) {
-            if (Ӎ(Β.ɉ, ref Ʌ))
+        if (G_VAR43_Class1.Ͷ) {
+            if (Ӎ(G_VAR43_Class1.ɉ, ref Ʌ))
                 ª = Enum8.ґ;
 
-            if (ˠ(Β, dockDist, true, out ɉ))
+            if (ˠ(G_VAR43_Class1, dockDist, true, out ɉ))
                 if (Ӎ(ɉ, ref Ʌ))
                     ª = Enum8.ґ;
 
-            if (Ä != null && Vector3.Distance(Ä.GetPosition(), Β.ɉ) < 5)
+            if (Ä != null && Vector3.Distance(Ä.GetPosition(), G_VAR43_Class1.ɉ) < 5)
                 return Enum8.ҵ;
         }
 
-        for (int A = 0; A < ˋ.Count; A++)
-            if (Vector3.Distance(ˋ[A].ɉ, Β.ɉ) > dockDist * Ю && Vector3.Distance(ˋ[A].ɉ, Ǟ.ɉ) > dockDist * Ю)
-                if (Ӎ(ˋ[A].ɉ, ref Ʌ))
+        for (int A = 0; A < G_VAR51_List_Class1.Count; A++)
+            if (Vector3.Distance(G_VAR51_List_Class1[A].ɉ, G_VAR43_Class1.ɉ) > dockDist * Ю && Vector3.Distance(G_VAR51_List_Class1[A].ɉ, Ǟ.ɉ) > dockDist * Ю)
+                if (Ӎ(G_VAR51_List_Class1[A].ɉ, ref Ʌ))
                     ª = Enum8.Ҷ;
 
         if (Ǟ.Ͷ) {
@@ -2455,11 +2521,11 @@ void Ҕ() {
 void қ() {
     Enum8 Ҏ = ҳ();
     if (ƽ == Enum13.Ͼ) {
-        if (!Ǟ.Ͷ || !Β.Ͷ)
+        if (!Ǟ.Ͷ || !G_VAR43_Class1.Ͷ)
             return;
 
         ҕ();
-        bool ғ = Vector3.Distance(ɉ, Β.ɉ) < Vector3.Distance(ɉ, Ǟ.ɉ);
+        bool ғ = Vector3.Distance(ɉ, G_VAR43_Class1.ɉ) < Vector3.Distance(ɉ, Ǟ.ɉ);
 
         if (ɛ == Enum9.Ӈ)
             ғ = true;
@@ -2468,7 +2534,7 @@ void қ() {
             ғ = false;
 
         if (ғ) {
-            ˣ(Β, Enum9.Ӈ);
+            ˣ(G_VAR43_Class1, Enum9.Ӈ);
             switch (Ҏ) {
                 case Enum8.ҵ:
                     Ҝ(Enum10.ҡ);
@@ -2512,7 +2578,7 @@ void қ() {
 
         bool Ғ = Ӄ == Enum9.Ғ;
         ҕ();
-        bool ґ = Ű(false) && Β.Ͷ;
+        bool ґ = Ű(false) && G_VAR43_Class1.Ͷ;
         switch (Ҏ) {
             case Enum8.ҷ:
                 Ҝ(ґ ? Enum10.Ҧ : Enum10.ʟ);
@@ -2542,10 +2608,10 @@ void қ() {
 }
 
 void Ґ() {
-    if (Ӄ == Enum9.Ӌ && !Β.Ͷ)
+    if (Ӄ == Enum9.Ӌ && !G_VAR43_Class1.Ͷ)
         return;
 
-    if (ƽ == Enum13.Ͼ && (!Ǟ.Ͷ || !Β.Ͷ))
+    if (ƽ == Enum13.Ͼ && (!Ǟ.Ͷ || !G_VAR43_Class1.Ͷ))
         return;
 
     G_VAR12 = "Move to job";
@@ -2608,14 +2674,14 @@ void Ґ() {
 }
 
 void ҏ() {
-    if (!Β.Ͷ)
+    if (!G_VAR43_Class1.Ͷ)
         return;
 
     G_VAR12 = "Move home";
     Enum8 Ҏ = ҳ();
 
     if (ƽ == Enum13.Ͼ) {
-        ˣ(Β, Enum9.Ӈ);
+        ˣ(G_VAR43_Class1, Enum9.Ӈ);
         switch (Ҏ) {
             case Enum8.Ҷ:
                 Ҝ(Enum10.ү);
@@ -2830,7 +2896,7 @@ void ӗ() {
             if (J == Enum11.ӱ) {
                 Ӄ = Enum9.ΰ;
                 G_VAR12 = "Job done";
-                if (G_VAR22_bool && Β.Ͷ) {
+                if (G_VAR22_bool && G_VAR43_Class1.Ͷ) {
                     Ҝ(Enum10.Ҧ);
                     Ӿ(Enum10.Ҩ);
                     ҟ = Enum9.ғ;
@@ -3061,7 +3127,7 @@ void ӗ() {
 
             if (Ҡ == Enum10.Ҥ) {
                 if (J) {
-                    if (Β.Ͷ)
+                    if (G_VAR43_Class1.Ͷ)
                         Ҝ(Enum10.Ҧ);
                     else {
                         Ҕ();
@@ -3107,7 +3173,7 @@ void ӗ() {
                 Ҝ(Enum10.Ң);
 
             if (Ҡ == Enum10.ұ) {
-                if (Β.Ͷ)
+                if (G_VAR43_Class1.Ͷ)
                     Ҝ(Enum10.Ҧ);
                 else {
                     Ҕ();
@@ -3126,8 +3192,8 @@ void ӗ() {
             Ŗ(Ш, false);
             int E = -1;
             double ӟ = -1;
-            for (int A = ˋ.Count - 1; A >= 0; A--) {
-                double Ʌ = Vector3.Distance(ˋ[A].ɉ, ɉ);
+            for (int A = G_VAR51_List_Class1.Count - 1; A >= 0; A--) {
+                double Ʌ = Vector3.Distance(G_VAR51_List_Class1[A].ɉ, ɉ);
                 if (ӟ == -1 || Ʌ < ӟ) {
                     E = A;
                     ӟ = Ʌ;
@@ -3139,7 +3205,7 @@ void ӗ() {
                 return;
             }
 
-            ĉ = ˋ[E].ɉ;
+            ĉ = G_VAR51_List_Class1[E].ɉ;
             ñ(ĉ, 10);
             ë(Ǟ.ç, Ǟ.Ï, Ǟ.ĕ, false);
         }
@@ -3180,11 +3246,11 @@ void ӗ() {
                     Ӽ.Ӹ *= 1.5f;
 
                 if (ƽ == Enum13.Ͼ) {
-                    if (ҋ == Β)
+                    if (ҋ == G_VAR43_Class1)
                         Ӽ.Ӵ = Ǟ.ɉ;
 
                     if (ҋ == Ǟ)
-                        Ӽ.Ӵ = Β.ɉ;
+                        Ӽ.Ӵ = G_VAR43_Class1.ɉ;
 
                     Ӽ.ӵ = dockDist * Ю * 1.1f;
                 }
@@ -3194,21 +3260,21 @@ void ӗ() {
                 Ӽ.Ӹ = followPathJob * Ю;
                 Ӽ.ӷ = useJobDirectionDist * Ю;
                 Ӽ.Ӷ = 10;
-                Ӽ.Ӵ = Β.ɉ;
+                Ӽ.Ӵ = G_VAR43_Class1.ɉ;
                 Ӽ.ӵ = dockDist * Ю * 1.1f;
                 Ӽ.ӹ.Add(Ǟ.ɉ);
                 if (Ӄ == Enum9.Ӌ) {
-                    if (!Β.Ͷ || ˋ.Count == 0) {
+                    if (!G_VAR43_Class1.Ͷ || G_VAR51_List_Class1.Count == 0) {
                         Ҕ();
                         return;
                     }
 
-                    float ӡ = Vector3.Distance(ˋ.First().ɉ, Β.ɉ);
-                    float Ӡ = Vector3.Distance(ˋ.Last().ɉ, Β.ɉ);
+                    float ӡ = Vector3.Distance(G_VAR51_List_Class1.First().ɉ, G_VAR43_Class1.ɉ);
+                    float Ӡ = Vector3.Distance(G_VAR51_List_Class1.Last().ɉ, G_VAR43_Class1.ɉ);
                     if (ӡ < Ӡ)
-                        Ӽ.Ӻ = ˋ.Last();
+                        Ӽ.Ӻ = G_VAR51_List_Class1.Last();
                     else
-                        Ӽ.Ӻ = ˋ.First();
+                        Ӽ.Ӻ = G_VAR51_List_Class1.First();
                 }
             }
 
@@ -3218,11 +3284,11 @@ void ӗ() {
             Ũ(true);
             ԏ = -1;
             double ӟ = -1;
-            for (int A = ˋ.Count - 1; A >= 0; A--) {
-                if (Vector3.Distance(ˋ[A].ɉ, Ӽ.Ӵ) <= Ӽ.ӵ)
+            for (int A = G_VAR51_List_Class1.Count - 1; A >= 0; A--) {
+                if (Vector3.Distance(G_VAR51_List_Class1[A].ɉ, Ӽ.Ӵ) <= Ӽ.ӵ)
                     continue;
 
-                double Ʌ = Vector3.Distance(ˋ[A].ɉ, ɉ);
+                double Ʌ = Vector3.Distance(G_VAR51_List_Class1[A].ɉ, ɉ);
                 if (ӟ == -1 || Ʌ < ӟ) {
                     ԏ = A;
                     ӟ = Ʌ;
@@ -3233,7 +3299,7 @@ void ӗ() {
             Ә = null;
         }
 
-        н(ˋ, ы, Ӽ.ӹ, Ӽ.Ӹ, Ԏ, ref ԉ);
+        н(G_VAR51_List_Class1, ы, Ӽ.ӹ, Ӽ.Ӹ, Ԏ, ref ԉ);
         for (int A = 0; A < Ӽ.ӹ.Count; A++) {
             float Ʌ = Vector3.Distance(ɉ, Ӽ.ӹ[A]);
             if (Ʌ <= Ӽ.Ӹ)
@@ -3252,14 +3318,14 @@ void ӗ() {
             if (!Ԏ)
                 ԏ += ы;
 
-            if (ы == 0 || ԏ > ˋ.Count - 1 || ԏ < 0)
+            if (ы == 0 || ԏ > G_VAR51_List_Class1.Count - 1 || ԏ < 0)
                 ΰ = true;
             else {
-                Ԋ = ы > 0 ? ˋ.Count - 1 - ԏ : ԏ;
-                B = ˋ[ԏ];
+                Ԋ = ы > 0 ? G_VAR51_List_Class1.Count - 1 - ԏ : ԏ;
+                B = G_VAR51_List_Class1[ԏ];
                 Ә = B;
-                if (ԏ >= 1 && ԏ < ˋ.Count - 1)
-                    Ԇ = B.ɉ - ˋ[ԏ - ы].ɉ;
+                if (ԏ >= 1 && ԏ < G_VAR51_List_Class1.Count - 1)
+                    Ԇ = B.ɉ - G_VAR51_List_Class1[ԏ - ы].ɉ;
                 else
                     Ә = null;
 
@@ -3438,7 +3504,7 @@ void ӗ() {
         bool л = false;
         bool е = false;
         if (ƽ == Enum13.Ͼ) {
-            if (ˡ() == Β)
+            if (ˡ() == G_VAR43_Class1)
                 л = true;
             else if (ˡ() == Ǟ)
                 е = true;
@@ -3477,7 +3543,7 @@ void ӗ() {
         else if (Ĩ <= 99f)
             ә = false;
 
-        if (Ӄ != Enum9.Ӊ || ɶ == -1 || Ф.Count == 0)
+        if (Ӄ != Enum9.Ӊ || G_VAR37_float == -1 || Ф.Count == 0)
             Ӛ = true;
         else if (ļ >= 100f)
             Ӛ = true;
@@ -3541,15 +3607,15 @@ void ӗ() {
             Ŕ(false);
             if (Ӄ == Enum9.Ӊ) {
                 if (ƽ == Enum13.Ͼ) {
-                    if (ˡ() == Β)
+                    if (ˡ() == G_VAR43_Class1)
                         ʘ(G_VAR19_Class5.ƕ);
                     else if (ˡ() == Ǟ)
                         ʘ(G_VAR20_Class5.ƕ);
 
-                    if (ˡ() == Β)
+                    if (ˡ() == G_VAR43_Class1)
                         ˣ(Ǟ, Enum9.ӆ);
                     else
-                        ˣ(Β, Enum9.Ӈ);
+                        ˣ(G_VAR43_Class1, Enum9.Ӈ);
                 }
             }
 
@@ -3570,8 +3636,8 @@ void ӗ() {
             Ŗ(Ä, false);
             ť(Ч, false);
             Class1 B = null;
-            if (Vector3.Distance(Ä.GetPosition(), Β.ɉ) < 5f && Β.Ͷ)
-                B = Β;
+            if (Vector3.Distance(Ä.GetPosition(), G_VAR43_Class1.ɉ) < 5f && G_VAR43_Class1.Ͷ)
+                B = G_VAR43_Class1;
 
             if (Vector3.Distance(Ä.GetPosition(), Ǟ.ɉ) < 5f && Ǟ.Ͷ)
                 B = Ǟ;
@@ -3630,10 +3696,10 @@ class Class3 {
     public float Ʌ;
 }
 
-void н(List<Class1> ˋ, int ы, List<Vector3> ъ, float Ʌ, bool Ç, ref int G_VAR3) {
+void н(List<Class1> G_VAR51_List_Class1, int ы, List<Vector3> ъ, float Ʌ, bool Ç, ref int G_VAR3) {
     if (Ç) {
-        for (int ã = 0; ã < ˋ.Count; ã++)
-            ˋ[ã].Ί = 0;
+        for (int ã = 0; ã < G_VAR51_List_Class1.Count; ã++)
+            G_VAR51_List_Class1[ã].Ί = 0;
 
         G_VAR3 = -1;
         return;
@@ -3644,18 +3710,18 @@ void н(List<Class1> ˋ, int ы, List<Vector3> ъ, float Ʌ, bool Ç, ref int G_
 
     int щ = ы * -1;
     if (G_VAR3 == -1)
-        G_VAR3 = щ > 0 ? 1 : ˋ.Count - 2;
+        G_VAR3 = щ > 0 ? 1 : G_VAR51_List_Class1.Count - 2;
 
     int Ř = 0;
 
-    while (G_VAR3 >= 1 && G_VAR3 < ˋ.Count - 1) {
+    while (G_VAR3 >= 1 && G_VAR3 < G_VAR51_List_Class1.Count - 1) {
         if (Ř > 50)
             return;
 
         Ř++;
         try {
-            if ((щ < 0 && G_VAR3 >= 1) || (щ > 0 && G_VAR3 <= ˋ.Count - 2)) {
-                Class1 ʝ = ˋ[G_VAR3];
+            if ((щ < 0 && G_VAR3 >= 1) || (щ > 0 && G_VAR3 <= G_VAR51_List_Class1.Count - 2)) {
+                Class1 ʝ = G_VAR51_List_Class1[G_VAR3];
                 bool ш = false;
                 for (int ʡ = 0; ʡ < ъ.Count; ʡ++) {
                     if (Vector3.Distance(ʝ.ɉ, ъ[ʡ]) <= Ʌ) {
@@ -3665,8 +3731,8 @@ void н(List<Class1> ˋ, int ы, List<Vector3> ъ, float Ʌ, bool Ç, ref int G_
                 }
 
                 if (!ш) {
-                    Class1 ч = ˋ[G_VAR3 - щ];
-                    Class1 ц = ˋ[G_VAR3 + щ];
+                    Class1 ч = G_VAR51_List_Class1[G_VAR3 - щ];
+                    Class1 ц = G_VAR51_List_Class1[G_VAR3 + щ];
                     Vector3 х = ʝ.ɉ - ц.ɉ;
                     Vector3 ф = ч.ɉ - ʝ.ɉ;
                     Vector3 у = ʝ.ɉ + Vector3.Normalize(х) * ф.Length();
@@ -3689,7 +3755,7 @@ void н(List<Class1> ˋ, int ы, List<Vector3> ъ, float Ʌ, bool Ç, ref int G_
                     float â = Â(с, а, ʝ);
                     float ª = µ(â, ϋ);
                     float K = (float)Math.Sqrt(с.Length() * 1.0f / (0.5f * ª));
-                    ʝ.Ί = Math.Min(ʝ.Ί, (ф.Length() / K) * ɵ);
+                    ʝ.Ί = Math.Min(ʝ.Ί, (ф.Length() / K) * G_VAR38_float);
                 }
             }
         }
@@ -3736,7 +3802,7 @@ float Е(bool Ï) {
     if (ƽ == Enum13.ψ && Ж() == MyDetectedEntityType.None && !ƃ(Ь, true))
         return fastSpeed;
     else
-        return Ï ? ɴ : ɳ;
+        return Ï ? G_VAR39_float : G_VAR40_float;
 }
 
 /**
@@ -3873,10 +3939,10 @@ void Ѳ() {
         ѭ = Math.Min(ѷ.Z, ѭ);
     }
 
-    Й = (Ѱ - ѱ) * (1 - ɼ) + drillRadius * 2;
-    Я = (Ѯ - ѯ) * (1 - ɲ) + drillRadius * 2;
+    Й = (Ѱ - ѱ) * (1 - G_VAR41_float) + drillRadius * 2;
+    Я = (Ѯ - ѯ) * (1 - G_VAR42_float) + drillRadius * 2;
     if (М != null && М.WorldMatrix.Forward == Э.WorldMatrix.Down)
-        Я = (Ѭ - ѭ) * (1 - ɲ) + drillRadius * 2;
+        Я = (Ѭ - ѭ) * (1 - G_VAR42_float) + drillRadius * 2;
 }
 
 void Ѹ() {
@@ -4425,7 +4491,7 @@ void ĳ() {
                     Ґ();
 
                 if (G_VAR21_Enum5 == Enum5.ʮ)
-                    if (Β.Ͷ)
+                    if (G_VAR43_Class1.Ͷ)
                         ҏ();
                     else
                         Ґ();
@@ -4455,8 +4521,8 @@ bool Ĳ() {
             }
         }
 
-        if (ɶ > 0 && Ф.Count > 0) {
-            if (ļ <= ɶ) {
+        if (G_VAR37_float > 0 && Ф.Count > 0) {
+            if (ļ <= G_VAR37_float) {
                 G_VAR12 = "Low hydrogen";
                 return false;
             }
@@ -4660,7 +4726,7 @@ bool Ɖ(bool Ç, bool ƈ) {
     if (Ä == null)
         return false;
 
-    if (Vector3.Distance(Β.ɉ, Ä.GetPosition()) < 5)
+    if (Vector3.Distance(G_VAR43_Class1.ɉ, Ä.GetPosition()) < 5)
         return ƍ(G_VAR19_Class5, Ç, ƈ);
 
     if (Vector3.Distance(Ǟ.ɉ, Ä.GetPosition()) < 5)
@@ -4867,8 +4933,8 @@ void È(bool Ç) {
                 Ƈ = Æ;
         }
 
-        if (Β.Ͷ && Β.Í.Length() != 0) {
-            Æ = Å * Ð(Β.Ï, Β.ç * -1, Β.Í, null);
+        if (G_VAR43_Class1.Ͷ && G_VAR43_Class1.Í.Length() != 0) {
+            Æ = Å * Ð(G_VAR43_Class1.Ï, G_VAR43_Class1.ç * -1, G_VAR43_Class1.Í, null);
             if (Æ < Ƈ || Ƈ == -1)
                 Ƈ = Æ;
         }
@@ -4881,12 +4947,12 @@ void È(bool Ç) {
 
     if (Ê >= 0) {
         int Ä = 0;
-        while (Ê < ˋ.Count) {
+        while (Ê < G_VAR51_List_Class1.Count) {
             if (Ä > 100)
                 return;
 
             Ä++;
-            Class1 B = ˋ[Ê];
+            Class1 B = G_VAR51_List_Class1[Ê];
             if (B.Í.Length() != 0f) {
                 Æ = Å * Math.Min(Ð(B.Ï, B.ç * -1, B.Í, B), Ð(B.Ï * -1, B.ç * -1, B.Í, B));
                 if (Æ < Ƈ || Ƈ == -1)
@@ -4902,7 +4968,7 @@ void È(bool Ç) {
 
     bool Ã = true;
     float Ë = 0;
-    if (ˋ.Count == 0 && Ƈ == -1)
+    if (G_VAR51_List_Class1.Count == 0 && Ƈ == -1)
         Ã = false;
 
     if (É != null) {
@@ -5087,7 +5153,7 @@ Vector3 S(Vector3 C, float[,] I) {
 
 bool H(Class1 B, String G, out float F) {
     F = 0;
-    int E = ˌ.IndexOf(G);
+    int E = G_VAR50_List_String.IndexOf(G);
     if (E == -1 || B.Θ == null || E >= B.Θ.Length)
         return false;
 
@@ -5176,7 +5242,7 @@ float ē(Vector3 đ, Vector3 Đ, Class1 B) {
     float ª = µ(ď, ϋ);
     float K = (float)Math.Sqrt(µ(đ.Length(), ª * 0.5f));
 
-    return ª * K * Å * ɵ;
+    return ª * K * Å * G_VAR38_float;
 }
 
 bool Ď = false;
@@ -5588,13 +5654,13 @@ bool ɜ = false; void Save() {
 
     Storage = DATAREV + ";";
     ȗ(Ȋ(φ), false);
-    ȗ(Ȋ(Β.Ï));
-    ȗ(Ȋ(Β.ĕ));
-    ȗ(Ȋ(Β.ç));
-    ȗ(Ȋ(Β.Í));
-    ȗ(Ȋ(Β.ɉ));
-    ȗ(Ȋ(Β.Ή));
-    ȗ(Β.Ͷ);
+    ȗ(Ȋ(G_VAR43_Class1.Ï));
+    ȗ(Ȋ(G_VAR43_Class1.ĕ));
+    ȗ(Ȋ(G_VAR43_Class1.ç));
+    ȗ(Ȋ(G_VAR43_Class1.Í));
+    ȗ(Ȋ(G_VAR43_Class1.ɉ));
+    ȗ(Ȋ(G_VAR43_Class1.Ή));
+    ȗ(G_VAR43_Class1.Ͷ);
     ȗ(Ȋ(Ǟ.ɉ));
     ȗ(Ȋ(Ǟ.Í));
     ȗ(Ȋ(Ǟ.Ï));
@@ -5611,8 +5677,8 @@ bool ɜ = false; void Save() {
     ȗ(G_VAR34_float);
     ȗ(G_VAR35_float);
     ȗ(G_VAR36_float);
-    ȗ(ɶ);
-    ȗ(ɵ);
+    ȗ(G_VAR37_float);
+    ȗ(G_VAR38_float);
     ȗ(G_VAR28_bool);
     ȗ(G_VAR33_bool);
     if (ƽ == Enum13.Ͼ) {
@@ -5639,10 +5705,10 @@ bool ɜ = false; void Save() {
         ȗ(G_VAR24_int);
         ȗ(G_VAR25_int);
         ȗ(G_VAR26_int);
-        ȗ(ɴ);
-        ȗ(ɳ);
-        ȗ(ɼ);
-        ȗ(ɲ);
+        ȗ(G_VAR39_float);
+        ȗ(G_VAR40_float);
+        ȗ(G_VAR41_float);
+        ȗ(G_VAR42_float);
         ȗ(Ӂ);
         ȗ(Ӏ);
         ȗ(ԓ);
@@ -5654,12 +5720,12 @@ bool ɜ = false; void Save() {
     }
 
     ȗ(";");
-    for (int A = 0; A < ˌ.Count; A++)
-        ȗ((A > 0 ? "|" : "") + ˌ[A], false);
+    for (int A = 0; A < G_VAR50_List_String.Count; A++)
+        ȗ((A > 0 ? "|" : "") + G_VAR50_List_String[A], false);
 
     ȗ(";");
-    for (int A = 0; A < ˋ.Count; A++)
-        ȗ(Ȝ(ˋ[A]), A > 0);
+    for (int A = 0; A < G_VAR51_List_Class1.Count; A++)
+        ȗ(Ȝ(G_VAR51_List_Class1[A]), A > 0);
 }
 
 Enum9 ɛ = Enum9.Ӌ;
@@ -5684,13 +5750,13 @@ Enum16 ɖ() {
     try {
         String[] O = Ȗ(ɕ, 1).Split('\n');
         φ = ȉ(Ȗ(O, A++));
-        Β.Ï = ȉ(Ȗ(O, A++));
-        Β.ĕ = ȉ(Ȗ(O, A++));
-        Β.ç = ȉ(Ȗ(O, A++));
-        Β.Í = ȉ(Ȗ(O, A++));
-        Β.ɉ = ȉ(Ȗ(O, A++));
-        Β.Ή = ȉ(Ȗ(O, A++));
-        Β.Ͷ = bool.Parse(Ȗ(O, A++));
+        G_VAR43_Class1.Ï = ȉ(Ȗ(O, A++));
+        G_VAR43_Class1.ĕ = ȉ(Ȗ(O, A++));
+        G_VAR43_Class1.ç = ȉ(Ȗ(O, A++));
+        G_VAR43_Class1.Í = ȉ(Ȗ(O, A++));
+        G_VAR43_Class1.ɉ = ȉ(Ȗ(O, A++));
+        G_VAR43_Class1.Ή = ȉ(Ȗ(O, A++));
+        G_VAR43_Class1.Ͷ = bool.Parse(Ȗ(O, A++));
         Ǟ.ɉ = ȉ(Ȗ(O, A++));
         Ǟ.Í = ȉ(Ȗ(O, A++));
         Ǟ.Ï = ȉ(Ȗ(O, A++));
@@ -5708,8 +5774,8 @@ Enum16 ɖ() {
         G_VAR34_float = int.Parse(Ȗ(O, A++));
         G_VAR35_float = int.Parse(Ȗ(O, A++));
         G_VAR36_float = int.Parse(Ȗ(O, A++));
-        ɶ = int.Parse(Ȗ(O, A++));
-        ɵ = float.Parse(Ȗ(O, A++));
+        G_VAR37_float = int.Parse(Ȗ(O, A++));
+        G_VAR38_float = float.Parse(Ȗ(O, A++));
         G_VAR28_bool = bool.Parse(Ȗ(O, A++));
         G_VAR33_bool = bool.Parse(Ȗ(O, A++));
         if (ƽ == Enum13.Ͼ) {
@@ -5736,10 +5802,10 @@ Enum16 ɖ() {
             G_VAR24_int = int.Parse(Ȗ(O, A++));
             G_VAR25_int = int.Parse(Ȗ(O, A++));
             G_VAR26_int = int.Parse(Ȗ(O, A++));
-            ɴ = float.Parse(Ȗ(O, A++));
-            ɳ = float.Parse(Ȗ(O, A++));
-            ɼ = float.Parse(Ȗ(O, A++));
-            ɲ = float.Parse(Ȗ(O, A++));
+            G_VAR39_float = float.Parse(Ȗ(O, A++));
+            G_VAR40_float = float.Parse(Ȗ(O, A++));
+            G_VAR41_float = float.Parse(Ȗ(O, A++));
+            G_VAR42_float = float.Parse(Ȗ(O, A++));
             Ӂ = int.Parse(Ȗ(O, A++));
             Ӏ = int.Parse(Ȗ(O, A++));
             ԓ = int.Parse(Ȗ(O, A++));
@@ -5751,12 +5817,12 @@ Enum16 ɖ() {
         }
 
         O = Ȗ(ɕ, 3).Replace("\n", "").Split('|');
-        ˌ = O.ToList();
+        G_VAR50_List_String = O.ToList();
         O = Ȗ(ɕ, 4).Split('\n');
-        ˋ.Clear();
+        G_VAR51_List_Class1.Clear();
         if (O.Count() >= 1 && O[0] != "")
             for (int ã = 0; ã < O.Length; ã++)
-                ˋ.Add(Ț(Ȗ(O, ã)));
+                G_VAR51_List_Class1.Add(Ț(Ȗ(O, ã)));
     }
     catch {
         return Enum16.ɘ;
