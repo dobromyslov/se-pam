@@ -116,7 +116,7 @@ Program()
                 pamStatus = "Grinder mode enabled!";
             } else {
                 pamMode = PamMode.SHUTTLE;
-                Ͻ(Enum2.Ͼ);
+                Ͻ(Enum2.SHUTTLE_MODE_ENABLED);
             }
         }
 
@@ -129,9 +129,9 @@ Program()
 IMyGridTerminalSystem GTS;
 Vector3 φ = new Vector3();
 Vector3 ɉ = new Vector3();
-Vector3 υ = new Vector3();
-Vector3 τ = new Vector3();
-Vector3 σ = new Vector3();
+Vector3 forwardAxis = new Vector3();
+Vector3 leftAxis = new Vector3();
+Vector3 downAxis = new Vector3();
 DateTime ς = new DateTime();
 bool ρ = true;
 int π = 0;
@@ -141,8 +141,8 @@ bool ν = true;
 bool ƿ = false;
 bool μ = false;
 bool λ = false;
-float κ = 0;
-float ϋ = 0;
+float shipSpeed = 0;
+float shipMass = 0;
 int ι = 0;
 int Ə = 0;
 int Ϊ = 0;
@@ -154,7 +154,7 @@ float Υ = 0;
 List<int> Τ = new List<int>();
 List<int> Σ = new List<int>();
 
-void Main(string Ƹ, UpdateType Ρ) {
+void Main(string Ƹ, UpdateType updateType) {
     try {
         if (ȥ != null) {
             Ҕ();
@@ -162,7 +162,7 @@ void Main(string Ƹ, UpdateType Ρ) {
             return;
         }
 
-        ξ = (Ρ & UpdateType.Update10) != 0;
+        ξ = (updateType & UpdateType.Update10) != 0;
 
         if (ξ)
             π++;
@@ -191,8 +191,8 @@ void Main(string Ƹ, UpdateType Ρ) {
         G_VAR4 = false;
 
         try {
-            int Ο = Runtime.CurrentInstructionCount;
-            float A = µ(Ο, Runtime.MaxInstructionCount);
+            int currentInstructionCount = Runtime.CurrentInstructionCount;
+            float A = µ(currentInstructionCount, Runtime.MaxInstructionCount);
             if (A > 0.90)
                 pamStatus = "Max. instructions >90%";
 
@@ -200,13 +200,13 @@ void Main(string Ƹ, UpdateType Ρ) {
                 Ψ = A;
 
             if (G_VAR1) {
-                Τ.Add(Ο);
+                Τ.Add(currentInstructionCount);
                 while (Τ.Count > 10)
                     Τ.RemoveAt(0);
 
                 Χ = 0;
-                for (int ã = 0; ã < Τ.Count; ã++) {
-                    Χ += Τ[ã];
+                for (int i = 0; i < Τ.Count; i++) {
+                    Χ += Τ[i];
                 }
 
                 Χ = µ(µ(Χ, Τ.Count), Runtime.MaxInstructionCount);
@@ -250,12 +250,13 @@ void Λ(string Ƹ) {
     if (ɘ <= 1 && !Ⱦ(Ƹ))
         η(Ƹ);
 
-    if (ɬ != null && ɬ.HasPendingMessage) {
-        MyIGCMessage ǉ = ɬ.AcceptMessage();
-        String ž = (string)ǉ.Data;
+    if (broadcastListener != null && broadcastListener.HasPendingMessage) {
+        MyIGCMessage igsMessage = broadcastListener.AcceptMessage();
+        String messageData = (string)igsMessage.Data;
         String ǋ = "";
-        if (ɘ <= 1 && Ȼ(ref ž, out ǋ, out Κ) && ǋ == ɟ) {
-            η(ž); Π = true;
+        if (ɘ <= 1 && Ȼ(ref messageData, out ǋ, out Κ) && ǋ == ɟ) {
+            η(messageData);
+            Π = true;
         }
     }
 
@@ -374,12 +375,12 @@ void Λ(string Ƹ) {
                 Ҕ();
 
             if (ɘ <= 1) {
-                ϋ = remoteControl.CalculateShipMass().PhysicalMass;
-                κ = (float)remoteControl.GetShipSpeed();
+                shipMass = remoteControl.CalculateShipMass().PhysicalMass;
+                shipSpeed = (float)remoteControl.GetShipSpeed();
                 ɉ = Ȕ(remoteControl, φ);
-                υ = remoteControl.WorldMatrix.Forward;
-                τ = remoteControl.WorldMatrix.Left;
-                σ = remoteControl.WorldMatrix.Down;
+                forwardAxis = remoteControl.WorldMatrix.Forward;
+                leftAxis = remoteControl.WorldMatrix.Left;
+                downAxis = remoteControl.WorldMatrix.Down;
                 ˇ();
                 if (G_VAR67_Enum10 != Enum10.Д) {
                     μ = false;
@@ -399,7 +400,7 @@ void Λ(string Ƹ) {
                 } else {
                     if (μ) {
                         if (ù()) {
-                            ë(σ, υ, τ, 0.25f, true);
+                            ë(downAxis, forwardAxis, leftAxis, 0.25f, true);
                             Ĕ();
                             pamStatus = "Aligning to planet: " + Math.Round(ė - 0.25f, 2) + "°";
                             if (ě)
@@ -620,7 +621,7 @@ String γ() {
         "Run-arguments: (Type without:[ ])\n" + 
         "———————————————\n" + 
         "[UP] Menu navigation up\n" + 
-        "[DOWN] Menu navigation down\n" +
+        "[DOWN] Menu navigation downAxis\n" +
         "[APPLY] Apply menu point\n\n" +
         "[UPLOOP] \"UP\" + looping\n" + 
         "[DOWNLOOP] \"DOWN\" + looping\n" + 
@@ -643,7 +644,7 @@ String γ() {
             "[CFGB done damage]*\n" +
             "[CFGL maxload weightLimit]*\n" + 
             "[CFGE minUr minBat minHyd]*\n" + 
-            "[CFGW forward backward]*\n" + 
+            "[CFGW forwardAxis backward]*\n" + 
             "[CFGA acceleration]*\n" + 
             "———————————————\n" +
             "*[CFGS] = Config Size:\n" + 
@@ -677,7 +678,7 @@ String γ() {
 void β() {
     Ҕ();
     pamMode = PamMode.SHUTTLE;
-    Ͻ(Enum2.Ͼ);
+    Ͻ(Enum2.SHUTTLE_MODE_ENABLED);
     G_VAR58_Class1.Ͷ = false;
     G_VAR43_Class1.Ͷ = false;
     sensor = null;
@@ -841,32 +842,32 @@ Enum1 G_VAR7 = Enum1.Ϸ;
  * Original: Ѓ 
  */ 
 public enum Enum2 {
-    Ђ,
-    Ё,
-    Ѐ,
-    Ͽ,
-    Ͼ
+    JOB_IS_RUNNING,
+    CONNECTOR_NOT_READY,
+    SHIP_MODIFIED_PATH_OUTDATED,
+    INTERRUPTED_BY_PLAYER,
+    SHUTTLE_MODE_ENABLED
 }
 
 String Ͻ(Enum2 ƿ) {
     switch (ƿ) {
-        case Enum2.Ђ:
+        case JOB_IS_RUNNING:
             pamStatus = "Job is running";
             break;
 
-        case Enum2.Ё:
+        case Enum2.CONNECTOR_NOT_READY:
             pamStatus = "Connector not ready!";
             break;
 
-        case Enum2.Ѐ:
+        case Enum2.SHIP_MODIFIED_PATH_OUTDATED:
             pamStatus = "Ship modified, path outdated!";
             break;
 
-        case Enum2.Ͽ:
+        case Enum2.INTERRUPTED_BY_PLAYER:
             pamStatus = "Interrupted by player!";
             break;
 
-        case Enum2.Ͼ:
+        case Enum2.SHUTTLE_MODE_ENABLED:
             pamStatus = "Shuttle mode enabled!";
             break;
     }
@@ -874,12 +875,12 @@ String Ͻ(Enum2 ƿ) {
     return "";
 }
 
-String ϝ(Enum4 ϫ) {
-    switch (ϫ) {
-        case Enum4.ʱ:
+String ϝ(StartJobPosition startJobPosition) {
+    switch (startJobPosition) {
+        case StartJobPosition.TOP_LEFT:
             return "Top-Left";
 
-        case Enum4.ʰ:
+        case StartJobPosition.CENTER:
             return "Center";
 
         default:
@@ -1534,10 +1535,10 @@ String ϣ(bool ƛ) {
 
         Ɨ += ƶ;
         Ɨ += "State: " + ϕ(G_VAR67_Enum10) + " \n";
-        Ɨ += "Speed: " + Math.Round(κ, 1) + "m/s\n";
+        Ɨ += "Speed: " + Math.Round(shipSpeed, 1) + "m/s\n";
         Ɨ += "Target dist: " + Ϣ + "m\n";
         Ɨ += "Wp count: " + G_VAR51_List_Class1.Count + "\n";
-        Ɨ += "Wp left: " + Ԋ + "\n";
+        Ɨ += "Wp leftAxis: " + Ԋ + "\n";
     } else if (G_VAR7 == Enum1.ϯ) {
         List<IMyTerminalBlock> ʢ = į();
         if (ο)
@@ -1688,9 +1689,9 @@ public enum Enum3 {
 /**
  * Original: ʲ
  */
-public enum Enum4 {
-    ʱ,
-    ʰ
+public enum StartJobPosition {
+    TOP_LEFT,
+    CENTER
 }
 
 /**
@@ -1739,7 +1740,7 @@ bool G_VAR22_bool = true;
 /**
  * Original: ʄ
  */
-Enum4 G_VAR23_Enum4 = Enum4.ʱ;
+StartJobPosition G_VAR23_Enum4 = StartJobPosition.TOP_LEFT;
 
 /**
  * Original: ʃ
@@ -1818,7 +1819,7 @@ float G_VAR38_float = 0.70f;
 
 /**
  * Original: ɴ 
- * Looks like down mining speed.
+ * Looks like downAxis mining speed.
  */
 float G_VAR39_float = 1.50f;
 
@@ -2144,7 +2145,7 @@ void ˇ() {
         º = Ò(MyShipConnectorStatus.Connected);
 
     if (º != null) {
-        if (Math.Round(κ, 2) <= 0.20)
+        if (Math.Round(shipSpeed, 2) <= 0.20)
             G_VAR53_int++;
         else
             G_VAR53_int = 0;
@@ -2174,11 +2175,11 @@ void ˇ() {
         ˆ = Vector3.Distance(ɉ, G_VAR51_List_Class1.Last().ɉ);
     }
 
-    double ğ = Math.Max(1.5, Math.Pow(κ / 100.0, 2));
-    double ˁ = Math.Max(κ * ğ, 2);
+    double ğ = Math.Max(1.5, Math.Pow(shipSpeed / 100.0, 2));
+    double ˁ = Math.Max(shipSpeed * ğ, 2);
     G_VAR54_double = ˁ;
     if ((ˆ == -1) || ˆ >= ˁ) {
-        Class1 B = new Class1(ɉ, υ, σ, τ, remoteControl.GetNaturalGravity());
+        Class1 B = new Class1(ɉ, forwardAxis, downAxis, leftAxis, remoteControl.GetNaturalGravity());
         B.Ε(thrusters, G_VAR50_List_String);
         G_VAR51_List_Class1.Add(B);
     }
@@ -2446,7 +2447,7 @@ Enum9 G_VAR61_Enum9 = Enum9.Ӌ;
 /**
  * Original: ӂ
  */
-Enum4 G_VAR62_Enum4 = Enum4.ʱ;
+StartJobPosition G_VAR62_Enum4 = StartJobPosition.TOP_LEFT;
 
 /**
  * Original: Ӂ
@@ -2481,9 +2482,9 @@ void Ұ() {
 
     G_VAR58_Class1.ɉ = ɉ;
     G_VAR58_Class1.Í = remoteControl.GetNaturalGravity();
-    G_VAR58_Class1.Ï = υ;
-    G_VAR58_Class1.ç = σ;
-    G_VAR58_Class1.ĕ = τ;
+    G_VAR58_Class1.Ï = forwardAxis;
+    G_VAR58_Class1.ç = downAxis;
+    G_VAR58_Class1.ĕ = leftAxis;
     G_VAR59_Vector3 = firstDrillOrGrinder.WorldMatrix.Forward;
     G_VAR60_Vector3 = G_VAR58_Class1.ç;
     if (G_VAR59_Vector3 == remoteControl.WorldMatrix.Down)
@@ -2531,7 +2532,7 @@ void җ() {
 int G_VAR67_int = 0;
 
 void ҕ() {
-    Ͻ(Enum2.Ђ);
+    Ͻ(JOB_IS_RUNNING);
     җ();
     ť(landingGears, false);
     Ũ(ũ);
@@ -2876,7 +2877,7 @@ Enum11 Ӯ(int ӭ, bool Ç) {
         Ԓ = 0;
     }
 
-    if (G_VAR23_Enum4 == Enum4.ʱ) {
+    if (G_VAR23_Enum4 == StartJobPosition.TOP_LEFT) {
         int Ӭ = ӭ + 1;
         Ԓ = (int)Math.Floor(µ(ӭ, G_VAR63_int));
         if (Ԓ % 2 == 0)
@@ -2888,7 +2889,7 @@ Enum11 Ӯ(int ӭ, bool Ç) {
             return Enum11.ӱ;
         else
             return Enum11.Ӳ;
-    } else if (G_VAR23_Enum4 == Enum4.ʰ) {
+    } else if (G_VAR23_Enum4 == StartJobPosition.CENTER) {
         if (G_VAR72_int_array == null)
             G_VAR72_int_array = new int[] { 0, -1, 0, 0 };
 
@@ -3078,9 +3079,9 @@ void ӗ() {
             ñ(Ӕ, 4);
             ӕ = true;
         } else {
-            float κ = Е(true);
+            float shipSpeed = Е(true);
             Vector3 ӓ = Һ(ԍ, Math.Max(G_VAR26_int + 1, ԁ + 1));
-            ñ(true, false, false, ӓ, ӓ - ԍ, κ, κ);
+            ñ(true, false, false, ӓ, ӓ - ԍ, shipSpeed, shipSpeed);
         }
 
         bool ΰ = false;
@@ -3196,7 +3197,7 @@ void ӗ() {
                 else if (100 - (µ(Ө, ԇ) * 100) < minEjection) {
                     J = true;
                 } else
-                    Ͻ(Enum2.Ђ);
+                    Ͻ(JOB_IS_RUNNING);
             }
 
             if (ɘ && J)
@@ -3389,8 +3390,8 @@ void ӗ() {
         if (Ӧ)
             Ӥ = G_VAR71_Class2.Ӷ;
 
-        float Ӟ = Ә != null ? Ә.Ί : κ;
-        float ӝ = (float)Math.Max(κ * 0.1f * Ю, wpReachedDist);
+        float Ӟ = Ә != null ? Ә.Ί : shipSpeed;
+        float ӝ = (float)Math.Max(shipSpeed * 0.1f * Ю, wpReachedDist);
         if ((Ԍ < ӝ) || Ԏ) {
             if (!Ԏ)
                 ԏ += ы;
@@ -3444,7 +3445,7 @@ void ӗ() {
         Class1 ҋ = ˡ();
         if (Ԏ) {
             if (!ˠ(ҋ, dockDist * Ю, true, out ĉ)) {
-                Ͻ(Enum2.Ё);
+                Ͻ(Enum2.CONNECTOR_NOT_READY);
                 Ҕ();
                 return;
             }
@@ -3474,7 +3475,7 @@ void ӗ() {
             if (G_VAR67_Enum10 == Enum10.ҫ) {
                 Class1 ҋ = ˡ();
                 if (!ˠ(ҋ, dockDist * Ю, true, out ĉ)) {
-                    Ͻ(Enum2.Ё);
+                    Ͻ(Enum2.CONNECTOR_NOT_READY);
                     Ҕ();
                     return;
                 }
@@ -3526,7 +3527,7 @@ void ӗ() {
         float й = dockingSpeed * 5;
         float и = Math.Max(1.5f, Math.Min(5f, Ю * 0.15f));
         if (!ˠ(ҋ, 0, true, out ĉ) || !ˠ(ҋ, и, true, out Ԇ) || ʣ == null || !ʣ.FatBlock.IsFunctional) {
-            Ͻ(Enum2.Ё);
+            Ͻ(Enum2.CONNECTOR_NOT_READY);
             Ҕ();
             return;
         }
@@ -3609,7 +3610,7 @@ void ӗ() {
 
         if (Ò(MyShipConnectorStatus.Connected) == null) {
             Ҕ();
-            Ͻ(Enum2.Ͽ);
+            Ͻ(Enum2.INTERRUPTED_BY_PLAYER);
             return;
         }
 
@@ -3721,7 +3722,7 @@ void ӗ() {
 
             if (B != null) {
                 if (!ˠ(B, dockDist * Ю, true, out ĉ)) {
-                    Ͻ(Enum2.Ё);
+                    Ͻ(Enum2.CONNECTOR_NOT_READY);
                     Ҕ();
                     return;
                 }
@@ -3732,7 +3733,7 @@ void ӗ() {
                 ñ(ɉ + г.WorldMatrix.Forward * dockDist * Ю, 5);
 
             if (G_VAR61_Enum9 == Enum9.Ӊ)
-                Ͻ(Enum2.Ђ);
+                Ͻ(JOB_IS_RUNNING);
         }
 
         if (Ԍ < wpReachedDist) {
@@ -3830,7 +3831,7 @@ void н(List<Class1> G_VAR51_List_Class1, int ы, List<Vector3> ъ, float Ʌ, bo
 
                     Vector3 а = ȕ(ʝ.Ï, ʝ.ç * -1, ʝ.Í);
                     float â = Â(с, а, ʝ);
-                    float ª = µ(â, ϋ);
+                    float ª = µ(â, shipMass);
                     float K = (float)Math.Sqrt(с.Length() * 1.0f / (0.5f * ª));
                     ʝ.Ί = Math.Min(ʝ.Ί, (ф.Length() / K) * G_VAR38_float);
                 }
@@ -4823,7 +4824,7 @@ bool Ɔ = false;
 
 bool Ű(bool š) {
     if (G_VAR28_bool && pamMode != PamMode.SHUTTLE)
-        if (Ƈ != -1 && ϋ >= Ƈ) {
+        if (Ƈ != -1 && shipMass >= Ƈ) {
             pamStatus = "Ship too heavy";
             return true;
         }
@@ -5272,7 +5273,7 @@ float Â(Vector3 C, Class1 B) {
 
 float Â(Vector3 C, Vector3 Á, Class1 B) {
     Vector3 Z = D(C, B);
-    Vector3 À = Z + Á * ϋ;
+    Vector3 À = Z + Á * shipMass;
     float º = (À / C).AbsMin();
     return (float)(C * º).Length();
 }
@@ -5322,7 +5323,7 @@ float ē(Vector3 đ, Vector3 Đ, Class1 B) {
     if (ď == 0)
         return 0.1f;
 
-    float ª = µ(ď, ϋ);
+    float ª = µ(ď, shipMass);
     float K = (float)Math.Sqrt(µ(đ.Length(), ª * 0.5f));
 
     return ª * K * Å * G_VAR38_float;
@@ -5369,7 +5370,7 @@ void ą() {
     } else
         Ĉ = new Vector3(1, 1, 1);
 
-    Ć = ϋ * Ġ - Á * ϋ;
+    Ć = shipMass * Ġ - Á * shipMass;
     k(Ć, Č);
     Ԍ = Vector3.Distance(ɉ, ĉ);
 }
@@ -5653,12 +5654,12 @@ Vector3 Ȕ(IMyTerminalBlock q, Vector3 ȓ) {
     return Vector3D.Transform(ȓ, q.WorldMatrix);
 }
 
-Vector3 Ȓ(IMyTerminalBlock q, Vector3 ȑ) {
-    return Ȑ(q, ȑ - q.GetPosition());
+Vector3 Ȓ(IMyTerminalBlock terminalBlock, Vector3 ȑ) {
+    return Ȑ(terminalBlock, ȑ - terminalBlock.GetPosition());
 }
 
-Vector3 Ȑ(IMyTerminalBlock q, Vector3 ȏ) {
-    return Vector3D.TransformNormal(ȏ, MatrixD.Transpose(q.WorldMatrix));
+Vector3 Ȑ(IMyTerminalBlock terminalBlock, Vector3 ȏ) {
+    return Vector3D.TransformNormal(ȏ, MatrixD.Transpose(terminalBlock.WorldMatrix));
 }
 
 Vector3 ȕ(Vector3 ȍ, Vector3 Ȍ, Vector3 ȏ) {
@@ -5873,11 +5874,11 @@ Enum16 ɖ() {
             G_VAR20_Class5.Ɣ = Ȗ(O, A++);
             G_VAR20_Class5.ƕ = Ȗ(O, A++);
         } else {
-            G_VAR23_Enum4 = (Enum4)int.Parse(Ȗ(O, A++));
+            G_VAR23_Enum4 = (StartJobPosition)int.Parse(Ȗ(O, A++));
             G_VAR21_Enum5 = (Enum5)int.Parse(Ȗ(O, A++));
             G_VAR32_Enum6 = (Enum6)int.Parse(Ȗ(O, A++));
             G_VAR27_Enum3 = (Enum3)int.Parse(Ȗ(O, A++));
-            G_VAR62_Enum4 = (Enum4)int.Parse(Ȗ(O, A++));
+            G_VAR62_Enum4 = (StartJobPosition)int.Parse(Ȗ(O, A++));
             G_VAR22_bool = bool.Parse(Ȗ(O, A++));
             G_VAR31_bool = bool.Parse(Ȗ(O, A++));
             G_VAR29_bool = bool.Parse(Ȗ(O, A++));
@@ -5941,7 +5942,7 @@ bool ɯ = false;
 bool ɰ = false;
 String ɮ = "";
 String ɭ = "";
-IMyBroadcastListener ɬ = null;
+IMyBroadcastListener broadcastListener = null;
 bool ɫ = true;
 void ɪ() {
     bool ɩ = true;
@@ -5969,9 +5970,9 @@ void ɪ() {
 
             ɭ = ɔ(ɓ(O, "Broadcast_Channel", ref ɩ)).ToLower();
             ɦ =false;
-            if (ɬ == null) {
-                ɬ = this.IGC.RegisterBroadcastListener(ɠ);
-                ɬ.SetMessageCallback("");
+            if (broadcastListener == null) {
+                broadcastListener = this.IGC.RegisterBroadcastListener(PAMCMD);
+                broadcastListener.SetMessageCallback("");
             }
 
             List<IMyRadioAntenna> ɥ = new List<IMyRadioAntenna>();
@@ -5998,10 +5999,10 @@ void ɪ() {
 
         ɰ = ɧ;
         if (ɦ) {
-            if (ɬ != null)
-                this.IGC.DisableBroadcastListener(ɬ);
+            if (broadcastListener != null)
+                this.IGC.DisableBroadcastListener(broadcastListener);
 
-            ɬ = null;
+            broadcastListener = null;
         }
     } catch {
         ɩ = false;
@@ -6026,7 +6027,7 @@ String ɡ() {
     return ɟ;
 }
 
-const String ɠ = "[PAMCMD]";
+const String PAMCMD = "[PAMCMD]";
 const String ɟ = "#";
 const Char ɞ = ';';
 
@@ -6039,15 +6040,15 @@ void ɀ(String ƿ, String ý, String ȷ) {
         if (!ɯ)
             return;
 
-        ƿ = ɠ + ɞ + ɡ() + ɞ + ý + ɞ + ɭ + ɞ + ȷ + ɞ + ƿ;
-        this.IGC.SendBroadcastMessage(ɠ, ƿ);
+        ƿ = PAMCMD + ɞ + ɡ() + ɞ + ý + ɞ + ɭ + ɞ + ȷ + ɞ + ƿ;
+        this.IGC.SendBroadcastMessage(PAMCMD, ƿ);
     } catch (Exception e) {
         ȥ = e;
     }
 }
 
 bool Ⱦ(String ƿ) {
-    return ƿ.StartsWith(ɠ);
+    return ƿ.StartsWith(PAMCMD);
 }
 
 bool Ƚ(ref String ū, out string Ƹ, Char ȼ) {
@@ -6380,8 +6381,8 @@ List<Class6> Ǎ = null; void ǌ(string Ƹ) {
     if (!Ⱦ(Ƹ))
         ƹ(Ƹ);
 
-    if (ɬ != null && ɬ.HasPendingMessage) {
-        MyIGCMessage ǉ = ɬ.AcceptMessage();
+    if (broadcastListener != null && broadcastListener.HasPendingMessage) {
+        MyIGCMessage ǉ = broadcastListener.AcceptMessage();
         String ž = (string)ǉ.Data;
         if (Ȼ(ref ž, out ǋ, out Ǌ) && ǋ != "" && ǋ != ɟ) {
             Class6 Ʀ = ǎ(ǋ, "");
@@ -6858,7 +6859,7 @@ void Ǘ() {
         "Run-arguments: (Type without:[ ])\n" +
         "———————————————\n" +
         "[UP] Menu navigation up\n" +
-        "[DOWN] Menu navigation down\n" +
+        "[DOWN] Menu navigation downAxis\n" +
         "[APPLY] Apply menu point\n" +
         "[CLEAR] Clear miner list\n" +
         "[SEND ship:cmd] Send to a ship*\n" +
