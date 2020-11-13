@@ -1619,8 +1619,8 @@ public enum ʪ {
     ʺ
 }
 
-ų ʔ = new ų();
-ų ʒ = new ų();
+Class5 ʔ = new Class5();
+Class5 ʒ = new Class5();
 ʯ ʆ = ʯ.ʮ;
 bool ʅ = true;
 ʲ ʄ = ʲ.ʱ;
@@ -1774,8 +1774,11 @@ int ͻ<ŕ>(ŕ ͺ) {
     return Enum.GetValues(ͺ.GetType()).Length;
 }
 
-class ͷ {
-    public bool Ͷ = false;
+/**
+ * Original: ͷ 
+ */
+class Class1 {
+    public bool Class1 = false;
     public Vector3 ɉ = new Vector3();
     public Vector3 ç = new Vector3();
     public Vector3 Ï = new Vector3();
@@ -1785,10 +1788,10 @@ class ͷ {
     public float Ί = 0;
     public float Η = 0;
     public float[] Θ = null;
-    public ͷ() {
+    public Class1() {
 
     }
-    public ͷ(ͷ Ζ) {
+    public Class1(Class1 Ζ) {
         Ͷ = Ζ.Ͷ;
         ɉ = Ζ.ɉ;
         ç = Ζ.ç;
@@ -1799,7 +1802,7 @@ class ͷ {
         Θ = Ζ.Θ;
     }
 
-    public ͷ(Vector3 ɉ, Vector3 Ï, Vector3 ç, Vector3 ĕ, Vector3 Í) {
+    public Class1(Vector3 ɉ, Vector3 Ï, Vector3 ç, Vector3 ĕ, Vector3 Í) {
         this.ɉ = ɉ;
         this.ç = ç;
         this.Ï = Ï;
@@ -1822,9 +1825,9 @@ class ͷ {
     }
 }
 
-ͷ Β = new ͷ();
-ͷ Α = new ͷ();
-ͷ ΐ = new ͷ();
+Class1 Β = new Class1();
+Class1 Α = new Class1();
+Class1 ΐ = new Class1();
 bool Ώ = false;
 bool Ύ = false;
 bool Ό = false;
@@ -1836,8 +1839,8 @@ void ʹ() {
 
     ˋ.Clear();
     ˍ = true;
-    Α = new ͷ(Β);
-    ΐ = new ͷ(Ǟ);
+    Α = new Class1(Β);
+    ΐ = new Class1(Ǟ);
     Β.Ͷ = false;
     if (ƽ == В.Ͼ)
         Ǟ.Ͷ = false;
@@ -1868,8 +1871,8 @@ void ˎ() {
 
 bool ˍ = false;
 List<String> ˌ = new List<string>();
-List<ͷ> ˋ = new List<ͷ>();
-List<ͷ> ˊ = new List<ͷ>();
+List<Class1> ˋ = new List<Class1>();
+List<Class1> ˊ = new List<Class1>();
 int ˉ = 0;
 double ˈ = 0;
 void ˇ() {
@@ -1929,7 +1932,7 @@ void ˇ() {
     double ˁ = Math.Max(κ * ğ, 2);
     ˈ = ˁ;
     if ((ˆ == -1) || ˆ >= ˁ) {
-        ͷ B = new ͷ(ɉ, υ, σ, τ, Э.GetNaturalGravity());
+        Class1 B = new Class1(ɉ, υ, σ, τ, Э.GetNaturalGravity());
         B.Ε(Δ, ˌ);
         ˋ.Add(B);
     }
@@ -2008,21 +2011,21 @@ bool ʼ(Vector3 ɉ) {
     return Ͱ < ˮ || Ͱ < ˬ;
 }
 
-ͷ ˤ = null;
-void ˣ(ͷ B, ӌ ˢ) {
+Class1 ˤ = null;
+void ˣ(Class1 B, ӌ ˢ) {
     ˤ = B;
     if (Ӄ == ӌ.Ӊ)
         ҟ = ˢ;
 }
 
-ͷ ˡ() {
+Class1 ˡ() {
     if (ƽ != В.Ͼ)
         return Β;
 
     return ˤ;
 }
 
-bool ˠ(ͷ ˑ, float Ʌ, bool ː, out Vector3 ˏ) {
+bool ˠ(Class1 ˑ, float Ʌ, bool ː, out Vector3 ˏ) {
     if (ː) {
         Vector3I Ƌ = new Vector3I((int)ˑ.Ή.X, (int)ˑ.Ή.Y, (int)ˑ.Ή.Z);
         IMySlimBlock ʣ = Me.CubeGrid.GetCubeBlock(Ƌ);
@@ -2157,7 +2160,7 @@ public enum ӌ {
     ӆ
 }
 
-ͷ Ǟ = new ͷ();
+Class1 Ǟ = new Class1();
 Vector3 Ӆ;
 Vector3 ӄ;
 ӌ Ӄ = ӌ.Ӌ;
@@ -2520,10 +2523,13 @@ void Ӿ(ҍ ӏ) {
     this.ӏ = ӏ;
 }
 
-ӻ Ӽ = null;
+Class2 Ӽ = null;
 
-class ӻ {
-    public ͷ Ӻ = null;
+/**
+ * Original: ӻ
+ */
+class Class2 {
+    public Class1 Ӻ = null;
     public List<Vector3> ӹ = new List<Vector3>();
     public float Ӹ = 0;
     public float ӷ = 0;
@@ -2623,7 +2629,7 @@ bool ӧ = false;
 bool Ӛ = false;
 bool ә = false;
 DateTime ż = new DateTime();
-ͷ Ә = null;
+Class1 Ә = null;
 
 void ӗ() {
     if (Ҡ == ҍ.ʟ) {
@@ -2974,11 +2980,11 @@ void ӗ() {
         bool ӥ = false;
         float Ӥ = 0;
         bool ӣ = false;
-        ͷ B = null;
+        Class1 B = null;
         if (Ԏ) {
             if (Ҡ == ҍ.ү || ƽ == В.Ͼ) {
-                ͷ ҋ = ˡ();
-                Ӽ = new ӻ();
+                Class1 ҋ = ˡ();
+                Ӽ = new Class2();
                 Ӽ.Ӻ = ҋ;
                 Ӽ.Ӹ = followPathDock * Ю;
                 Ӽ.ӷ = useDockDirectionDist * Ю;
@@ -3000,7 +3006,7 @@ void ӗ() {
                     Ӽ.ӵ = dockDist * Ю * 1.1f;
                 }
             } else if (Ҡ == ҍ.Ү) {
-                Ӽ = new ӻ();
+                Ӽ = new Class2();
                 Ӽ.Ӻ = Ǟ;
                 Ӽ.Ӹ = followPathJob * Ю;
                 Ӽ.ӷ = useJobDirectionDist * Ю;
@@ -3109,7 +3115,7 @@ void ӗ() {
     }
 
     if (Ҡ == ҍ.Ҭ || Ҡ == ҍ.ҩ) {
-        ͷ ҋ = ˡ();
+        Class1 ҋ = ˡ();
         if (Ԏ) {
             if (!ˠ(ҋ, dockDist * Ю, true, out ĉ)) {
                 Ͻ(Ѓ.Ё);
@@ -3140,7 +3146,7 @@ void ӗ() {
     if (Ҡ == ҍ.ҫ || Ҡ == ҍ.Ҫ) {
         if (Ԏ) {
             if (Ҡ == ҍ.ҫ) {
-                ͷ ҋ = ˡ();
+                Class1 ҋ = ˡ();
                 if (!ˠ(ҋ, dockDist * Ю, true, out ĉ)) {
                     Ͻ(Ѓ.Ё);
                     Ҕ();
@@ -3180,7 +3186,7 @@ void ӗ() {
             return;
         }
 
-        ͷ ҋ = ˡ();
+        Class1 ҋ = ˡ();
         if (Ԏ) {
             Ԅ = 0;
             ż = DateTime.Now;
@@ -3300,7 +3306,7 @@ void ӗ() {
         else
             ӧ = Ĺ >= ɷ;
 
-        ų ƌ = null;
+        Class5 ƌ = null;
         if (л)
             ƌ = ʔ;
 
@@ -3380,7 +3386,7 @@ void ӗ() {
             IMyShipConnector г = Ä.OtherConnector;
             Ŗ(Ä, false);
             ť(Ч, false);
-            ͷ B = null;
+            Class1 B = null;
             if (Vector3.Distance(Ä.GetPosition(), Β.ɉ) < 5f && Β.Ͷ)
                 B = Β;
 
@@ -3428,8 +3434,11 @@ void ӗ() {
     Ԏ = false;
 }
 
-class в {
-    public в(Vector3 б, float Ʌ) {
+/**
+ * Original: в
+ */
+class Class3 {
+    public Class3(Vector3 б, float Ʌ) {
         this.б = б;
         this.Ʌ = Ʌ;
     }
@@ -3438,7 +3447,7 @@ class в {
     public float Ʌ;
 }
 
-void н(List<ͷ> ˋ, int ы, List<Vector3> ъ, float Ʌ, bool Ç, ref int Ћ) {
+void н(List<Class1> ˋ, int ы, List<Vector3> ъ, float Ʌ, bool Ç, ref int Ћ) {
     if (Ç) {
         for (int ã = 0; ã < ˋ.Count; ã++)
             ˋ[ã].Ί = 0;
@@ -3463,7 +3472,7 @@ void н(List<ͷ> ˋ, int ы, List<Vector3> ъ, float Ʌ, bool Ç, ref int Ћ) {
         Ř++;
         try {
             if ((щ < 0 && Ћ >= 1) || (щ > 0 && Ћ <= ˋ.Count - 2)) {
-                ͷ ʝ = ˋ[Ћ];
+                Class1 ʝ = ˋ[Ћ];
                 bool ш = false;
                 for (int ʡ = 0; ʡ < ъ.Count; ʡ++) {
                     if (Vector3.Distance(ʝ.ɉ, ъ[ʡ]) <= Ʌ) {
@@ -3473,8 +3482,8 @@ void н(List<ͷ> ˋ, int ы, List<Vector3> ъ, float Ʌ, bool Ç, ref int Ћ) {
                 }
 
                 if (!ш) {
-                    ͷ ч = ˋ[Ћ - щ];
-                    ͷ ц = ˋ[Ћ + щ];
+                    Class1 ч = ˋ[Ћ - щ];
+                    Class1 ц = ˋ[Ћ + щ];
                     Vector3 х = ʝ.ɉ - ц.ɉ;
                     Vector3 ф = ч.ɉ - ʝ.ɉ;
                     Vector3 у = ʝ.ɉ + Vector3.Normalize(х) * ф.Length();
@@ -4021,12 +4030,15 @@ public enum ŉ {
     ň, Ň, ņ
 }
 
-class Ņ {
+/**
+ * Original: Ņ
+ */
+class Class4 {
     public String Ô = "";
     public String ń = "";
     public int Ń = 0;
     public ŉ ĭ = ŉ.ņ;
-    public Ņ(String Ô, String ń, int Ń, ŉ ĭ) {
+    public Class4(String Ô, String ń, int Ń, ŉ ĭ) {
         this.Ô = Ô;
         this.ń = ń;
         this.Ń = Ń;
@@ -4034,18 +4046,18 @@ class Ņ {
     }
 }
 
-Ņ Œ(String Ô, String ń, ŉ ĭ, bool ő) {
+Class4 Œ(String Ô, String ń, ŉ ĭ, bool ő) {
     Ô = Ô.ToUpper();
     ń = ń.ToUpper();
     for (int A = 0; A < ŀ.Count; A++) {
-        Ņ Ĵ = ŀ[A];
+        Class4 Ĵ = ŀ[A];
         if (Ĵ.Ô.ToUpper() == Ô && Ĵ.ń.ToUpper() == ń && (Ĵ.ĭ == ĭ || ĭ == ŉ.ņ))
             return Ĵ;
     }
 
-    Ņ J = null;
+    Class4 J = null;
     if (ő) {
-        J = new Ņ(Ô, ń, 0, ĭ);
+        J = new Class4(Ô, ń, 0, ĭ);
         ŀ.Add(J);
     }
 
@@ -4061,7 +4073,7 @@ int Ő(String Ô, String ń, ŉ ĭ, String[] ŋ) {
     Ô = Ô.ToUpper();
     ń = ń.ToUpper();
     for (int A = 0; A < ŀ.Count; A++) {
-        Ņ Ĵ = ŀ[A];
+        Class4 Ĵ = ŀ[A];
         if (ŋ != null && ŋ.Contains(Ĵ.Ô.ToUpper()))
             continue;
 
@@ -4072,7 +4084,7 @@ int Ő(String Ô, String ń, ŉ ĭ, String[] ŋ) {
     return Ń;
 }
 
-float ŏ = 0; float œ = 0; float ł = 0; List<Ņ> ŀ = new List<Ņ>(); void Į(IMyTerminalBlock q, ŉ ĭ) {
+float ŏ = 0; float œ = 0; float ł = 0; List<Class4> ŀ = new List<Class4>(); void Į(IMyTerminalBlock q, ŉ ĭ) {
     for (int A = 0; A < q.InventoryCount; A++) {
         List<MyInventoryItem> Ĭ = new List<MyInventoryItem>(); q.GetInventory(A).GetItems(Ĭ);
         for (int ã = 0; ã < Ĭ.Count; ã++) {
@@ -4081,11 +4093,11 @@ float ŏ = 0; float œ = 0; float ł = 0; List<Ņ> ŀ = new List<Ņ>(); void Į(
     }
 }
 
-void ī(List<Ņ> Ī) {
+void ī(List<Class4> Ī) {
     for (int ĩ = Ī.Count - 1; ĩ > 0; ĩ--) {
         for (int A = 0; A < ĩ; A++) {
-            Ņ ª = Ī[A];
-            Ņ q = Ī[A + 1];
+            Class4 ª = Ī[A];
+            Class4 q = Ī[A + 1];
             if (ª.Ń < q.Ń)
                 Ī.Move(A, A + 1);
         }
@@ -4296,7 +4308,10 @@ public enum ſ {
     ž, Ž, ż, Ż, ź, Ź, Ÿ, ŷ, Ŷ, ŵ, Ŵ
 }
 
-class ų {
+/**
+ * Original: ų
+ */ 
+class Class5 {
     public ſ Ų = ſ.ž;
     public float Ƅ = 0;
     public float ƅ = 0;
@@ -4342,7 +4357,7 @@ class ų {
     }
 }
 
-bool ƍ(ų ƌ, bool Ç, bool ƈ) {
+bool ƍ(Class5 ƌ, bool Ç, bool ƈ) {
     if (Ç)
         ƌ.Ç();
 
@@ -4632,7 +4647,7 @@ IMyShipConnector Ò(MyShipConnectorStatus Ñ) {
     return null;
 }
 
-float Ð(Vector3 Ï, Vector3 Î, Vector3 Í, ͷ B) {
+float Ð(Vector3 Ï, Vector3 Î, Vector3 Í, Class1 B) {
     if (Í.Length() == 0f)
         return 0;
 
@@ -4642,7 +4657,7 @@ float Ð(Vector3 Ï, Vector3 Î, Vector3 Í, ͷ B) {
 }
 
 int Ê = 0;
-ͷ É = null;
+Class1 É = null;
 
 void È(bool Ç) {
     float Æ = 0;
@@ -4676,7 +4691,7 @@ void È(bool Ç) {
                 return;
 
             Ä++;
-            ͷ B = ˋ[Ê];
+            Class1 B = ˋ[Ê];
             if (B.Í.Length() != 0f) {
                 Æ = Å * Math.Min(Ð(B.Ï, B.ç * -1, B.Í, B), Ð(B.Ï * -1, B.ç * -1, B.Í, B));
                 if (Æ < Ƈ || Ƈ == -1)
@@ -4875,7 +4890,7 @@ Vector3 S(Vector3 C, float[,] I) {
         );
 }
 
-bool H(ͷ B, String G, out float F) {
+bool H(Class1 B, String G, out float F) {
     F = 0;
     int E = ˌ.IndexOf(G);
     if (E == -1 || B.Θ == null || E >= B.Θ.Length)
@@ -4888,7 +4903,7 @@ bool H(ͷ B, String G, out float F) {
     return true;
 }
 
-Vector3 D(Vector3 C, ͷ B) {
+Vector3 D(Vector3 C, Class1 B) {
     if (B != null) {
         Vector3 J = new Vector3();
         for (int A = 0; A < ä.Keys.Count; A++) {
@@ -4907,11 +4922,11 @@ Vector3 D(Vector3 C, ͷ B) {
     return S(C, Õ);
 }
 
-float Â(Vector3 C, ͷ B) {
+float Â(Vector3 C, Class1 B) {
     return Â(C, new Vector3(), B);
 }
 
-float Â(Vector3 C, Vector3 Á, ͷ B) {
+float Â(Vector3 C, Vector3 Á, Class1 B) {
     Vector3 Z = D(C, B);
     Vector3 À = Z + Á * ϋ;
     float º = (À / C).AbsMin();
@@ -4951,7 +4966,7 @@ void k(Vector3 h, bool e) {
     }
 }
 
-float ē(Vector3 đ, Vector3 Đ, ͷ B) {
+float ē(Vector3 đ, Vector3 Đ, Class1 B) {
     if (đ.Length() == 0)
         return 0;
 
@@ -5321,7 +5336,7 @@ Vector3 ȉ(String O) {
     return new Vector3(float.Parse(Ȗ(ȝ, 0)), float.Parse(Ȗ(ȝ, 1)), float.Parse(Ȗ(ȝ, 2)));
 }
 
-String Ȝ(ͷ B) {
+String Ȝ(Class1 B) {
     String ț = ":";
     String J = Ȋ(B.ɉ) + ț + Ȋ(B.Ï) + ț + Ȋ(B.ç) + ț + Ȋ(B.ĕ) + ț + Ȋ(B.Í);
     for (int A = 0; A < B.Θ.Length; A++) {
@@ -5332,9 +5347,9 @@ String Ȝ(ͷ B) {
     return J;
 }
 
-ͷ Ț(String ș) {
+Class1 Ț(String ș) {
     String[] O = ș.Split(':');
-    ͷ J = new ͷ(ȉ(Ȗ(O, 0)), ȉ(Ȗ(O, 1)), ȉ(Ȗ(O, 2)), ȉ(Ȗ(O, 3)), ȉ(Ȗ(O, 4)));
+    Class1 J = new Class1(ȉ(Ȗ(O, 0)), ȉ(Ȗ(O, 1)), ȉ(Ȗ(O, 2)), ȉ(Ȗ(O, 3)), ȉ(Ȗ(O, 4)));
     int A = 5;
     List<float> Ī = new List<float>();
     while (A < O.Length) {
@@ -5759,7 +5774,10 @@ public enum Ⱥ {
     ǻ, Ɂ, ɒ, ɑ
 }
 
-class ɐ {
+/**
+ * Original: ɐ
+ */ 
+class Class6 {
     public DateTime ɏ;
     public DateTime Ɏ;
     public String ǃ = "";
@@ -5770,7 +5788,7 @@ class ɐ {
     public String Ǹ = "";
     public String Ɋ = "";
     public Vector3 ɉ = new Vector3();
-    public List<Ņ> Ƿ = new List<Ņ>();
+    public List<Class4> Ƿ = new List<Class4>();
     public В ƽ = В.ǻ;
     public Ⱥ Ɉ;
     public float ɇ;
@@ -5790,7 +5808,7 @@ class ɐ {
         return (DateTime.Now - Ɏ).TotalSeconds >= 4;
     }
 
-    public ɐ(String ǃ) {
+    public Class6(String ǃ) {
         this.ǃ = ǃ;
     }
 
@@ -5817,7 +5835,7 @@ class ɐ {
     }
 }
 
-void ǀ(ɐ Ʀ, String ƿ) {
+void ǀ(Class6 Ʀ, String ƿ) {
     Ʀ.ɏ = DateTime.Now;
     String Ä = "";
     String ƾ = "";
@@ -5853,7 +5871,7 @@ void ǀ(ɐ Ʀ, String ƿ) {
         if (!int.TryParse(O[2], out ƻ))
             continue;
 
-        Ʀ.Ƿ.Add(new Ņ(O[0], O[1], ƻ, ŉ.ň));
+        Ʀ.Ƿ.Add(new Class4(O[0], O[1], ƻ, ŉ.ň));
     }
 
     int ƺ = 0;
@@ -5981,14 +5999,14 @@ void ǐ(String Ƹ) {
 
     ª.DefaultIfEmpty("");
     String Ǐ = ª.ElementAtOrDefault(0).Trim();
-    ɐ Ʀ = ǎ("", Ǐ);
+    Class6 Ʀ = ǎ("", Ǐ);
     if (Ʀ != null)
         Ƨ(Ʀ, ª.ElementAtOrDefault(1).Trim());
     else
         ώ = "Unknown ship: " + Ǐ;
 }
 
-ɐ ǎ(String ǃ, String Ô) {
+Class6 ǎ(String ǃ, String Ô) {
     ǃ = ǃ.ToUpper(); Ô = Ô.ToUpper();
     for (int A = 0; A < Ǎ.Count; A++) {
         if (ǃ != "" && Ǎ[A].ǃ.ToUpper() == ǃ)
@@ -6001,9 +6019,9 @@ void ǐ(String Ƹ) {
     return null;
 }
 
-List<ɐ> Ǎ = null; void ǌ(string Ƹ) {
+List<Class6> Ǎ = null; void ǌ(string Ƹ) {
     if (ρ) {
-        Ǎ = new List<ɐ>();
+        Ǎ = new List<Class6>();
     }
 
     String ǋ = "";
@@ -6015,15 +6033,15 @@ List<ɐ> Ǎ = null; void ǌ(string Ƹ) {
         MyIGCMessage ǉ = ɬ.AcceptMessage();
         String ž = (string)ǉ.Data;
         if (Ȼ(ref ž, out ǋ, out Ǌ) && ǋ != "" && ǋ != ɟ) {
-            ɐ Ʀ = ǎ(ǋ, "");
+            Class6 Ʀ = ǎ(ǋ, "");
             if (Ʀ == null) {
-                Ʀ = new ɐ(ǋ);
+                Ʀ = new Class6(ǋ);
                 Ǎ.Add(Ʀ);
             }
 
             Ʀ.ǫ(Ǌ, false, false, true);
             ǀ(Ʀ, ž);
-            Ǎ.Sort(delegate (ɐ Y, ɐ X) {
+            Ǎ.Sort(delegate (Class6 Y, Class6 X) {
                 if (Y.Ô == null && X.Ô == null)
                     return 0;
                 else if (Y.Ô == null)
@@ -6049,7 +6067,7 @@ List<ɐ> Ǎ = null; void ǌ(string Ƹ) {
     Ǘ();
 }
 
-Ⱥ ǈ(ɐ Ʀ, bool Ǉ, string ǃ) {
+Ⱥ ǈ(Class6 Ʀ, bool Ǉ, string ǃ) {
     Ⱥ J = Ⱥ.ǻ;
     if (Ʀ == null) {
         for (int A = 0; A < Ǎ.Count; A++) {
@@ -6070,7 +6088,7 @@ List<ɐ> Ǎ = null; void ǌ(string Ƹ) {
         return Ʀ.ǫ(ǃ, false, Ǉ, false);
 }
 
-void Ƨ(ɐ Ʀ, String ƥ) {
+void Ƨ(Class6 Ʀ, String ƥ) {
     if (Ʀ == null) {
         for (int A = 0; A < Ǎ.Count; A++)
             Ǎ[A].ǫ(ƥ, true, false, false);
@@ -6113,7 +6131,7 @@ void Ơ() {
     Ѕ = 0;
 }
 
-ɐ ƞ = null;
+Class6 ƞ = null;
 String Ɯ(bool ƛ) {
     int Ɲ = 0;
     return Ɯ(ƛ, 0, ref Ɲ, false, 1);
@@ -6145,7 +6163,7 @@ String Ɯ(bool ƛ, int ƚ, ref int ƙ, bool Ƙ, int Ɵ) {
         int Ʋ = 0;
         for (int ã = 0; ã < Ǎ.Count; ã++) {
             if (Ƙ) Ƴ += "\n";
-            ɐ Ʊ = Ǎ[ã];
+            Class6 Ʊ = Ǎ[ã];
             if (ƴ == A || ƴ == A + 1)
                 ƞ = Ʊ;
 
@@ -6172,7 +6190,7 @@ String Ɯ(bool ƛ, int ƚ, ref int ƙ, bool Ƙ, int Ɵ) {
         Ɨ += ǧ(ư, Ƴ, Ʋ, ref ƙ);
     } else if (Є == ϸ.ž || Є == ϸ.ϻ) {
         ϸ J = Є == ϸ.ž ? ϸ.Ϭ : ϸ.Ϸ;
-        ɐ Ʀ = null;
+        Class6 Ʀ = null;
         if (Є == ϸ.ž)
             Ʀ = ƞ;
 
@@ -6237,25 +6255,25 @@ String Ɯ(bool ƛ, int ƚ, ref int ƙ, bool Ƙ, int Ɵ) {
     return Ɨ;
 }
 
-String Ʈ(ɐ Ʀ) {
+String Ʈ(Class6 Ʀ) {
     if (Ʀ.ɍ != VERSION)
         return Ʀ.Ô + ": Different version!";
 
     return Ʀ.Ô + ": " + ƪ(Ʀ, Ʀ.ɋ) + " " + Ʀ.Ʌ + "m"; 
 }
 
-String ƭ(ɐ Ʀ) {
+String ƭ(Class6 Ʀ) {
     String O = ǿ("", µ(Ʀ.Ɇ, Ʀ.ɇ) * 100f, 100f, 8, 0, 0) + "% ";
     for (int A = 0; A < Ʀ.Ƿ.Count; A++) {
         if (A >= 5) break;
-        Ņ Ĵ = Ʀ.Ƿ[A];
+        Class4 Ĵ = Ʀ.Ƿ[A];
         O += Ǜ(Ȁ(Ƭ(Ĵ)), 3) + " " + ǖ(Ĵ.Ń) + " ";
     }
 
     return O;
 }
 
-String Ƭ(Ņ Ĵ) {
+String Ƭ(Class4 Ĵ) {
     if (Ĵ.ń.ToUpper() == "ORE" || Ĵ.ń.ToUpper() == "INGOT") {
         String ƫ = GetElementCode(Ĵ.Ô.ToUpper());
         if (ƫ != "")
@@ -6265,7 +6283,7 @@ String Ƭ(Ņ Ĵ) {
     return Ĵ.Ô;
 }
 
-String ƪ(ɐ Ʀ, String O) {
+String ƪ(Class6 Ʀ, String O) {
     if (Ʀ.Ƀ())
         return "No signal...(" + Ǖ((int)(DateTime.Now - Ʀ.ɏ).TotalSeconds) + ")";
 
@@ -6350,7 +6368,7 @@ String Ȅ(Ǒ ƽ, String ǩ, bool Ç) {
     if (ƽ == Ǒ.ǵ) {
         return Ɯ(false, 0, ref ȅ, true, ȃ);
     } else if (ƽ == Ǒ.Ƿ || ƽ == Ǒ.Ǹ || ƽ == Ǒ.Ƕ) {
-        ɐ Ʀ = ƞ;
+        Class6 Ʀ = ƞ;
         if (ǩ != "") {
             Ʀ = ǎ("", ǩ);
             if (Ʀ == null)
@@ -6412,7 +6430,7 @@ String Ǜ(String O, int ǚ) {
     return O;
 }
 
-string Ǚ(ɐ Ʀ) {
+string Ǚ(Class6 Ʀ) {
     String O = "";
     O += Ʀ.ɍ + "\n";
     O += Ʀ.Ô + "\n";
@@ -6429,13 +6447,13 @@ string Ǚ(ɐ Ʀ) {
     return O;
 }
 
-string ǘ(ɐ Ʀ) {
+string ǘ(Class6 Ʀ) {
     String O = "";
     O += ǿ("All", µ(Ʀ.Ɇ, Ʀ.ɇ) * 100f, 100, 30, 8, 12) + "%\n";
     O += "\n";
 
     for (int ã = 0; ã < Ʀ.Ƿ.Count(); ã++) {
-        Ņ Ĵ = Ʀ.Ƿ[ã];
+        Class4 Ĵ = Ʀ.Ƿ[ã];
         O += ǿ(Ĵ.Ô, Ĵ.Ń, Ʀ.Ʉ, 30, 8, 10) + "\n";
     }
 
@@ -6462,7 +6480,7 @@ String Ǖ(int ǔ) {
     return "" + ǔ + " s";
 }
 
-String Ǔ(ɐ Ʀ, String ž) {
+String Ǔ(Class6 Ʀ, String ž) {
     Ⱥ Ƶ = ǈ(Ʀ, false, ž);
     if (Ƶ == Ⱥ.ɒ)
         return "received!";
